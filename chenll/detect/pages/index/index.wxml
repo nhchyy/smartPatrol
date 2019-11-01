@@ -1,0 +1,4 @@
+<!--index.wxml-->
+
+
+   <view bindtap="click">点我扫一扫</view>  

@@ -1,0 +1,13 @@
+<!--pages/logadd/logadd.wxml-->
+<view>
+  
+    <form bindreset="formReset" bindsubmit="formSubmit">  
+       
+            <input type="text"  name="mtc_type"   />
+            
+            <input type="text"  name="description"  />
+        
+
+     <button  formType="submit" >确定</button><button formType="reset" >取消</button>
+    </form>
+</view>
