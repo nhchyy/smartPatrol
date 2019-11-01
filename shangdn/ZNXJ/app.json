@@ -1,7 +1,6 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/index1/index1",
     "pages/logs/logs"
   ],
   "permission": {
