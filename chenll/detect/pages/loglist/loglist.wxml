@@ -1,0 +1,5 @@
+<!--pages/loglist/loglist.wxml-->
+<button bindtap="addlog">添加日志</button>
+<view wx:for="{{list}}" wx:key="{{index}}">
+   {{item.mtime}}  {{item.mtype}} <button id="{{item.id}}" bindtap="detail">详细</button>
+  </view> 

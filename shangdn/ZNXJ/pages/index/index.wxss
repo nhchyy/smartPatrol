@@ -1,0 +1,9 @@
+/**index.wxss**/
+map{
+  width: 750rpx;
+  height: 500rpx;
+  margin-top: 50rpx;
+}
+.line{
+ border-bottom: 1px solid gray;
+}
