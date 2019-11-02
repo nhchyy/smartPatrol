@@ -1,0 +1,13 @@
+<!--pages/detailinfo/detailinfo.wxml-->
+<view>
+  <view>{{list.eqp_name}}</view>
+  <view>{{list.address}}</view>
+  <view>{{list.longtitude}}</view>
+  <view>{{list.latitude}}</view>
+  <view>{{list.principal_name}}</view>
+  <view>{{list.principal_tel}}</view>
+  <view>{{list.mfr_name}}</view>
+  <view>{{list.mfr_tel}}</view>
+  <view>{{list.comment}}</view>
+</view>
+<button bindtap="onclick">数据修订</button>
