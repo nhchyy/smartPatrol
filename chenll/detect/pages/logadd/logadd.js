@@ -40,7 +40,7 @@ Page({
         mtc_type = "除尘";
 
     }
-    wx.request({
+    wx.request({ 
 
 
       url: 'http://112.93.119.181:8090/zhyw/api/mtcadd/',
