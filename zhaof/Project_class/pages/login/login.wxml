@@ -14,7 +14,7 @@
            <image src="img/7.png" style="width: 20px; height:20px;" bindload="imageLoad"></image>
         </view>
         <view class="num">
-           <input bindblur="pwdBlur" name="pwd" placeholder="请输入密码" />
+           <input bindblur="pwdBlur" name="pwd" type="password" placeholder="请输入密码" />
         </view>   
     </view>
   <view class="hr"></view>
