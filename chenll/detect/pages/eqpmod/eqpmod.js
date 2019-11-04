@@ -19,7 +19,7 @@ Page({
     console.log("123")
     wx.request({
 
-      url: 'http://39.104.94.115/zhyw/api/equipment/',
+      url: 'http://112.93.119.181:8090/zhyw/api/equipment/',
       method: 'post',
       data: util.json2Form({
         id: eqpid
@@ -55,7 +55,7 @@ Page({
     wx.request({
 
 
-      url: 'http://39.104.94.115/zhyw/api/eqpedit/',
+      url: 'http://112.93.119.181:8090/zhyw/api/eqpedit/',
       method: 'post',
       data: util.json2Form({
         eqp_id: that.data.id,

@@ -1,23 +1,88 @@
 <!--pages/eqpmod/eqpmod.wxml-->
-<view>
-    <view >
-        <label >{{list.eqp_name}}   </label>
-        <label>{{list.eqp_type}}   </label>
-       <label>{{list.mfr_name}}   </label>
-    </view>
-    <form bindreset="formReset" bindsubmit="formSubmit">  
-       
-            <input type="text"  name="address"  value="{{list.address}}" />
-            <input type="text" name="longtitude" value="{{list.longtitude}}" />
-            <input type="text" name="latitude" value="{{list.latitude}}" />
-            <input type="text" name="principal_name" value="{{list.principal_name}}" />
-            <input type="text"  name="principal_tel" value="{{list.principal_tel}}" />
-            <input type="text" name="mfr_tel" value="{{list.mfr_tel}}" />
-            <input type="text"  name="comment" value="{{list.comment}}" />
-        
 
-     <button  formType="submit" >确定</button><button formType="reset" >取消</button>
+    <form bindreset="formReset" bindsubmit="formSubmit"> 
+     
+        <view class="padding-left: 20rpx;padding-right: 20rpx">
+        <view class="page__title padding-top: 20rpx">{{list.eqp_name}}</view>
+        <!-- <view>
+        <label>{{list.eqp_type}}   </label>
+        </view>
+           <view>
+       <label>{{list.mfr_name}}   </label>
+       </view> -->
+             <view class="weui-cells__title">机房经度：</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell">
+                <view class="weui-cell__bd">
+            <input type="text" name="longtitude" value="{{list.longtitude}}" />
+              </view>
+            </view>  
+        </view>
+
+             <view class="weui-cells__title">机房纬度：</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell">
+                <view class="weui-cell__bd">
+            <input type="text" name="latitude" value="{{list.latitude}}" />
+              </view>
+            </view>
+        </view>
+
+
+            <view class="weui-cells__title">责任人：</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell">
+                <view class="weui-cell__bd">
+            <input type="text" name="principal_name" value="{{list.principal_name}}" />
+
+
+            </view>
+            </view>
+        </view>
+             <view class="weui-cells__title">责任人电话：</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell">
+                <view class="weui-cell__bd">
+            <input type="text"  name="principal_tel" value="{{list.principal_tel}}" />
+
+ </view>
+            </view>
+        </view>
+
+              <view class="weui-cells__title">厂家电话：</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell">
+                <view class="weui-cell__bd">
+            <input type="text" name="mfr_tel" value="{{list.mfr_tel}}" />
+               </view>
+            </view>
+        </view>
+
+              <view class="weui-cells__title">机房地址：</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell">
+                <view class="weui-cell__bd">
+                   <textarea style="height: 3.0em" name="address"  value="{{list.address}}" />
+                    <view class="weui-textarea-counter">0/20</view>
+                </view>
+            </view>
+        </view>
+  <view class="weui-cells__title">备注信息：</view>
+             <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell">
+                <view class="weui-cell__bd">
+                  <textarea  style="height: 4.3em" name="comment" value="{{list.comment}}" />
+                    <view class="weui-textarea-counter">0/200</view>
+                </view>
+            </view>
+        </view> 
+            
+        </view>
+        
+<view class="showbtp"> 
+     <button  formType="submit" >确定</button><button formType="reset" >重置</button>
+     </view>
     </form>
-</view>
+
 
 

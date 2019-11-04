@@ -1,6 +1,0 @@
-<!--pages/logdetail/logdetail.wxml-->
-<view>{{list.mtime}}</view>
-<view>{{list.mtype}}</view>
-<view>{{list.mname}}</view>
-<view>{{list.mtel}}</view>
-<view>{{list.mdes}}</view>
