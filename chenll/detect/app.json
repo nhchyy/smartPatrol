@@ -1,11 +1,9 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/basicinfo/basicinfo",
     "pages/detailinfo/detailinfo",
     "pages/loglist/loglist",
     "pages/logadd/logadd",
-    "pages/logdetail/logdetail",
     "pages/eqpmod/eqpmod"
   ],
   "window": {

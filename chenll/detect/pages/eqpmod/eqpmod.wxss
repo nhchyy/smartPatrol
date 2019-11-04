@@ -1,10 +1,68 @@
 /* pages/eqpmod/eqpmod.wxss */
-.showbtp {
-  display: flex;
+page{ background-color: white;}
+.input1{
   width: 100%;
-  flex-direction: row;
-  align-items: center;
-  padding-top: 20rpx;
+   color:darkgray;
+   
+}
+.textarea{
+  height: 3.5em;
+color:darkgray;
+
+   width: 100%;
+
+  
+}
+.textareal{
+  height: 5.5em;
+ 
+   width: 100%;
+  color:darkgray;
+  
+}
+.backline{
+  height:1px;
+  width: 100%;
+  background-color: #EDEDED;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+}
+.texta{
+  color: #EDEDED;
+   text-align: end; 
+    width: 100%;
+}
+.pagetitle {
+  width: 100%;
+    text-align: left;
+    font-size: 50rpx;
+    font-weight: 400;
+    padding-top: 20rpx;
+}
+.showmessage {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 15rpx;
   justify-content: space-around;
   box-sizing: border-box;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.hori {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content:space-between;
+  padding-top: 20rpx;
+   margin-top: 15px;
+}
+
+.showbtn {
+  align-items: center;
+  margin-top: 15rpx;
+  padding-left: 100rpx;
+  padding-right: 100rpx;
 }
