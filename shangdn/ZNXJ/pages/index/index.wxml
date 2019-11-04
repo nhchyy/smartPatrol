@@ -1,0 +1,20 @@
+<!--index.wxml-->
+<button type="primary" bindtap="dw">点击打卡</button>
+<map id="myMap" 
+longitude="{{longitude}}" 
+latitude="{{latitude}}" 
+markers="{{markers}}" 
+scale='14' 
+show-location 
+show-compass 
+show-scale 
+enable-zoom 
+enable-scroll 
+enable-rotate />
+<view>
+<view class="rizhi">打卡日志:</view>
+<view class="line"></view>
+  <view wx:for="{{jilu}}">
+    {{item.wtime}}{{item.name}}
+  </view>
+</view>

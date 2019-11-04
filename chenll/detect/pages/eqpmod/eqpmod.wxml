@@ -1,0 +1,23 @@
+<!--pages/eqpmod/eqpmod.wxml-->
+<view>
+    <view >
+        <label >{{list.eqp_name}}   </label>
+        <label>{{list.eqp_type}}   </label>
+       <label>{{list.mfr_name}}   </label>
+    </view>
+    <form bindreset="formReset" bindsubmit="formSubmit">  
+       
+            <input type="text"  name="address"  value="{{list.address}}" />
+            <input type="text" name="longtitude" value="{{list.longtitude}}" />
+            <input type="text" name="latitude" value="{{list.latitude}}" />
+            <input type="text" name="principal_name" value="{{list.principal_name}}" />
+            <input type="text"  name="principal_tel" value="{{list.principal_tel}}" />
+            <input type="text" name="mfr_tel" value="{{list.mfr_tel}}" />
+            <input type="text"  name="comment" value="{{list.comment}}" />
+        
+
+     <button  formType="submit" >确定</button><button formType="reset" >取消</button>
+    </form>
+</view>
+
+
