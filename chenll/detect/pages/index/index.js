@@ -28,7 +28,7 @@ Page({
           duration: 2000
         })
         wx.navigateTo({
-          url: '../basicinfo/basicinfo?id='+id,
+          url: '../detailinfo/detailinfo?id='+id,
          
           　　success: function () {
             　　　　console.log('接口调用成功')

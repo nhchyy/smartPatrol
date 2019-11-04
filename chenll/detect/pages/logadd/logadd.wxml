@@ -2,12 +2,25 @@
 <view>
   
     <form bindreset="formReset" bindsubmit="formSubmit">  
+
+
+
+       <view style=" padding-top: 100px">维护类型：</view>
        
-            <input type="text"  name="mtc_type"   />
+          
+           <!-- <input class="input1" name="mtc_type"/> -->
+            <!-- <view class="border"></view> -->
             
-            <input type="text"  name="description"  />
+              <picker bindchange="styleChange" value="{{sindex}}"  class="input1" name="mtc_type" range="{{styles}}">
+                        <view>{{styles[sindex]}}</view>
+                    </picker>
+          <view>详细信息：</view>
+                  <textarea class="textarea" name="description" style="height: 3.3em" />
+
+              <view style="background-color: white; " class="weui-textarea-counter;">0/200</view>  
+            <!-- <view class="border"></view> -->
         
 
-     <button  formType="submit" >确定</button><button formType="reset" >取消</button>
+     <button  formType="submit"  style="margin-top: 20px">确定</button><button formType="reset" >取消</button>
     </form>
 </view>
