@@ -1,1 +1,20 @@
 /* pages/logadd/logadd.wxss */
+.input1{
+  background-color:white;
+
+ padding: 10px;
+   
+}
+.textarea{
+  height: 5.5em;
+  background-color: white;
+  padding-right: 10px;
+    padding-left: 10px;
+  
+}
+.border{
+  background-color: #888888;
+  height:3rpx;
+    padding-right: 10px;
+    padding-left: 10px;
+}

@@ -1,9 +1,0 @@
-<!--pages/bisicinfo/basicinfo.wxml-->
-
- <view >
-  <view>{{list.eqp_type}}</view>
-  <view>{{list.eqp_name}}</view>
-   <view>{{list.address}}</view>
-</view>
-<button bindtap="details">详细信息</button>
-  <button bindtap="loglist">巡检日志</button>
