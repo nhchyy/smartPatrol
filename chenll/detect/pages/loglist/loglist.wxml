@@ -13,10 +13,10 @@
    {{item.mtime}}  {{item.mtype}} <image src="../images/detail.png" class="image" id="{{item.id}}" bindtap="detail"></image>
    </view>
    <view class="backline"></view>
-<view hidden="{{item.open ? '' : 'true'}}">
+<view hidden="{{item.open ? '' : 'true'}}" class="detail-bg">
 <view>操作人：{{item.mname}}</view>
 <view>电话：{{item.mtel}}</view>
-<view>描述：{{item.mdes}}</view>
+<view style="width:100%;">描述：{{item.mdes}}</view>
 </view>
    </view>
 

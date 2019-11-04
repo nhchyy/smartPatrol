@@ -1,84 +1,88 @@
 <!--pages/detailinfo/detailinfo.wxml-->
+<view class="pagetitle">设备信息</view>
+<view class="showmessage">
+
+  <view style="width:100%;">
+  <view class="backline"></view>
+    <label >设备类型：</label>
+    <view>{{list.eqp_type}}</view>
+      <view class="backline"></view>
+
+  </view>
+
+  <view style="width:100%;">
+    <label>设备名称：</label>
+    <view style="">{{list.eqp_name}}</view>
+     <view class="backline"></view>
+  </view>
 
 
-<view class="kind-list" >
- 
+  <view style="width:100%;">
 
+    <label class="">生产厂家：</label>
+    <view style="">{{list.mfr_name}}</view>
+     <view class="backline"></view>
+
+  </view>
+
+  <view style="width:100%;">
+
+    <label class="">责 任 人：</label>
+    <view class="">{{list.principal_name}}</view>
+     <view class="backline"></view>
+  </view>
+
+  <view  style="width:100%;" hidden="{{open ? '' : 'true'}}">
+    <label class="">责任电话：</label>
+
+    <view class="">{{list.principal_tel}}</view>
+     <view class="backline"></view>
+  </view>
+
+  <view style="width:100%;" hidden="{{open ? '' : 'true'}}">
+    <label class="">机房地址：</label>
+    <view class="">{{list.address}}</view>
+     <view class="backline"></view>
+  </view>
+
+  <view style="width:100%;" hidden="{{open ? '' : 'true'}}">
+
+    <label class="">经度：</label>
+    <view class="">{{list.longtitude}}</view>
+     <view class="backline"></view>
+
+  </view>
+
+  <view  style="width:100%;" hidden="{{open ? '' : 'true'}}">
+
+    <label class="">纬度：</label>
+    <view class="">{{list.latitude}}</view>
+     <view class="backline"></view>
+
+  </view>
+
+  <view style="width:100%;" hidden="{{open ? '' : 'true'}}">
+
+    <label class="">厂家电话：</label>
+    <view class="">{{list.mfr_tel}}</view>
+     <view class="backline"></view>
+
+  </view>
+  <view style="width:100%;" hidden="{{open ? '' : 'true'}}">
+
+    <label class="">备注信息：</label>
+    <view class="">{{list.comment}}</view>
+     <view class="backline"></view>
+  </view>
+</view>
+
+<view style="width:100%;" class="hori hd">
+  <view class=" {{open ? 'hd_show' : ''}}" bindtap="kindToggle">
   
-  <view class="kind-list__item-bd kind-list__item-bd_show">
-    <view class="weui-cells weui-cells_show">
-      <label style="padding-top:10px;" class="weui-cell__bd">设备类型：</label>
-      <view class="weui-cell__bd">{{list.eqp_type}}</view>
-    </view>
-  </view>
-<view class="kind-list__item-bd kind-list__item-bd_show"> 
-   <view class="weui-cells weui-cells_show">
-    <label style="padding-top:10px;" class="weui-cell__bd" >设备名称：</label>
-    <view  class="weui-cell__bd">{{list.eqp_name}}</view>
+    <image class="img" src="../images/icon_nav_nav.png"></image>
   </view>
 </view>
-
-<view class="kind-list__item-bd kind-list__item-bd_show">
-  <view class="weui-cells weui-cells_show">
-    <label class="weui-cell__bd">生产厂家：</label>
-    <view class="weui-cell__bd">{{list.mfr_name}}</view>
-  </view>
-  </view>
-
-<view class="kind-list__item-bd kind-list__item-bd_show">
-  <view class="weui-cells weui-cells_show">
-    <label class="weui-cell__bd">责 任 人：</label>
-    <view class="weui-cell__bd">{{list.principal_name}}</view>
-  </view>
-
-<view class="kind-list__item-bd kind-list__item-bd_show}}">
-  <view class="weui-cells weui-cells_show">
-    <label class="weui-cell__bd" >责任电话：</label>
-
-    <view class="weui-cell__bd" >{{list.principal_tel}}</view>
-  </view>
-</view>
-
-<view class="kind-list__item-bd {{open ? 'kind-list__item-bd_show' : ''}}">
-  <view class="weui-cells {{open ? 'weui-cells_show' : ''}}">
-    <label class="weui-cell__bd">机房地址：</label>
-    <view class="weui-cell__bd">{{list.address}}</view>
-  </view>
-  </view>
-
-<view class="kind-list__item-bd {{open ? 'kind-list__item-bd_show' : ''}}">
-  <view class="weui-cells {{open ? 'weui-cells_show' : ''}}">
-    <label class="weui-cell__bd">经度：</label>
-    <view class="weui-cell__bd">{{list.longtitude}}</view>
-  </view>
-  </view>
-
-<view class="kind-list__item-bd {{open ? 'kind-list__item-bd_show' : ''}}">
-  <view class="weui-cells {{open ? 'weui-cells_show' : ''}}">
-    <label class="weui-cell__bd">纬度：</label>
-    <view class="weui-cell__bd">{{list.latitude}}</view>
-  </view>
-</view>
-
-<view class="kind-list__item-bd {{open ? 'kind-list__item-bd_show' : ''}}">
-  <view class="weui-cells {{open ? 'weui-cells_show' : ''}}">
-    <label class="weui-cell__bd">厂家电话：</label>
-    <view class="weui-cell__bd">{{list.mfr_tel}}</view>
-  </view>
-  </view>
-<view class="kind-list__item-bd {{open ? 'kind-list__item-bd_show' : ''}}">
-  <view  class="weui-cells {{open ? 'weui-cells_show' : ''}}">
-    <label class="weui-cell__bd">备注信息：</label>
-    <view class="weui-cell__bd">{{list.comment}}</view>
-  </view> 
-</view>
-</view>
-</view>
-<view class="weui-cells weui-cells_show">
-<view  class=" weui-flex kind-list__item-hd {{open ? 'kind-list__item-hd_show' : ''}}" bindtap="kindToggle">
-    <view class="weui-flex__item">详细</view>
-    <image class="kind-list__img" src="../images/icon_nav_nav.png"></image>
-  </view>
-  <button bindtap="onclick" class="">数据修订</button>
-  <button bindtap="loglist" class="">巡检日志</button>
+<view class="">
+  <button bindtap="onclick" class="showbtn">数据修订</button>
+  <button bindtap="loglist" class="showbtn">维护日志</button>
 </view>
