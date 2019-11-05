@@ -4,26 +4,18 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": false,
+		"urlCheck": true,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
-		"coverView": true,
 		"autoAudits": false,
-		"checkInvalidKey": true,
-		"checkSiteMap": true,
-		"uploadWithSourceMap": true,
-		"babelSetting": {
-			"ignore": [],
-			"disablePlugins": [],
-			"outputPath": ""
-		}
+		"coverView": true
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.9.1",
 	"appid": "wxede301b87b61ce22",
-	"projectname": "daka",
+	"projectname": "yunwei",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
