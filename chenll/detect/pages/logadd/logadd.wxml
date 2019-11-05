@@ -2,7 +2,10 @@
 
 
 <form bindreset="formReset" bindsubmit="formSubmit">
-
+  <view class="pagetitle">
+    <view class="">新增维护</view>
+    <button class="topbutton">主页</button>
+  </view>
   <view class="showmessage">
     <view class="backline"></view>
     <view style="">维护类型：</view>
