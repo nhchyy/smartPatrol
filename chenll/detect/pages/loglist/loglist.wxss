@@ -13,6 +13,11 @@
 
 
 }
+.detail-bg{
+  background-color: #EDEDED;
+    margin-left:10px;
+   margin-right:10px;
+}
 .imagep{
   width: 70rpx;
    height: 70rpx;
