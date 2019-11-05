@@ -106,14 +106,14 @@ Page({
     })
   },
   formReset: function(e) {
-    var that = this;
-    e.detail.value.address = "",
-      e.detail.value.longtitude = "",
-      e.detail.value.latitude = "",
-      e.detail.value.principal_name = "",
-      e.detail.value.principal_tel = "",
-      e.detail.value.mfr_tel = "",
-      e.detail.value.comment = ""
+    // var that = this;
+    // e.detail.value.address = "",
+    //   e.detail.value.longtitude = "",
+    //   e.detail.value.latitude = "",
+    //   e.detail.value.principal_name = "",
+    //   e.detail.value.principal_tel = "",
+    //   e.detail.value.mfr_tel = "",
+    //   e.detail.value.comment = ""
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

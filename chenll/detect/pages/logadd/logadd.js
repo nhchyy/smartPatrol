@@ -88,9 +88,9 @@ Page({
     })
   },
   formReset: function(e) {
-    e.detail.value.mtc_type = 0,
-
-      e.detail.value.description = ""
+    this.setData({
+      sindex:0
+    })
   },
 
   styleChange: function(e) {
