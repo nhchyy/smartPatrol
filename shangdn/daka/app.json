@@ -1,8 +1,8 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/logs/index",
-    "pages/zuji/index"
+    "pages/logs/logs",
+    "pages/zuji/zuji"
   ],
   "window": {
     "backgroundTextStyle": "light",

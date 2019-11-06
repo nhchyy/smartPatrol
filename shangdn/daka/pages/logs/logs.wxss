@@ -11,10 +11,9 @@
   color: black;
 }
 .log{
-  margin-top: 20rpx;
   text-align: center;
-  padding-top: 20rpx;
+  padding-top: 30rpx;
   font-size: 30rpx;
   color: rgb(126, 125, 125);
-  letter-spacing: 4rpx;
+  letter-spacing: 3rpx;
 }
