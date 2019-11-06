@@ -1,4 +1,5 @@
 // pages/detailinfo/detailinfo.js
+const app = getApp();
 var util = require('../../utils/util.js');
 Page({
 
