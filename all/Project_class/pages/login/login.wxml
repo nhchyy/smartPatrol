@@ -1,0 +1,40 @@
+<view style='height:230rpx'> <image class="bg_logo" src="img/5.png" style="width: 100px; height:100px;"></image></view>
+<view class="content">
+    <view class="account">
+        <view class="title">
+            <image src="img/8.png" style="width: 20px; height:20px;" bindload="imageLoad"></image>
+        </view>
+        <view class="num">
+            <input bindinput="accountInput"  name="mobile" placeholder="请输入账号"/>
+        </view>
+    </view>
+  <view class="hr"></view>
+    <view class="account">
+        <view class="title">
+           <image src="img/7.png" style="width: 20px; height:20px;" bindload="imageLoad"></image>
+        </view>
+        <view class="num">
+           <input bindblur="pwdBlur" name="pwd" type="password" placeholder="请输入密码" />
+        </view>   
+    </view>
+  <view class="hr"></view>
+    <view class="account">
+      <view class='input_center'>
+          <view class="title">
+            <image src="img/10.png" style="width: 20px; height:20px;" ></image>
+          </view>
+        <input bindinput="accountInput"  name="mobile" placeholder="输入验证码"   value='{{code}}' name="code" bindinput='bindCode'/>
+      </view>
+      <view class="capture" bindtap="changeImg">
+         <canvas style="width:{{cvs.width}};height:{{cvs.height}};" canvas-id="canvas"></canvas>
+      </view>
+    <!-- <view class="changeImg" bindtap="changeImg">换一换</view> -->
+  </view>
+
+  <view style='height:30rpx'></view>
+  <button class="btn" bindtap='login' type="primary" style='width:500rpx'>确认登录</button>
+
+  <!-- <view style='height:30rpx'></view>
+  <button class="weui-btn" type="primary" style='width:500rpx'  open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">绑定微信</button> -->
+</view>
+<view>{{errmsg}}</view> 

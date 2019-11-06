@@ -1,0 +1,88 @@
+<!--pages/detailinfo/detailinfo.wxml-->
+<view class="pagetitle">设备信息</view>
+<view class="showmessage">
+
+  <view style="width:100%;">
+  <view class="backline"></view>
+    <label >设备类型：</label>
+    <view>{{list.eqp_type}}</view>
+      <view class="backline"></view>
+
+  </view>
+
+  <view style="width:100%;">
+    <label>设备名称：</label>
+    <view style="">{{list.eqp_name}}</view>
+     <view class="backline"></view>
+  </view>
+
+
+  <view style="width:100%;">
+
+    <label class="">生产厂家：</label>
+    <view style="">{{list.mfr_name}}</view>
+     <view class="backline"></view>
+
+  </view>
+
+  <view style="width:100%;">
+
+    <label class="">责 任 人：</label>
+    <view class="">{{list.principal_name}}</view>
+     <view class="backline"></view>
+  </view>
+
+  <view  style="width:100%;" hidden="{{open ? '' : 'true'}}">
+    <label class="">责任电话：</label>
+
+    <view class="">{{list.principal_tel}}</view>
+     <view class="backline"></view>
+  </view>
+
+  <view style="width:100%;" hidden="{{open ? '' : 'true'}}">
+    <label class="">机房地址：</label>
+    <view class="">{{list.address}}</view>
+     <view class="backline"></view>
+  </view>
+
+  <view style="width:100%;" hidden="{{open ? '' : 'true'}}">
+
+    <label class="">经度：</label>
+    <view class="">{{list.longtitude}}</view>
+     <view class="backline"></view>
+
+  </view>
+
+  <view  style="width:100%;" hidden="{{open ? '' : 'true'}}">
+
+    <label class="">纬度：</label>
+    <view class="">{{list.latitude}}</view>
+     <view class="backline"></view>
+
+  </view>
+
+  <view style="width:100%;" hidden="{{open ? '' : 'true'}}">
+
+    <label class="">厂家电话：</label>
+    <view class="">{{list.mfr_tel}}</view>
+     <view class="backline"></view>
+
+  </view>
+  <view style="width:100%;" hidden="{{open ? '' : 'true'}}">
+
+    <label class="">备注信息：</label>
+    <view class="">{{list.comment}}</view>
+     <view class="backline"></view>
+  </view>
+</view>
+
+<view style="width:100%;" class="hori hd">
+  <view class=" {{open ? 'hd_show' : ''}}" bindtap="kindToggle">
+  
+    <image class="img" src="../images/icon_nav_nav.png"></image>
+  </view>
+</view>
+<view class="">
+  <button bindtap="onclick" class="showbtn">数据修订</button>
+  <button bindtap="loglist" class="showbtn">维护日志</button>
+</view>

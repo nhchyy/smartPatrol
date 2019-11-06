@@ -1,0 +1,15 @@
+{
+
+  "pages": [
+    "pages/pages/index/index",
+    "pages/pages/logs/index",
+    "pages/pages/zuji/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json"
+}
