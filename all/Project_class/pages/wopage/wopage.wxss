@@ -1,0 +1,30 @@
+/* wopage/wopage.wxss */
+.top{
+  display: flex;
+  height: 150rpx;
+  width: 700rpx;
+  padding:90rpx 0 0 60rpx;
+}
+.topl {
+  width: 150rpx;
+  height: 150rpx;
+}
+
+.bg_button {
+  top:200rpx;
+}
+
+.bg_button1 {
+  top:203rpx;
+}
+
+.bg_button2 {
+  top:206rpx;
+}
+
+.bg_button3 {
+  top:700rpx;
+}
+
+
+

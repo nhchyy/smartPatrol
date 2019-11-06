@@ -1,4 +1,5 @@
 // pages/loglist/loglist.js
+const app = getApp();
 var util = require('../../utils/util.js');
 Page({
 
@@ -8,13 +9,13 @@ Page({
   data: {
     list: [],
     id: "",
-    listshow:[]
+    listshow: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
+  onLoad: function (options) {
     var that = this;
     let eqpid = options.id;
     that.setData({
@@ -22,11 +23,9 @@ Page({
       //res代表success函数的事件对，data是固定的，list是数组
     })
 
-   
-  },
-  detail: function(e) {
-  
 
+  },
+  detail: function (e) {
     var id = e.currentTarget.id, list = this.data.list;
     for (var i = 0, len = list.length; i < len; ++i) {
       if (list[i].id == id) {
@@ -39,41 +38,34 @@ Page({
       list: list
     });
   },
-    // console.log(e);
-    // wx.navigateTo({
-    //   url: '../logdetail/logdetail?id=' + e.currentTarget.id,
+  // console.log(e);
+  // wx.navigateTo({
+  //   url: '../logdetail/logdetail?id=' + e.currentTarget.id,
 
-    //   success: function() {
-    //     console.log('接口调用成功')
+  //   success: function() {
+  //     console.log('接口调用成功')
 
-    //   },
-    //   fail: function() {
-    //     console.log('接口调用成功')
-    //   },
-    //   complete: function() {
-    //     console.log('调用结束，调用成功失败都会执行')
-    //   }
-    // })
+  //   },
+  //   fail: function() {
+  //     console.log('接口调用成功')
+  //   },
+  //   complete: function() {
+  //     console.log('调用结束，调用成功失败都会执行')
+  //   }
+  // })
 
-
-  
-  addlog: function() {
+  addlog: function () {
     var id = this.data.id;
     console.log('接口调用成功传参数' + this.data.id)
     wx.navigateTo({
-
-
       url: '../logadd/logadd?id=' + this.data.id,
-
-
-      success: function() {
+      success: function () {
         console.log('接口调用成功传参数')
-
       },
-      fail: function() {
+      fail: function () {
         console.log('接口调用成功')
       },
-      complete: function() {
+      complete: function () {
         console.log('调用结束，调用成功失败都会执行')
       }
     })
@@ -82,16 +74,16 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function() {
+  onReady: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function() {
-    var that=this
-    var listshow=[];
+  onShow: function () {
+    var that = this
+    var listshow = [];
     wx.request({
 
       url: 'http://112.93.119.181:8090/zhyw/api/mtceqpid/',
@@ -109,30 +101,29 @@ Page({
         console.log(res.data.mtclog);
         listshow = res.data.mtclog;
         for (var i = 0; i < listshow.length; i++) {
-          listshow[i] = that.extend(listshow[i],{ open: false });
+          listshow[i] = that.extend(listshow[i], { open: false });
         }
         that.setData({
           list: listshow
         })
         console.log("讨厌" + that.data.list[0].open);
-          // that.setData({
-          //   listshow: res.data.mtclog,
-          //   //res代表success函数的事件对，data是固定的，list是数组
-            
-          // })
-     
-        
+        // that.setData({
+        //   listshow: res.data.mtclog,
+        //   //res代表success函数的事件对，data是固定的，list是数组
+
+        // })
+
+
       },
       fail: function (err) {
         console.log("失败")
       }
-   
 
     })
-   
-    
-    
-    
+
+
+
+
   },
   extend: function (data, dataExtend) {
     var res = {};
@@ -148,35 +139,35 @@ Page({
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function() {
+  onHide: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function() {
+  onUnload: function () {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function() {
+  onPullDownRefresh: function () {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function() {
+  onReachBottom: function () {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function() {
+  onShareAppMessage: function () {
 
   }
 })

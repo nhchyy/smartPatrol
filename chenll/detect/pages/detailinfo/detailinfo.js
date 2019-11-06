@@ -1,14 +1,15 @@
 // pages/detailinfo/detailinfo.js
+const app = getApp();
 var util = require('../../utils/util.js');
 Page({
 
   /**
    * 页面的初始数据
    */
-  
+
   data: {
-  id:"",
-  open:false
+    id: "",
+    open: false
 
   },
 
@@ -21,38 +22,38 @@ Page({
     that.setData({
       id: eqpid,
       open: false
-      })
-   
+    })
+
   },
-  onclick:function(){
-  wx.navigateTo({
-    url: '../eqpmod/eqpmod?id=' + this.data.id,
+  onclick: function () {
+    wx.navigateTo({
+      url: '../eqpmod/eqpmod?id=' + this.data.id,
 
-    success: function () {
-      console.log('接口调用成功')
+      success: function () {
+        console.log('接口调用成功')
 
-    },
-    fail: function () {
-      console.log('接口调用成功')
-    },
-    complete: function () {
-      console.log('调用结束，调用成功失败都会执行')
-    }
-  })
+      },
+      fail: function () {
+        console.log('接口调用成功')
+      },
+      complete: function () {
+        console.log('调用结束，调用成功失败都会执行')
+      }
+    })
 
-},
+  },
   kindToggle: function (e) {
-   
+
     this.setData({
       open: !this.data.open,
-  
+
     });
-     
+
   },
 
 
   loglist: function () {
-   
+
     wx.navigateTo({
       url: '../loglist/loglist?id=' + this.data.id,
       success: function () {
@@ -73,7 +74,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    var that=this;
+    var that = this;
     wx.request({
 
       url: 'http://112.93.119.181:8090/zhyw/api/equipment/',
@@ -108,5 +109,5 @@ Page({
 
   },
 
-  
+
 })

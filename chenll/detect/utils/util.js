@@ -17,6 +17,10 @@ const formatNumber = n => {
 module.exports = {
   formatTime: formatTime
 }
+/**
+ * 以下信息请加入到util.js
+ * 
+ */
 
 function json2Form(json) {
   var str = [];

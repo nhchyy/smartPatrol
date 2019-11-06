@@ -1,45 +1,40 @@
 /* pages/eqpmod/eqpmod.wxss */
-page{ background-color: white;}
-.input1{
-  width: 100%;
-   color:darkgray;
-   
+
+page {
+  background-color: white;
 }
-.textarea{
+
+.input1 {
+  width: 100%;
+  color: darkgray;
+}
+
+.textarea {
   height: 3.5em;
-color:darkgray;
-
-   width: 100%;
-
-  
-}
-.textareal{
-  height: 5.5em;
- 
-   width: 100%;
-  color:darkgray;
-  
-}
-.backline{
-  height:1px;
+  color: darkgray;
   width: 100%;
-  background-color: #EDEDED;
+}
+
+.textareal {
+  height: 5.5em;
+  width: 100%;
+  color: darkgray;
+}
+
+.backline {
+  height: 1px;
+  width: 100%;
+  background-color: #ededed;
   margin-top: 10px;
   margin-bottom: 10px;
+}
 
-}
-.texta{
-  color: #EDEDED;
-   text-align: end; 
-    width: 100%;
-}
-.pagetitle {
+.texta {
+  color: #ededed;
+  text-align: end;
   width: 100%;
-    text-align: left;
-    font-size: 50rpx;
-    font-weight: 400;
-    padding-top: 20rpx;
 }
+
 .showmessage {
   display: flex;
   flex-direction: column;
@@ -55,9 +50,9 @@ color:darkgray;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content:space-between;
+  justify-content: space-between;
   padding-top: 20rpx;
-   margin-top: 15px;
+  margin-top: 15px;
 }
 
 .showbtn {
@@ -65,4 +60,31 @@ color:darkgray;
   margin-top: 15rpx;
   padding-left: 100rpx;
   padding-right: 100rpx;
+  
+}
+
+.pagetitle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-top: 30rpx;
+  justify-content: space-between;
+  box-sizing: border-box;
+  text-align: left;
+  font-size: 50rpx;
+  font-weight: 400;
+  padding-bottom: 20rpx;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.topbutton {
+  width: 130rpx;
+  height: 50rpx;
+  padding: 0px 0px 0px 0px;
+
+  font-size: 20rpx;
+  text-align: center;
+  vertical-align: middle;
+  margin-right: 0px;
 }

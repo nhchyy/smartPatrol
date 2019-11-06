@@ -1,4 +1,5 @@
 // pages/eqpmod/eqpmod.js
+const app = getApp();
 var util = require('../../utils/util.js');
 Page({
 
@@ -13,7 +14,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
     var that = this;
     let eqpid = options.id;
     console.log("123")
@@ -30,7 +31,7 @@ Page({
       },
 
 
-      success: function (res) {
+      success: function(res) {
         //将获取到的json数据，存在名字叫list的这个数组中
         console.log(res.data),
           that.setData({
@@ -40,7 +41,7 @@ Page({
           })
 
       },
-      fail: function (err) {
+      fail: function(err) {
         console.log("失败")
       }
 
@@ -48,7 +49,7 @@ Page({
 
   },
 
-  formSubmit: function (e) {
+  formSubmit: function(e) {
     var that = this;
     console.log("修订：" + that.data.id);
     console.log("提交结果" + e.detail.value.address);
@@ -78,7 +79,7 @@ Page({
       },
 
 
-      success: function (res) {
+      success: function(res) {
         //将获取到的json数据，存在名字叫list的这个数组中
         console.log(res.data),
           that.setData({
@@ -91,11 +92,11 @@ Page({
           duration: 2000
         })
         wx.navigateBack({
-          delta: 1         // 返回上一页
+          delta: 1 // 返回上一页
         });
 
       },
-      fail: function (err) {
+      fail: function(err) {
         wx.showToast({
           title: '失败',
           icon: 'success',
@@ -105,26 +106,26 @@ Page({
 
     })
   },
-  formReset: function (e) {
-    var that = this;
-    e.detail.value.address = "",
-    e.detail.value.longtitude = "",
-    e.detail.value.latitude = "",
-    e.detail.value.principal_name = "",
-    e.detail.value.principal_tel = "",
-    e.detail.value.mfr_tel = "",
-    e.detail.value.comment = ""
+  formReset: function(e) {
+    // var that = this;
+    // e.detail.value.address = "",
+    //   e.detail.value.longtitude = "",
+    //   e.detail.value.latitude = "",
+    //   e.detail.value.principal_name = "",
+    //   e.detail.value.principal_tel = "",
+    //   e.detail.value.mfr_tel = "",
+    //   e.detail.value.comment = ""
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  
+
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow: function() {
 
   }
 
- 
+
 })

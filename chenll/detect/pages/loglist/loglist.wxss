@@ -1,41 +1,87 @@
 /* pages/loglist/loglist.wxss */
-.image{
+
+.image {
   width: 70rpx;
-   height: 50rpx;
+  height: 50rpx;
 }
-.showcenter{
- 
-  display: flex; 
+
+.showcenter {
+  display: flex;
   flex-direction: row;
   align-items: flex-end;
   justify-content: flex-end;
   box-sizing: border-box;
-
-
 }
-.detail-bg{
-  background-color: #EDEDED;
-    margin-left:10px;
-   margin-right:10px;
+
+.detail-bg {
+  background-color: #ededed;
+  margin-left: 10px;
+  margin-right: 10px;
 }
-.imagep{
+
+.imagep {
   width: 70rpx;
-   height: 70rpx;
-  
+  height: 70rpx;
 }
-.showlist{
-  display: flex; 
+
+.showlist {
+  display: flex;
   flex-direction: row;
   align-items: flex-start;
   justify-content: space-between;
   box-sizing: border-box;
-  background-color:#fff;
+  background-color: #fff;
   padding: 10px;
- 
 }
-.backline{
-  height:1px;
-  background-color: #EDEDED;
-   margin-left:10px;
-   margin-right:10px;
+
+.backline {
+  height: 1px;
+  background-color: #ededed;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.pagetitle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-top: 30rpx;
+  justify-content: space-between;
+  box-sizing: border-box;
+  text-align: left;
+  font-size: 50rpx;
+  font-weight: 400;
+  padding-bottom: 20rpx;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.topbutton {
+  width: 130rpx;
+  height: 50rpx;
+  padding: 0px 0px 0px 0px;
+
+  font-size: 20rpx;
+  text-align: center;
+  vertical-align: middle;
+  margin-right: 30rpx;
+}
+
+.topbuttonp {
+  width: 130rpx;
+  height: 50rpx;
+  padding: 0px 0px 0px 0px;
+
+  font-size: 20rpx;
+  text-align: center;
+  vertical-align: middle;
+  margin-right: 0px;
+}
+
+.topbuttonview {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
 }
