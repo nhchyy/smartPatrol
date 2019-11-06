@@ -1,4 +1,5 @@
 // pages/logadd/logadd.js
+const app = getApp();
 var util = require('../../utils/util.js');
 Page({
 
@@ -41,13 +42,9 @@ Page({
 
     }
     wx.request({
-
-
       url: 'http://112.93.119.181:8090/zhyw/api/mtcadd/',
       method: 'post',
-
       data: util.json2Form({
-
         eqp_id: this.data.eqp_id,
         mtc_type: mtc_type,
         maintainer_name: "陈玲玲",

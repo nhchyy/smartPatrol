@@ -32,7 +32,6 @@ Page({
          
           　　success: function () {
             　　　　console.log('接口调用成功')
-            
           　　},
           　　fail: function () {
             　　　　console.log('接口调用成功')
