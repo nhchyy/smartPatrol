@@ -23,7 +23,26 @@ Page({
     // 获取当前用户点击的文章ID
     this.setData({ ArticleId: options.id })
     // console.log(this.data.ArticleId)
+    let id = options.id;
+    console.log("详情页接收到的id值："+id);
+
+
+    //请求文字详情页
+    wx.request({
+      url: 'http://112.93.119.181:8090/zhyw/api/art/' + id,
+      header: {
+        'content-type': 'application/json'
+      },
+      method: "get",
+      data: {
+        mobile: '18607851317',
+      },
+      success: function (response) {
+        console.log(response.data.data);
+      },
+    });
   },
+
 
   /**
    * 生命周期函数--监听页面初次渲染完成
