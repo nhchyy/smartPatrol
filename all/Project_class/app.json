@@ -1,7 +1,8 @@
 {
   "pages": [   
-    "pages/menpage/pages/apitext/apitext",
     "pages/login/login",
+    "pages/menpage/pages/apitext/apitext",
+    
     "pages/shoupage/shoupage",
     "pages/pages/index/index",
     "pages/pages/logs/index",
