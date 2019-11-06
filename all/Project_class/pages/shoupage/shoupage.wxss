@@ -1,0 +1,26 @@
+/* shoupage/shoupage.wxss */
+page{
+  height: 50%;
+  width: 100%;
+}
+.fl {
+    display: flex;
+    /*flex-wrap: wrap-reverse;*/
+    /*flex-wrap: nowrap;
+    flex-wrap: wrap;*/
+    margin-bottom: 30rpx;
+}
+
+
+.button {
+    width:160px;
+    height:160px;
+}
+
+.center{
+  width: 240rpx;
+  height: 110rpx;
+  line-height: 230rpx;  /** 垂直居中 **/ 
+  text-align: center;   /** 水平居中 **/ 
+
+}
