@@ -74,16 +74,15 @@ page {
   margin-top: 15rpx;
   padding-left: 100rpx;
   padding-right: 100rpx;
-  background-color: #07c160;
-  color: white;
+
 }
+  /* background-color: #07c160;
+  color: white; */
 
 .topbutton {
   width: 130rpx;
   height: 50rpx;
   padding: 0px 0px 0px 0px;
-  background-color: #07c160;
-  color: white;
   font-size: 20rpx;
   text-align: center;
   vertical-align: middle;

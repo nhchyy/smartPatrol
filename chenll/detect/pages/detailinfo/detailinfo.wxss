@@ -30,8 +30,7 @@ page {
   margin-top: 15rpx;
   margin-left: 15px;
   margin-right: 15px;
-  background-color: #07c160;
-  color: white;
+
 }
 
 .showmessage {
@@ -72,8 +71,7 @@ page {
   width: 130rpx;
   height: 50rpx;
   padding: 0px 0px 0px 0px;
-   background-color: #07c160;
-  color: white;
+
     font-size: 20rpx;
     text-align: center;
  vertical-align: middle;
