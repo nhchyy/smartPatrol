@@ -21,7 +21,7 @@ Page({
     this.setData({
       mobile: option.mobile,
       date: option.date,
-      month: option.date.substring(0, 7),
+      month: option.date.substring(0, 7),//截取日期为年月格式，2019-10,
     })
 
     //初始化，以所在位置为地图显示的中心点
@@ -57,8 +57,9 @@ Page({
               })
             }else{
               wx.showToast({
-                title: '当月暂无打卡记录',
-                icon: "loading"
+                title: '当月无打卡记录',
+                icon: "loading",
+                duration: 3000
               })
             }
           },

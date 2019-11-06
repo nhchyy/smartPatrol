@@ -41,7 +41,7 @@ Page({
       }, 
       method: 'POST', 
       success: res => {
-        //请求成功时，设置flag标签值为1，和显示打卡记录
+        //请求成功时，设置tag标签值为1，和显示打卡记录
         if(res.data.errcode == 0){
           this.setData({
             tag:1,
@@ -65,7 +65,7 @@ Page({
   //界面跳转
   zj:function(){
     wx.navigateTo({
-      url: '../zuji/index?mobile=' + this.data.mobile + "&date=" + this.data.date,
+      url: '../zuji/zuji?mobile=' + this.data.mobile + "&date=" + this.data.date,
     })
   }
 })
