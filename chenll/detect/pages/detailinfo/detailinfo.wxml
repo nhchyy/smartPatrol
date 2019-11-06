@@ -1,6 +1,10 @@
 <!--pages/detailinfo/detailinfo.wxml-->
-<view class="pagetitle">设备信息</view>
+<view class="pagetitle">
+<view class="">设备信息</view>
+<button class="topbutton">主页</button>
+</view>
 <view class="showmessage">
+
 
   <view style="width:100%;">
   <view class="backline"></view>
