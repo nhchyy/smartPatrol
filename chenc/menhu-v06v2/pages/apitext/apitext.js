@@ -23,10 +23,10 @@ Page({
   },
 
   /**
-   * 社会新闻点击操作
+   * 新闻点击操作
    */
   navNews: function(event) {
-    //console.log(event)
+    console.log("按钮："+event.currentTarget.dataset.navindex)
     var navindex = event.currentTarget.dataset.navindex
     //需要修改currentTab变量
     this.setData({
