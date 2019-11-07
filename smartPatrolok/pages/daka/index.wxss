@@ -10,6 +10,7 @@ page{
   height: 250rpx;
   width: 250rpx;
   border-radius: 150rpx;
+  border: 2rpx solid rgb(60, 189, 173);
   padding: 0;
   color: white;
   font-size: 45rpx;
@@ -18,7 +19,6 @@ page{
   line-height: 250rpx;
   background: linear-gradient(to bottom right, rgb(20, 150, 106), rgb(41, 230, 173));
   vertical-align: middle; 
-  border: 2rpx solid rgb(60, 189, 173);
   box-shadow: 5px 10px 15px 2px rgba(37, 148, 27, 0.1);
 }
 .button-hover{
