@@ -45,7 +45,7 @@ Page({
             date: this.data.date.substring(0, 7) //截取日期为年月格式，2019-10,
           },
           method: 'POST',
-          //数据请请求成功
+          //数据请求成功
           success: res => {
             if (res.data.errcode == 0) {
               this.setData({

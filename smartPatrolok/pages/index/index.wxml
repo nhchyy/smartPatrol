@@ -5,13 +5,17 @@
   <image bindtap="bindQrcode" class="header_add" src="/resources/qrcode2.png"></image>
 </view>
 <view class="menu">
-  <!--<view class="menu_item">
+  <!-- <view class="menu_item">
     <image src="/resources/btn_first_normal.png"></image>
     <text>扫码</text>
-  </view>-->
+  </view> -->
   <view class="menu_item" bindtap="bindPatrolList">
     <image src="/resources/btn_second_normal.png"></image>
     <text>设备信息</text>
+  </view>
+  <view class="menu_item" bindtap="bindCar">
+    <image src="/resources/btn_second_normal.png"></image>
+    <text>车辆管理</text>
   </view>
   <view class="menu_item" bindtap="bindWarnCheck">
     <image src="/resources/btn_third_normal.png"></image>
@@ -26,7 +30,7 @@
     <text>签到打卡</text>
   </view>
 </view>
-<!--<view class="event mt20" wx:if="{{work.workID > 0}}">
+<!-- <view class="event mt20" wx:if="{{work.workID > 0}}">
   <view class="event_item">
     <image class="event_icon" src="/resources/head_guzhang_default.png"></image>
     <image bindtap="bindEventCancel" class="event_dian" src="/resources/btn_normal_88.png"></image>
@@ -39,12 +43,12 @@
   <view class="event_do" bindtap="bindEventDo" data-id="{{work.workID}}" data-module="{{work.module}}">
     <text>立即处理</text>
   </view>
-</view>-->
-
-
+</view> -->
 <view class="list mt20" wx:if="{{work.workID > 0}}">
   <view class="list_item" bindtap="bindEventDo" data-id="{{work.workID}}" data-module="{{work.module}}">
-    <view class="item_thumb"><image src="/resources/icon_guzhang_80.png@2x.png"></image></view>
+    <view class="item_thumb">
+      <image src="/resources/icon_guzhang_80.png@2x.png"></image>
+    </view>
     <view class="item_desc">
       <view class="item_title">{{work.title}}</view>
       <view class="item_status">{{work.addtime}}</view>
@@ -52,18 +56,12 @@
     <view class="item_date">处理</view>
   </view>
 </view>
-
-
-
-  <!--<view class="article_tag">
+<!-- <view class="article_tag">
     <view  class="tag_item {{articleTypeID == 1? 'article_tag_current' : ''}}" data-typeid="1" bindtap="bindUncheck">新闻</view>
     <view  class="tag_item {{articleTypeID == 2? 'article_tag_current' : ''}}" data-typeid="2" bindtap="bindCheck">法规</view>
     &lt;!&ndash;<view  class="tag_item">订阅</view>&ndash;&gt;
-  </view>-->
-
-
-
-  <!-- <view class="article_content">
+  </view> -->
+<!-- <view class="article_content">
     <view class="article_item"  wx:for="{{articleList}}" data-id="{{item.articleID}}" bindtap="bindGoToDetail">
       <image class="article_thumb"  src="{{item.photo}}"></image>
       <view class="article_date">1小时</view>
@@ -87,4 +85,3 @@
     </view>
   </view>
 </view> -->
-
