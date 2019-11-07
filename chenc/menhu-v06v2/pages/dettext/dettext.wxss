@@ -1,0 +1,7 @@
+/* pages/dettext/dettext.wxss */
+@import "../../wxParse/wxParse.wxss";
+.xiangqing{
+width: 100%;
+height: 100%
+
+}

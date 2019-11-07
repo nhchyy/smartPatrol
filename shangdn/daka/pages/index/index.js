@@ -21,7 +21,7 @@ Page({
   //页面跳转
   jilu:function(){
     wx.navigateTo({
-      url: '../logs/index?mobile=' + this.data.mobile,
+      url: '../logs/logs?mobile=' + this.data.mobile,
     })
   },
   //点击打卡
@@ -33,7 +33,13 @@ Page({
         //修改地图中显示的位置
         this.setData({
           latitude:res.latitude,
-          longitude:res.longitude
+          longitude:res.longitude,
+          markers: [{
+            id: 1,
+            latitude: res.latitude,
+            longitude: res.longitude,
+            title: ''
+          }]
         }),
         //发送post请求，向服务器提交打卡数据
         wx.request({
@@ -53,21 +59,24 @@ Page({
             if (res.data.errcode == 0) {
               wx.showToast({
                 title: '打卡成功',
-                icon:"success"
+                icon:"success",
+                duration:2000
               })
               //10分钟以内不可重复打卡，服务器端已做出限制
             } else {
               wx.showToast({
-                title: '频率过高，重试',
-                icon: "loading"
+                title: '频率过高，请10分钟后再打卡',
+                icon: "none",
+                duration: 2000
               })
             }
           },
           //网络或服务器异常
           fail: res => {
             wx.showToast({
-              title: '服务异常，重试',
-              icon: "loading"
+              title: '服务异常，请稍后再试',
+              icon: "none",
+              duration: 2000
             })
           },
         })
@@ -75,8 +84,9 @@ Page({
       //定位失败
       fail:res => {
         wx.showToast({
-          title: '定位失败',
-          icon: "loading"
+          title: '定位失败，请稍后再试',
+          icon: "none",
+          duration: 2000
         })
       }
     })
