@@ -12,13 +12,13 @@ Page({
   //借用车辆
   jy:function(e){
     wx.navigateTo({
-      url: '../jie/index?id=' + e.currentTarget.id
+      url: 'jie?id=' + e.currentTarget.id
     })
   },
   //归还车辆
   gh: function (e) {
     wx.navigateTo({
-      url: '../gh/index?id=' + e.currentTarget.id
+      url: 'gh?id=' + e.currentTarget.id
     })
   },
   onLoad: function () {

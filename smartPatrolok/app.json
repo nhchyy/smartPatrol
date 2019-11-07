@@ -1,8 +1,10 @@
 {
   "pages": [
-    "pages/login/login",
     "pages/index/index",
-    "pages/menhu/apitext",  
+    "pages/cheliang/index",
+    "pages/login/login",
+    
+    "pages/menhu/apitext",
     "pages/index/warnCheck",
     "pages/index/warn",
     "pages/index/warnDetail",
@@ -16,6 +18,9 @@
     "pages/daka/index",
     "pages/daka/logs",
     "pages/daka/zuji",
+   
+    "pages/cheliang/gh",
+    "pages/cheliang/jie",
     "pages/menhu/dettext"
   ],
   "tabBar": {
@@ -49,18 +54,8 @@
     "backgroundTextStyle": "light",
     "backgroundColor": "#f2f2f2"
   },
-
-
   "usingComponents": {
     "calendar": "/components/calendar/calendar"
   },
-
-
-
-  
   "sitemapLocation": "sitemap.json"
-
-
-
-
 }
