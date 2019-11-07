@@ -13,10 +13,8 @@ Page({
   onLoad: function (option) {
     this.setData({
       id: option.id,
-      // mobile: app.globalData.mobile,
-      // name: app.globalData.name
-      mobile: "18688283883",
-      name: "陈源一"
+      mobile: app.globalData.mobile,
+      name: app.globalData.name
     })
     wx.request({
       url: 'http://112.93.119.181:8090/zhyw/api/carid/',

@@ -24,11 +24,8 @@ Page({
   onLoad: function () {
     //接收上一页面跳转过来的mobile和name参数
     this.setData({
-      // mobile: app.globalData.mobile,
-      // name: app.globalData.name
-
-      mobile: "18688283883",
-      name: "陈源一"
+      mobile: app.globalData.mobile,
+      name: app.globalData.name
     })
     wx.request({
       url: 'http://112.93.119.181:8090/zhyw/api/car/',

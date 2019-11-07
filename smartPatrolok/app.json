@@ -1,13 +1,10 @@
 {
   "pages": [
-<<<<<<< HEAD
-=======
-    "pages/daka/index",
     "pages/login/login",
->>>>>>> xiugai-sdn
+    "pages/daka/index",
     "pages/index/index",
     "pages/cheliang/index",
-    "pages/login/login",
+    
     
     "pages/menhu/apitext",
     "pages/index/warnCheck",
