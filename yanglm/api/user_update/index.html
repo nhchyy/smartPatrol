@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script src="https://g.alicdn.com/dingding/dingtalk-jsapi/2.7.13/dingtalk.open.js"></script>
+		<link rel="stylesheet" href="css/style.css">
+		<title>获取用户信息</title>
+	</head>
+	<body>
+		<form action="userinfo.php" method="post">
+			<input type="text" name="code" id="code" style="display: none;"/>
+			<input class="btn" type="submit" value="点击下载用户信息"/>
+		</form>
+		<div>
+			<h3></h3>
+			<p></p>
+		</div>
+	</body>
+	<script type="text/javascript">
+		dd.ready(function() {
+		    // dd.ready参数为回调函数，在环境准备就绪时触发，jsapi的调用需要保证在该回调函数触发后调用，否则无效。
+		    dd.runtime.permission.requestAuthCode({
+		        corpId: "ding230d567b629fd35535c2f4657eb6378f",
+		        onSuccess: function(result) {
+			        document.getElementById("code").value = result.code;
+		        },
+		        onFail : function(err) {
+		        	
+		        }
+		    });
+		});
+	</script>
+</html>

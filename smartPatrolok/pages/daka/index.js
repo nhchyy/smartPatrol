@@ -1,3 +1,4 @@
+var app = getApp();
 Page({
   data: {
     latitude: 39.9096045,
@@ -14,8 +15,8 @@ Page({
   //接收上一页面跳转过来的mobile和name参数
   onLoad: function (option) {
     this.setData({
-      mobile: '15637251568',    //上线后改为   option.mobile
-      name: '尚丹娜'  //上线后改为  option.name
+      mobile: app.globalData.mobile ,
+      name: app.globalData.name  
     })
   },
   //页面跳转
