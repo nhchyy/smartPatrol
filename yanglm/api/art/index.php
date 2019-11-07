@@ -3,7 +3,7 @@
  * @author 作者：杨黎明
  * @param  leib  按类别查询文章列表  1、实时新闻   2、榜样力量   3、安全教育
  * @return JSON
- * @text 文章查询接口
+ * @text 文章查询接口  
  */
 if(isset($_GET['leib'])){
 	
