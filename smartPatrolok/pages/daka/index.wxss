@@ -7,22 +7,22 @@ page{
   padding-top: 7%;
 }
 .btn{
-  height: 300rpx;
-  width: 300rpx;
+  height: 250rpx;
+  width: 250rpx;
   border-radius: 150rpx;
   padding: 0;
   color: white;
-  font-size: 1.5rem;
+  font-size: 45rpx;
   font-weight: bold;
   letter-spacing: 5rpx;  
-  line-height: 300rpx;
+  line-height: 250rpx;
   background: linear-gradient(to bottom right, rgb(20, 150, 106), rgb(41, 230, 173));
   vertical-align: middle; 
-  border: 2rpx rgb(60, 189, 173) solid;
+  border: 2rpx solid rgb(60, 189, 173);
   box-shadow: 5px 10px 15px 2px rgba(37, 148, 27, 0.1);
 }
-.btn:hover{
-  background-color: #d5d5d5;
+.button-hover{
+  background: linear-gradient(to bottom right, rgb(175, 241, 219), rgb(196, 224, 216)) !important;
 }
 .log{
   text-align: right;
