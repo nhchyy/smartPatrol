@@ -1,6 +1,14 @@
 {
   "pages": [
+<<<<<<< HEAD
     "pages/login/login",
+=======
+<<<<<<< HEAD
+=======
+    "pages/daka/index",
+    "pages/login/login",
+>>>>>>> xiugai-sdn
+>>>>>>> 7a10e9f58ec069e8d05616cc998451ca22da561d
     "pages/index/index",
     "pages/cheliang/index",
     "pages/menhu/apitext",
@@ -14,7 +22,7 @@
     "pages/dev/eqpmod",
     "pages/dev/logadd",
     "pages/dev/loglist",
-    "pages/daka/index",
+    
     "pages/daka/logs",
     "pages/daka/zuji",
    
