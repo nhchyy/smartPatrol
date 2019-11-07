@@ -1,9 +1,8 @@
 {
   "pages": [
+    "pages/login/login",
     "pages/index/index",
     "pages/cheliang/index",
-    "pages/login/login",
-    
     "pages/menhu/apitext",
     "pages/index/warnCheck",
     "pages/index/warn",
