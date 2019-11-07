@@ -7,15 +7,15 @@ page{
   padding-top: 7%;
 }
 .btn{
-  height: 300rpx;
-  width: 300rpx;
+  height: 250rpx;
+  width: 250rpx;
   border-radius: 150rpx;
   padding: 0;
   color: white;
-  font-size: 53rpx;
+  font-size: 45rpx;
   font-weight: bold;
   letter-spacing: 5rpx;  
-  line-height: 300rpx;
+  line-height: 250rpx;
   background: linear-gradient(to bottom right, rgb(20, 150, 106), rgb(41, 230, 173));
   vertical-align: middle; 
   border: 2rpx solid rgb(60, 189, 173);
