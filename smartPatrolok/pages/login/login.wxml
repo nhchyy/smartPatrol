@@ -32,9 +32,9 @@
   </view>
 
   <view style='height:30rpx'></view>
-  <button class="btn" bindtap='login' type="primary" style='width:500rpx'>确认登录</button>
-
+  <button class="btnlogin" bindtap='login' >确认登录</button>
+ <button class="btnregister" bindtap='goRegister' >注册</button>
   <!-- <view style='height:30rpx'></view>
   <button class="weui-btn" type="primary" style='width:500rpx'  open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">绑定微信</button> -->
 </view>
-<view>{{errmsg}}</view> 
+<!-- <view>{{errmsg}}</view>  -->

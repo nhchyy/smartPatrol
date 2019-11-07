@@ -1,14 +1,8 @@
 {
   "pages": [
-<<<<<<< HEAD
     "pages/login/login",
-=======
-<<<<<<< HEAD
-=======
+    "pages/register/register",
     "pages/daka/index",
-    "pages/login/login",
->>>>>>> xiugai-sdn
->>>>>>> 7a10e9f58ec069e8d05616cc998451ca22da561d
     "pages/index/index",
     "pages/cheliang/index",
     "pages/menhu/apitext",

@@ -149,7 +149,7 @@ page {
   right:50rpx;
   text-align: center;
   line-height: 120rpx;
-  background-color: #1AAD19;
+  background-color: rgb(240, 35, 8);
   color: #ffffff;
 }
 
