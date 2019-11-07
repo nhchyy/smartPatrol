@@ -60,11 +60,7 @@
 </view>
 
 <view class="function mt20">
-  <view class="function_item function_item_border" bindtap="bindLanya">
-    <image src="/resources/icon_normal.50.png@2x_23.png"></image>
-    <text class="function_title">位置测试</text>
-    <image class="function_arrow" src="/resources/btn_normal.png@2x.png"></image>
-  </view>
+  
   <view class="function_item function_item_border" bindtap="clearBeat">
     <image src="/resources/icon_normal.50.png@2x_89.png"></image>
     <text class="function_title">清空缓存</text>
@@ -77,9 +73,14 @@
     <text class="function_ext">v1.09</text>
     <image class="function_arrow" src="/resources/btn_normal.png@2x.png"></image>
   </view>
-  <view class="function_item">
+  <view class="function_item function_item_border" bindtap="bindLanya">
+    <image src="/resources/icon_normal.50.png@2x_23.png"></image>
+    <text class="function_title">意见反馈</text>
+    <image class="function_arrow" src="/resources/btn_normal.png@2x.png"></image>
+  </view>
+  <view class="function_item function_item_border" bindtap="bt_women">
     <image src="/resources/icon_normal.50.png@2x.png"></image>
-    <text class="function_title">关于</text>
+    <text class="function_title">关于我们</text>
     <image class="function_arrow" src="/resources/btn_normal.png@2x.png"></image>
   </view>
 </view>
