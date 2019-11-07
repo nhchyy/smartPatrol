@@ -31,28 +31,37 @@
  
 }
 
-.btn{
+/* .btn{
   width: 90%;
   margin-top:40px;
-  color: #999999;
-}
+  color: #1b0cf0;
+} */
 
 .left{ float: left}
  
 .right{float: right}
 
+.btnlogin{
+  width: 80%;
+  margin-top:30px;
+   color: #f75b13;
+}
 
-
+.btnregister{
+  width: 80%;
+  margin-top:10px;
+  color: #f75b13;
+}
 
 .phcolor {
-   color: #baf713; 
+   color: #e73a05; 
 } 
 
 .input_center {
   height: 100rpx;
   display: flex;
   align-items:center;
-  border-bottom: 1px solid #f0f0f0; 
+  border-bottom: 1px solid #e73a05; 
 } 
 /* 
 .input_center view {
@@ -64,6 +73,7 @@
 }
 
 .input_center .capture {
+  border: 1px solid #cccccc;
   width: 35%;
 }
 
@@ -74,14 +84,15 @@
   color: #4b5987;
 }
 
-.btn {
-  width: 90%;
+/* .btn {
+  width: 80%;
   margin: 0 auto;
   padding: 0;
   display: flex;
   flex-direction: column;
   text-align: center;
-}
+  color: #1b0cf0;
+} */
 
 
  canvas {

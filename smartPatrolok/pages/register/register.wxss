@@ -1,0 +1,98 @@
+/* .bg {
+  background-image: url();
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+} */ 
+
+.bg_image {
+  height: 100vh;
+  width: 100vw;
+  display: block;
+}
+
+.bg_logo {
+  height: 200rpx;
+  width: 200rpx;
+  position: absolute;
+  left: 50%;
+  top:100rpx;
+  margin-left: -80rpx;
+}
+
+ .form_box {
+  width: 629rpx;
+  height: 400rpx;
+  position: absolute;
+  left: 50%;
+  margin-left: -315rpx;
+  top:360rpx;
+  border-radius: 10rpx;
+  border:1rpx solid #ee0c0c;
+  display: flex;
+  justify-content:center;
+  flex-direction:column;
+  font-size: 30rpx;
+} 
+
+.form_item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 76rpx;
+  margin: 22rpx 0;
+}
+
+.form_item:after{
+  content: " ";
+  position: absolute;
+  left: 5rpx;
+  bottom: 0;
+  right: 5rpx;
+  height: 1px;
+  border-bottom: 1px solid rgb(12, 221, 236);
+  color: #D9D9D9;
+  -webkit-transform-origin: 0 100%;
+  transform-origin: 0 100%;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+}
+
+.form_item image {
+  height: 50rpx;
+  width: 50rpx;
+}
+
+/* .item_thumb {
+  height: 50rpx;
+  width: 50rpx;
+  margin-left: 20rpx;
+} */
+
+.input_box {
+
+  flex-grow: 1000;
+  color: #15868a;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+}
+
+/* .button_band {
+  width: 629rpx;
+  height: 82rpx;
+  line-height: 84rpx;
+  position: absolute;
+  left: 50%;
+  margin-left: -315rpx;
+  top:900rpx;
+  border-radius: 1rpx;
+  border:1rpx solid #c0e61c;
+  text-align: center;
+  color:#1f581f;
+} */
+
+.register {
+  width: 90%;
+  margin-top:450px;
+  color: #999999;
+}
