@@ -54,10 +54,10 @@ Page({
       },
       //网络或服务器异常
       fail: res => {
+        console.log(res)
         wx.showToast({
-          title: '网络异常，请重试',
+          title: '网络异常1，请重试',
           icon: "none",
-          duration: 2000
         })
       },
     })

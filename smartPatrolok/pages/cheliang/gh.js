@@ -42,10 +42,12 @@ Page({
       success: res => {
         if (res.data.errcode == 0) {
           wx.showToast({
-            title: '行驶' + res.data.clc + 'KM',
+            title: '完成，行驶' + res.data.clc + 'KM',
             duration: 4000
           })
-          wx.navigateBack({
+          wx.navigateTo({
+            url: 'index',
+          })({
             delta: 1 // 返回上一页
           });
         } else {

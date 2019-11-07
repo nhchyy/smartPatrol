@@ -25,7 +25,6 @@ Page({
         id: option.id,
       },
       method: 'POST',
-      //服务器打卡数据成功保存
       success: res => {
         if (res.data.errcode == 0) {
           this.setData({
@@ -66,14 +65,13 @@ Page({
         lyy: e.detail.value.yy
       },
       method: 'POST',
-      //服务器打卡数据成功保存
       success: res => {
         if (res.data.errcode == 0) {
           wx.showToast({
             title: '申请成功'
           })
-          wx.navigateBack({
-            delta: 1 // 返回上一页
+          wx.navigateTo({
+            url: 'index',
           });
         } else {
           //参数错误

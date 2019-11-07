@@ -29,7 +29,7 @@ $mysql = new MMysql($configArr);
 
 //插入用户
 $data = array(
-	"mobile" => $_POST['eqp_id'],
+	"mobile" => $_POST['mobile'],
 	"pwd" => md5($_POST['pwd']),
 	"name" => $_POST['name']
 	);

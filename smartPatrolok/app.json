@@ -1,11 +1,10 @@
 {
   "pages": [
-    "pages/login/login",
     "pages/daka/index",
+    "pages/login/login",
+    
     "pages/index/index",
     "pages/cheliang/index",
-    
-    
     "pages/menhu/apitext",
     "pages/index/warnCheck",
     "pages/index/warn",
