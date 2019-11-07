@@ -1,0 +1,82 @@
+<!--pages/eqpmod/eqpmod.wxml-->
+<view class="pagetitle">
+  <view class="">信息修改</view>
+  <button class="topbutton">主页</button>
+</view>
+<form bindreset="formReset" bindsubmit="formSubmit">
+
+  <view class="showmessage">
+    <view class="">{{list.eqp_name}}</view>
+    <view class="backline"></view>
+    <!-- <view>
+        <label>{{list.eqp_type}}   </label>
+        </view>
+           <view>
+       <label>{{list.mfr_name}}   </label>
+       </view> -->
+
+    <view style="width:100%;">
+      <view style="margin-bottom:15rpx">机房经度：</view>
+      <view class="input1">
+        <input type="text" name="longtitude" value="{{list.longtitude}}" />
+      </view>
+      <view class="backline"></view>
+    </view>
+
+    <view style="width:100%">
+      <view style="margin-bottom:15rpx">机房纬度：</view>
+      <view class="input1">
+        <input type="text" name="latitude" value="{{list.latitude}}" />
+      </view>
+      <view class="backline"></view>
+    </view>
+
+    <view style="width:100%">
+      <view style="margin-bottom:15rpx">责任人：</view>
+      <view class="input1">
+        <input type="text" name="principal_name" value="{{list.principal_name}}" />
+        <view class="backline"></view>
+      </view>
+    </view>
+
+    <view style="width:100%">
+      <view style="margin-bottom:15rpx">责任人电话：</view>
+      <view class="input1">
+        <input type="text" name="principal_tel" value="{{list.principal_tel}}" />
+      </view>
+      <view class="backline"></view>
+    </view>
+
+    <view style="width:100%">
+      <view style="margin-bottom:15rpx">厂家电话：</view>
+      <view class="input1">
+        <input type="text" name="mfr_tel" value="{{list.mfr_tel}}" />
+      </view>
+      <view class="backline"></view>
+    </view>
+
+    <view style="width:100%">
+      <view style="margin-bottom:15rpx">机房地址：</view>
+      <view class="textarea">
+        <textarea style="height: 3.0em" name="address" value="{{list.address}}" />
+        <view class="texta">0/20</view>
+      </view>
+      <view class="backline"></view>
+    </view>
+
+    <view style="width:100%">
+      <view style="margin-bottom:15rpx">备注信息：</view>
+      <view class="textareal">
+        <textarea style="height: 4.3em" name="comment" value="{{list.comment}}" />
+        <view class="texta">0/200</view>
+        <view class="backline"></view>
+      </view>
+    </view>
+
+  </view>
+
+  <view class="hori">
+    <button formType="submit" class="showbtn">确 定</button>
+    <button formType="reset" class="showbtn">重 置</button>
+  </view>
+</form>

@@ -1,4 +1,5 @@
 // pages/loglist/loglist.js
+const app = getApp();
 var util = require('../../utils/util.js');
 Page({
 
@@ -25,8 +26,6 @@ Page({
 
   },
   detail: function (e) {
-
-
     var id = e.currentTarget.id, list = this.data.list;
     for (var i = 0, len = list.length; i < len; ++i) {
       if (list[i].id == id) {
@@ -55,20 +54,13 @@ Page({
   //   }
   // })
 
-
-
   addlog: function () {
     var id = this.data.id;
     console.log('接口调用成功传参数' + this.data.id)
     wx.navigateTo({
-
-
       url: '../logadd/logadd?id=' + this.data.id,
-
-
       success: function () {
         console.log('接口调用成功传参数')
-
       },
       fail: function () {
         console.log('接口调用成功')
@@ -126,7 +118,6 @@ Page({
       fail: function (err) {
         console.log("失败")
       }
-
 
     })
 

@@ -1,0 +1,82 @@
+{
+  "pages": [
+      "pages/login/login",
+    "pages/index/index",
+
+    "pages/menhu/apitext",  
+    
+   
+  
+    
+    "pages/index/warnCheck",
+    
+    "pages/index/warn",
+    
+    
+    "pages/index/warnDetail",
+    "pages/newspaper/index",
+    "pages/member/index",
+    "pages/index/warnDepartment",
+
+    "pages/dev/detailinfo",
+    "pages/dev/eqpmod",
+    "pages/dev/logadd",
+    "pages/dev/loglist",
+
+    "pages/daka/index",
+    "pages/daka/logs",
+    "pages/daka/zuji",
+
+    
+    "pages/menhu/dettext"
+
+
+
+
+  ],
+  "tabBar": {
+    "color": "#515151",
+    "selectedColor": "#F25E4C",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "resources/nav1.png",
+        "selectedIconPath": "resources/nav1_select.png"
+      },
+      {
+        "pagePath": "pages/menhu/apitext",
+        "text": "简报",
+        "iconPath": "resources/nav2.png",
+        "selectedIconPath": "resources/nav2_select.png"
+      },
+      {
+        "pagePath": "pages/member/index",
+        "text": "我的",
+        "iconPath": "resources/nav3.png",
+        "selectedIconPath": "resources/nav3_select.png"
+      }
+    ]
+  },
+  "window": {
+    "navigationBarBackgroundColor": "#F25E4C",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "运维智能巡检",
+    "backgroundTextStyle": "light",
+    "backgroundColor": "#f2f2f2"
+  },
+
+
+  "usingComponents": {
+    "calendar": "/components/calendar/calendar"
+  },
+
+
+
+  
+  "sitemapLocation": "sitemap.json"
+
+
+
+
+}
