@@ -13,8 +13,10 @@ Page({
   onLoad: function (option) {
     this.setData({
       id: option.id,
-      mobile: app.globalData.mobile,
-      name: app.globalData.name
+      // mobile: app.globalData.mobile,
+      // name: app.globalData.name
+      mobile: "18688283883",
+      name: "陈源一"
     })
   },
   //确认归还

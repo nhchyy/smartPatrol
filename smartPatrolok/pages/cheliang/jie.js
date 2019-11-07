@@ -74,9 +74,9 @@ Page({
           wx.showToast({
             title: '申请成功'
           })
-          wx.navigateTo({
-            url: '../index/index'
-          })
+          wx.navigateBack({
+            delta: 1 // 返回上一页
+          });
         } else {
           //参数错误
           wx.showToast({

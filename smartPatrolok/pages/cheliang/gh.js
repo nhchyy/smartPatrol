@@ -4,48 +4,52 @@ const app = getApp()
 
 Page({
   data: {
+    id:'',
+    clc:'',
     mobile:'',
     name:'',
-    mycar:'',
-    car:''
+    date:'2019-10-01'
   },
-  //借用车辆
-  jy:function(e){
-    wx.navigateTo({
-      url: '../jie/index?id=' + e.currentTarget.id
-    })
-  },
-  //归还车辆
-  gh: function (e) {
-    wx.navigateTo({
-      url: '../gh/index?id=' + e.currentTarget.id
-    })
-  },
-  onLoad: function () {
-    //接收上一页面跳转过来的mobile和name参数
+  onLoad: function (option) {
     this.setData({
+      id: option.id,
       // mobile: app.globalData.mobile,
       // name: app.globalData.name
-
       mobile: "18688283883",
       name: "陈源一"
     })
+  },
+  //确认归还
+  formSubmit: function (e) {
+    //判断输入不为空
+    if(e.detail.value.clc == ''){
+      wx.showToast({
+        title: '您还没填里程数',
+        icon: "none",
+        duration: 2000
+      })
+      return false;
+    }
     wx.request({
-      url: 'http://112.93.119.181:8090/zhyw/api/car/',
+      url: 'http://112.93.119.181:8090/zhyw/api/cargh/',
       header: {
         "Content-Type": "application/x-www-form-urlencoded"
       },
       data: {
-        mobile: this.data.mobile,
+        carid: this.data.id,
+        clc: e.detail.value.clc
       },
       method: 'POST',
       //服务器打卡数据成功保存
       success: res => {
         if (res.data.errcode == 0) {
-          this.setData({
-            mycar : res.data.mycar,
-            car : res.data.car
+          wx.showToast({
+            title: '行驶' + res.data.clc + 'KM',
+            duration: 4000
           })
+          wx.navigateBack({
+            delta: 1 // 返回上一页
+          });
         } else {
           //参数错误
           wx.showToast({
@@ -64,5 +68,5 @@ Page({
         })
       },
     })
-  },
+  }
 })
