@@ -82,5 +82,33 @@ Page({
     onLoad: function () {
         this.getUserInfo();
         this.getWxUserInfo();
-    }
+    },
+
+    bindLanya: function () {
+      wx.navigateTo({
+        url: '../member/fankui',
+      })
+    },
+
+    bt_women: function () {
+      wx.navigateTo({
+        url: '../member/guanyu',
+      })
+    },
+
+
+    
+
+
+    bindLogout: function () {
+
+      app.globalData.mobile = "";
+      app.globalData.name = "";
+      app.globalData.roleID = "";
+      
+      wx.redirectTo({
+        url: '../login/login',
+      })
+    },
+
 })
