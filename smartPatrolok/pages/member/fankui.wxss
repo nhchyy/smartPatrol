@@ -1,0 +1,32 @@
+/* pages/member/fankui.wxss */
+.page-section {
+    margin: 20rpx 0 20rpx 0;
+    font-size: 50 rpx;
+}
+
+.label {
+    margin: 20rpx 0 20rpx 0;
+    font-size: 45 rpx;
+}
+
+.split_line {
+    padding: 1rpx 0rpx 1rpx 0px;
+    background-color:silver;
+}
+
+.bt_tj {
+  margin-top: 35rpx;
+  margin-bottom: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content:center;
+}
+.bt_tj view {
+  background-color:#F25E4C;
+  width: 363rpx;
+  height: 80rpx;
+  border-radius: 40rpx;
+  line-height: 81rpx;
+  text-align: center;
+  color: #ffffff;
+}

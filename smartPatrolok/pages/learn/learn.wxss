@@ -1,0 +1,48 @@
+/* pages/learn/learn.wxss */
+
+.menu {
+  display: flex;
+  background-color: #ffffff;
+}
+
+.menu_item {
+  width: 25%;
+  height: 211rpx;
+  text-align: center;
+}
+
+.menu_item image {
+  display: block;
+  height: 72rpx;
+  width: 72rpx;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50rpx;
+}
+
+.menu_item text {
+  display: block;
+  font-size: 30rpx;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 20rpx;
+  color:#333333;
+}
+
+.gd_xianx image {
+  display: block;
+  height: 410rpx;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20rpx;
+}
+
+.gd_wangluo image {
+  display: block;
+  height: 450rpx;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20rpx;
+}

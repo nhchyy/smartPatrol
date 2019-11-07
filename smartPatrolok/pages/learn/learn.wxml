@@ -1,0 +1,47 @@
+<!--pages/learn/learn.wxml-->
+<view class="menu">
+  <view class="menu_item" bindtap="bindxianxia">
+    <image src="/resources/btn_xianxia.png"></image>
+    <text>线下培训</text>
+  </view>
+  <view class="menu_item" bindtap="bindwangluo">
+    <image src="/resources/btn_wangluo.png"></image>
+    <text>网络课程</text>
+  </view>
+  <view class="menu_item" bindtap="bindanli">
+    <image src="/resources/btn_anli.png"></image>
+    <text>警示案例</text>
+  </view>
+  <view class="menu_item" bindtap="bindziliao">
+    <image src="/resources/btn_ziliao.png"></image>
+    <text>资料中心</text>
+  </view>
+</view>  
+
+<view class="menu">
+  <view class="menu_item" bindtap="bindshizi">
+    <image src="/resources/btn_shizi.png"></image>
+    <text>师资库</text>
+  </view>
+  <view class="menu_item" bindtap="bindzhishi">
+    <image src="/resources/btn_zhishi.png"></image>
+    <text>维护知识</text>
+  </view>
+  <view class="menu_item" bindtap="bindjianyin">
+    <image src="/resources/btn_jianyin.png"></image>
+    <text>维护剪影</text>
+  </view>
+  <view class="menu_item" bindtap="bindkaoshi">
+    <image src="/resources/btn_kaoshi.png"></image>
+    <text>考试中心</text>
+  </view>
+</view>
+
+<view class="gd_xianx">
+    <image src="/resources/gd_xianx.png"></image>
+</view>
+<view class="gd_wangluo">
+    <image src="/resources/gd_wangluo.png"></image>
+</view>
+
+

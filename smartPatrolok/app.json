@@ -1,8 +1,11 @@
 {
   "pages": [
+<<<<<<< HEAD
     "pages/login/login",
     "pages/register/register",
     "pages/daka/index",
+=======
+>>>>>>> fe8420a37220ff35a8a0919ff7382907bf383537
     "pages/index/index",
     "pages/cheliang/index",
     "pages/menhu/apitext",
@@ -19,10 +22,14 @@
     
     "pages/daka/logs",
     "pages/daka/zuji",
-   
-    "pages/cheliang/gh",
-    "pages/cheliang/jie",
-    "pages/menhu/dettext"
+
+    
+    "pages/menhu/dettext",
+
+    "pages/learn/learn",
+    "pages/member/fankui",
+    "pages/member/guanyu"
+
   ],
   "tabBar": {
     "color": "#515151",
@@ -39,6 +46,12 @@
         "text": "简报",
         "iconPath": "resources/nav2.png",
         "selectedIconPath": "resources/nav2_select.png"
+      },
+      {
+        "pagePath": "pages/learn/learn",
+        "text": "学习",
+        "iconPath": "resources/nav4.png",
+        "selectedIconPath": "resources/nav4_select.png"
       },
       {
         "pagePath": "pages/member/index",
