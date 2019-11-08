@@ -1,33 +1,41 @@
 <block wx:for="{{mycar}}" wx:key="index">
-  <view class="main">
-    <view class="top">
-      <view class="fl">车辆名称：{{item.cname}}</view>
-      <view class="fr">车牌号码：{{item.cno}}</view>
+  <view wx:if="{{item.cstate==1}}" class="main">
+    <view>
+      <image src="{{item.cpath}}"></image>
     </view>
-    <view class="top">
-      <view class="fl">车辆类型：{{item.ctype}}</view>
-      <view class="fr">购置日期：{{item.cgzrq}}</view>
+    <view>
+      <view class="text t1">车辆名称：{{item.cname}}</view>
+      <view class="text t2">车牌号码：{{item.cno}}</view>
+      <view class="text t2">购置日期：{{item.cgzrq}}</view>
+      <view class="text t2">行驶里程：{{item.clc}}km</view>
+      <view class="text t2">车辆状态：审批中</view>
     </view>
-    <view class="top">
-      <view class="fl">行驶里程：{{item.clc}}km</view>
-      <view wx:if="{{item.cstate==1}}" class="fr">审批中</view>
-      <view wx:else class="fr a" bindtap="gh" id="{{item.id}}">点击归还></view>
+  </view>
+
+  <view wx:else class="main" bindtap="gh" id="{{item.id}}">
+    <view>
+      <image src="{{item.cpath}}"></image>
+    </view>
+    <view>
+      <view class="text t1">车辆名称：{{item.cname}}</view>
+      <view class="text t2">车牌号码：{{item.cno}}</view>
+      <view class="text t2">购置日期：{{item.cgzrq}}</view>
+      <view class="text t2">行驶里程：{{item.clc}}km</view>
+      <view class="text t2">车辆状态：正在使用</view>
     </view>
   </view>
 </block>
 <block wx:for="{{car}}" wx:key="index">
-  <view class="main">
-    <view class="top">
-      <view class="fl">车辆名称：{{item.cname}}</view>
-      <view class="fr">车辆类型：{{item.ctype}}</view>
+  <view class="main" bindtap="jy" id="{{item.id}}">
+    <view>
+      <image src="{{item.cpath}}"></image>
     </view>
-    <view class="top">
-      <view class="fl">车牌号码：{{item.cno}}</view>
-      <view class="fr">购置日期：{{item.cgzrq}}</view>
-    </view>
-    <view class="top">
-      <view class="fl">行驶里程：{{item.clc}}km</view>
-      <view class="fr a" bindtap="jy" id="{{item.id}}">点击借用></view>
+    <view>
+      <view class="text t1">车辆名称：{{item.cname}}</view>
+      <view class="text t2">车牌号码：{{item.cno}}</view>
+      <view class="text t2">购置日期：{{item.cgzrq}}</view>
+      <view class="text t2">行驶里程：{{item.clc}}km</view>
+      <view class="text t2">车辆状态：可以借用</view>
     </view>
   </view>
 </block>

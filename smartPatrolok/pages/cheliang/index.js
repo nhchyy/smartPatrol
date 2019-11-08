@@ -12,23 +12,20 @@ Page({
   //借用车辆
   jy:function(e){
     wx.navigateTo({
-      url: 'jie?id=' + e.currentTarget.id
+      url: '../jie/index?id=' + e.currentTarget.id
     })
   },
   //归还车辆
   gh: function (e) {
     wx.navigateTo({
-      url: 'gh?id=' + e.currentTarget.id
+      url: '../gh/indexgh?id=' + e.currentTarget.id
     })
   },
   onLoad: function () {
     //接收上一页面跳转过来的mobile和name参数
     this.setData({
-      // mobile: app.globalData.mobile,
-      // name: app.globalData.name
-
-      mobile: "18688283883",
-      name: "陈源一"
+      mobile: '15577554321',
+      name: '蔡奕妥'
     })
     wx.request({
       url: 'http://112.93.119.181:8090/zhyw/api/car/',
@@ -57,10 +54,10 @@ Page({
       },
       //网络或服务器异常
       fail: res => {
+        console.log(res)
         wx.showToast({
-          title: '网络异常，请重试',
+          title: '网络异常1，请重试',
           icon: "none",
-          duration: 2000
         })
       },
     })
