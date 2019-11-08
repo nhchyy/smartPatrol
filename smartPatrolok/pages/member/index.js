@@ -96,10 +96,6 @@ Page({
       })
     },
 
-
-    
-
-
     bindLogout: function () {
 
       app.globalData.mobile = "";

@@ -31,18 +31,18 @@
 
 .gd_xianx image {
   display: block;
-  height: 410rpx;
+  height: 860rpx;
   width: 100%;
   margin-left: auto;
   margin-right: auto;
   margin-top: 20rpx;
 }
 
-.gd_wangluo image {
+/* .gd_wangluo image {
   display: block;
   height: 450rpx;
   width: 100%;
   margin-left: auto;
   margin-right: auto;
   margin-top: 20rpx;
-}
+} */
