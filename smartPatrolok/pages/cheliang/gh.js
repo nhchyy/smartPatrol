@@ -13,10 +13,8 @@ Page({
   onLoad: function (option) {
     this.setData({
       id: option.id,
-      // mobile: app.globalData.mobile,
-      // name: app.globalData.name
-      mobile: "18688283883",
-      name: "陈源一"
+      mobile: app.globalData.mobile,
+      name: app.globalData.name
     })
   },
   //确认归还
@@ -44,10 +42,12 @@ Page({
       success: res => {
         if (res.data.errcode == 0) {
           wx.showToast({
-            title: '行驶' + res.data.clc + 'KM',
+            title: '完成，行驶' + res.data.clc + 'KM',
             duration: 4000
           })
-          wx.navigateBack({
+          wx.navigateTo({
+            url: 'index',
+          })({
             delta: 1 // 返回上一页
           });
         } else {

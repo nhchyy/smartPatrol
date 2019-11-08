@@ -13,10 +13,8 @@ Page({
   onLoad: function (option) {
     this.setData({
       id: option.id,
-      // mobile: app.globalData.mobile,
-      // name: app.globalData.name
-      mobile: "18688283883",
-      name: "陈源一"
+      mobile: app.globalData.mobile,
+      name: app.globalData.name
     })
     wx.request({
       url: 'http://112.93.119.181:8090/zhyw/api/carid/',
@@ -27,7 +25,6 @@ Page({
         id: option.id,
       },
       method: 'POST',
-      //服务器打卡数据成功保存
       success: res => {
         if (res.data.errcode == 0) {
           this.setData({
@@ -68,14 +65,13 @@ Page({
         lyy: e.detail.value.yy
       },
       method: 'POST',
-      //服务器打卡数据成功保存
       success: res => {
         if (res.data.errcode == 0) {
           wx.showToast({
             title: '申请成功'
           })
-          wx.navigateBack({
-            delta: 1 // 返回上一页
+          wx.navigateTo({
+            url: 'index',
           });
         } else {
           //参数错误

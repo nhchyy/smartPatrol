@@ -102,9 +102,9 @@ Page({
       app.globalData.name = "";
       app.globalData.roleID = "";
       
-      wx.redirectTo({
+        wx.reLaunch({
         url: '../login/login',
       })
-    },
+    }
 
 })
