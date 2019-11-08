@@ -26,6 +26,13 @@
   </view>
 </view>
 
+<view class="part2">
+  <view class="desc_label">
+    <textarea value="地点：{{xwz}}       \n经度： {{loaction.longitude}}       纬度：{{loaction.latitude}}" disabled="true"></textarea>
+  </view>
+  
+</view>
+
 
 <!-- <view class="warner warner2">
   <view class="warner_label">

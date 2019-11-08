@@ -1,8 +1,9 @@
 
-
+let amap = require("../../utils/amap");
 var app = getApp()
 Page({
     data: {
+        xwz:"",
         userInfo: {},
         mapCtx: {},
         placeContentList: [],
@@ -145,7 +146,7 @@ Page({
 
         let warnForm = {
             xtype: '线路',
-            xwz: '忻州xxx',
+            xwz: that.data.xwz,
             xwt: that.data.warnForm.textDescription,
             ximgpath: photoList,
             xmobile: app.globalData.mobile,
@@ -249,5 +250,19 @@ Page({
         //调用应用实例的方法获取全局数据
         this.getPlaceContentList();
 
+    },
+    onLoad(e) {
+        amap.getRegeo()
+            .then(d => {
+                console.log(d);
+                this.setData({
+                    xwz: d[0].desc
+                });
+
+                
+            })
+            .catch(e => {
+                console.log(e);
+            })
     }
 })
