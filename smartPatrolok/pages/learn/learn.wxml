@@ -38,10 +38,10 @@
 </view>
 
 <view class="gd_xianx">
-    <image src="/resources/gd_xianx.png"></image>
+    <image src="/resources/gd_xxwl.png"></image>
 </view>
-<view class="gd_wangluo">
+<!-- <view class="gd_wangluo">
     <image src="/resources/gd_wangluo.png"></image>
-</view>
+</view> -->
 
 
