@@ -1,19 +1,14 @@
 {
   "pages": [
-<<<<<<< HEAD
     "pages/login/login",
-=======
-<<<<<<< HEAD
-=======
     "pages/daka/index",
-    "pages/login/login",
->>>>>>> xiugai-sdn
->>>>>>> 7a10e9f58ec069e8d05616cc998451ca22da561d
+    "pages/daka/zuji",
     "pages/index/index",
+    "pages/register/register",
     "pages/cheliang/index",
     "pages/menhu/apitext",
     "pages/index/warnCheck",
-    "pages/index/warn",
+    
     "pages/index/warnDetail",
     "pages/newspaper/index",
     "pages/member/index",
@@ -22,13 +17,12 @@
     "pages/dev/eqpmod",
     "pages/dev/logadd",
     "pages/dev/loglist",
-    
     "pages/daka/logs",
-    "pages/daka/zuji",
-   
-    "pages/cheliang/gh",
-    "pages/cheliang/jie",
-    "pages/menhu/dettext"
+    
+    "pages/menhu/dettext",
+    "pages/learn/learn",
+    "pages/member/fankui",
+    "pages/member/guanyu"
   ],
   "tabBar": {
     "color": "#515151",
@@ -45,6 +39,12 @@
         "text": "简报",
         "iconPath": "resources/nav2.png",
         "selectedIconPath": "resources/nav2_select.png"
+      },
+      {
+        "pagePath": "pages/learn/learn",
+        "text": "学习",
+        "iconPath": "resources/nav4.png",
+        "selectedIconPath": "resources/nav4_select.png"
       },
       {
         "pagePath": "pages/member/index",

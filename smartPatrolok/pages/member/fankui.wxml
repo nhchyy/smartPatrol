@@ -1,0 +1,19 @@
+<!--pages/member/fankui.wxml-->
+<view>
+  <view class="page-section">意见与建议</view>
+  <view class="split_line" />
+  <view class="label">{{message}}</view>
+
+  <textarea auto-focus placeholder="请填写10字以上的问题描述以便我们提供更好的帮助" bindinput="onKeyInput"/>
+  <view class="split_line" />
+
+  <view class="page-section">联系方式(输入有效联系方式以便开发者联系你)</view>
+  <view class="split_line" />
+  <input type="number" placeholder="手机号" bindblur="onBlur" />
+  <view class="split_line" />
+
+  <view class="bt_tj" bindtap="tapModal">
+  <view>提交</view>
+  </view>
+
+</view>

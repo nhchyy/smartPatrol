@@ -181,6 +181,7 @@ Page({
 
 
 
+
   /**
    * 初始化验证码
    */
@@ -245,5 +246,12 @@ Page({
     }
     return pwd;
   },
+
+  //跳转注册页面
+  goRegister:function(){
+    wx.reLaunch({
+      url: '../register/register'
+    })
+  }
 
 })
