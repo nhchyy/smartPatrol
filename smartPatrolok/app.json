@@ -1,10 +1,10 @@
 {
   "pages": [
-    "pages/register/register",
-    "pages/daka/index",
-    "pages/index/index",
     "pages/login/login",
-    
+    "pages/daka/index",
+    "pages/daka/zuji",
+    "pages/index/index",
+    "pages/register/register",
     "pages/cheliang/index",
     "pages/menhu/apitext",
     "pages/index/warnCheck",
@@ -17,17 +17,12 @@
     "pages/dev/eqpmod",
     "pages/dev/logadd",
     "pages/dev/loglist",
-    
     "pages/daka/logs",
-    "pages/daka/zuji",
-
     
     "pages/menhu/dettext",
-
     "pages/learn/learn",
     "pages/member/fankui",
     "pages/member/guanyu"
-
   ],
   "tabBar": {
     "color": "#515151",
