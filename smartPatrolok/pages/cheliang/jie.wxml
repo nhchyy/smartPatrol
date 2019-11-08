@@ -1,0 +1,29 @@
+<view class="top">
+  <view class="fl">
+    <view class="t1">车辆型号：{{car[0].cname}}</view>
+    <view class="t1">车牌号码：{{car[0].cno}}</view>
+    <view class="t2">购置日期：{{car[0].cgzrq}}</view>
+  </view>
+  <view class="fr">
+    <image src="{{car[0].cpath}}"></image>
+  </view>
+</view>
+<view class="xian"></view>
+<form bindsubmit="formSubmit">
+  <view class="t3"><text>前往地点：</text><input type="text" name="wz"></input></view>
+  <view class="t3"><text>归还时间：</text>
+    <view class="section">
+      <picker mode="date" value="{{date}}" bindchange="sd" name="date">
+        <view class="picker">{{date}}</view>
+      </picker>
+    </view>
+  </view>
+  <view class="t3">借用原因：</view>
+  <view class="t4">
+    <textarea name="yy"></textarea>
+  </view>
+  <button formType="submit" type="primary">申请借用</button>
+</form>
+
+
+

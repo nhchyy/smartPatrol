@@ -138,7 +138,13 @@ Page({
     },
     bindPatrolList: function () {
         wx.navigateTo({
-            url: '../index/patrolList'
+            url: '../cheliang/index'
+        })
+    },
+
+    bindCar: function () {
+        wx.navigateTo({
+            url: '../cheliang/index'
         })
     },
     bindWarn: function () {

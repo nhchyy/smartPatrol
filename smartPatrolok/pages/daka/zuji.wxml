@@ -1,10 +1,22 @@
 <view class="text" wx:if="{{flag == 0}}">
-  <view class="title">>{{month}}月，共计打卡：{{num}}次</view>
-  <view class="title">>打卡位置距离约：{{range}}公里</view>
-  <view class="title">>相当于绕天安门广场走{{row}}圈</view>
+  <view class="cishu">
+    <image src="xxsm.png"></image>
+    <view class="title">{{month}}月，共计打卡：{{num}}次</view>
+  </view>
+  <view class="cishu">
+    <view class="fl"><image src="xxsm.png"></image></view>
+    <view class="fr title">打卡位置距离约：{{range}}公里</view>
+  </view>
+  <view class="cishu">
+    <view class="fl"><image src="xxsm.png"></image></view>
+    <view class="fr title">相当于绕天安门广场走{{row}}圈</view>
+  </view>
 </view>
 <view class="text" wx:else>
-  <view class="title">{{month}}月无打卡记录</view>
+  <view class="cishu">
+    <view class="fl"><image src="xxsm.png"></image></view>
+    <view class="fr title">{{month}}月无打卡记录</view>
+  </view>
 </view>
 <map id="myMap"
 longitude="{{longitude}}"

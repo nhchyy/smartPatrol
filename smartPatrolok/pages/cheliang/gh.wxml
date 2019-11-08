@@ -1,0 +1,12 @@
+<form bindsubmit="formSubmit">
+  <view class="main">
+    <view class="input">
+      <text>当前里程：</text>
+      <input type="text" name="clc" placeholder="单位：公里"></input>
+    </view>
+    <button formType="submit" type="primary">确认归还</button>
+  </view>
+</form>
+
+
+

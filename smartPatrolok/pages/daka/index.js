@@ -15,8 +15,10 @@ Page({
   //接收上一页面跳转过来的mobile和name参数
   onLoad: function (option) {
     this.setData({
-      mobile: app.globalData.mobile ,
-      name: app.globalData.name  
+      // mobile: app.globalData.mobile ,
+      // name: app.globalData.name  ,
+      mobile: '15637251568',
+      name: '尚丹娜'  
     })
   },
   //页面跳转
