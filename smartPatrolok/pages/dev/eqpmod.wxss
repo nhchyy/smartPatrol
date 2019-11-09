@@ -60,7 +60,6 @@ page {
   margin-top: 15rpx;
   padding-left: 100rpx;
   padding-right: 100rpx;
-  
 }
 
 .pagetitle {

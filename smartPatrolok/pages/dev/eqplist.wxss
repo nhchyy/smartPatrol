@@ -1,0 +1,163 @@
+/* pages/dev/eqplist.wxss */
+
+.image {
+  width: 70rpx;
+  height: 50rpx;
+}
+
+.showcenter {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-end;
+  box-sizing: border-box;
+}
+
+.detail-bg {
+  background-color: #ededed;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.imagep {
+  width: 70rpx;
+  height: 70rpx;
+}
+
+.showlist {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  box-sizing: border-box;
+  background-color: #fff;
+  padding: 10px;
+}
+
+.backline {
+  height: 1px;
+  background-color: #ededed;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.pagetitle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-top: 30rpx;
+  justify-content: space-between;
+  box-sizing: border-box;
+  text-align: left;
+  padding-bottom: 20rpx;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.topbutton {
+  width: 130rpx;
+  height: 50rpx;
+  padding: 0px 0px 0px 0px;
+  font-size: 20rpx;
+  text-align: center;
+  vertical-align: middle;
+  margin-right: 30rpx;
+}
+
+.topbuttonp {
+  width: 130rpx;
+  height: 50rpx;
+  padding: 0px 0px 0px 0px;
+
+  font-size: 20rpx;
+  text-align: center;
+  vertical-align: middle;
+  margin-right: 0px;
+}
+
+.topbuttonview {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+.search{
+  width: 400rpx;
+}
+.search_arr {
+  border: 1px solid #d0d0d0;
+  border-radius: 10rpx;
+  margin-left: 20rpx;
+
+}
+.search_arr input{
+  margin-left: 60rpx;
+  height: 60rpx;
+  border-radius: 5px;
+  
+}
+.bc_text {
+  line-height: 68rpx;
+  height: 68rpx;
+  margin-top: 34rpx;
+}
+ 
+
+.page_row{
+  display: flex;
+  flex-direction: row;
+  
+    margin-top: 10rpx;
+    margin-bottom: 10rpx
+  
+ 
+}
+.page_row_end{
+  display: flex;
+  flex-direction: row;
+  
+    margin-top: 10rpx;
+    margin-bottom: 50rpx
+  
+ 
+}
+.page_row_start{
+  display: flex;
+  flex-direction: row;
+  
+    margin-top: 50rpx;
+    margin-bottom: 10rpx
+  
+ 
+}
+.input1 {
+  width: 300rpx;
+  color: darkgray;
+margin-left: 60rpx;
+  height: 60rpx;
+  border-radius: 5px;
+
+
+}
+
+
+.searchcion {
+  margin: 20rpx 25rpx 0rpx 0rpx;
+  position: inherit;
+  left:15rpx;
+  z-index: 2;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  float:left;
+}
+.showborder{
+   margin: 20rpx 20rpx 20rpx 20rpx;
+     border: 1px solid #d0d0d0;
+  border-radius: 10rpx;
+  background-color: white;
+}
+.bottombutton{
+ font-size: 30rpx; vertical-align: middle;height:70rpx;background-color: #666666;color:white
+}

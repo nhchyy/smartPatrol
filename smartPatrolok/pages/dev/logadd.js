@@ -47,8 +47,10 @@ Page({
       data: util.json2Form({
         eqp_id: this.data.eqp_id,
         mtc_type: mtc_type,
-        maintainer_name: "陈玲玲",
-        maintainer_tel: "18603377371",
+ 
+        maintainer_name: app.globalData.name,
+
+        maintainer_tel: app.globalData.mobile,
         description: e.detail.value.description
       }),
 
