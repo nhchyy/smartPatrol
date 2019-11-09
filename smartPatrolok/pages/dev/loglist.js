@@ -98,11 +98,14 @@ Page({
 
       success: function (res) {
         //将获取到的json数据，存在名字叫list的这个数组中
-        console.log(res.data.mtclog);
+        console.log(res.data);
+        if (res.data.errcode="0"){
         listshow = res.data.mtclog;
+        }
+        if (listshow!=[]){
         for (var i = 0; i < listshow.length; i++) {
           listshow[i] = that.extend(listshow[i], { open: false });
-        }
+        }}
         that.setData({
           list: listshow
         })

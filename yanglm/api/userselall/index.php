@@ -1,6 +1,6 @@
 <?php
 /**
- * 按手机号码查询用户是否存在
+ * 查询所有用户
  * @author 作者：杨黎明
  * @param  mobile
  * @return JSON
@@ -18,17 +18,18 @@ include '../../mysql/mysql.php';  //引入数据库操作类
 
 $mysql = new MMysql($configArr);
 
-$sql = "select count(*) as num from z_user where mobile = '{$_POST['mobile']}'";
+$sql = "select mobile,name,dep from z_user order by id";
 $res = $mysql->doSql($sql);
-if($res[0]['num'] == 0){
+if($res){
 	$res = array(
 		"errcode" => "0",
-		"errmsg" => "请求成功，可以使用此号码注册"
+		"errmsg" => "请求成功",
+		"list" => $res
 	);
 	$res = json_encode($res, JSON_UNESCAPED_UNICODE); //参数为json中文转义符
 	echo $res;
 }else{
-	$res = '{"errcode":"2","errmsg":"该手机号码已存在！"}';
+	$res = '{"errcode":"2","errmsg":"请求失败"}';
 	echo $res;
 }
 ?>

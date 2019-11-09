@@ -9,6 +9,7 @@ page {
   align-items: flex-end;
   justify-content: left;
   padding-top: 15rpx;
+ 
 }
 
 .img {
@@ -30,6 +31,7 @@ page {
   margin-top: 15rpx;
   margin-left: 15px;
   margin-right: 15px;
+   background-color:#DDDDDD; 
 
 }
 
@@ -60,8 +62,6 @@ page {
   justify-content: space-between;
   box-sizing: border-box;
   text-align: left;
-  font-size: 50rpx;
-  font-weight: 400;
   padding-bottom: 20rpx;
   margin-left: 15px;
   margin-right: 15px;

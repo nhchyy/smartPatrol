@@ -1,11 +1,11 @@
 <?php
 /** 
+ * 按ID查询车辆信息
  * @author 作者：杨黎明
- * @param  car  
+ * @param  id  车辆信息
  * @return JSON
- * @text 按ID查询车辆信息
  */
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if (isset($_POST['id'])) {
 	
 	include '../../mysql/config.php'; //引入数据配置文件
 	include '../../mysql/mysql.php';  //引入数据库操作类

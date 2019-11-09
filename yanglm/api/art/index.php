@@ -1,11 +1,13 @@
 <?php
+
 /** 
+ * 文章查询接口，按类别查询文章列表
  * @author 作者：杨黎明
- * @param  leib  按类别查询文章列表  1、实时新闻   2、榜样力量   3、安全教育
- * @return JSON
- * @text 文章查询接口  
+ * @param  leib int  1、实时新闻   2、榜样力量   3、安全教育
+ * @return $res JSON
  */
-if(isset($_GET['leib'])){
+
+if( isset($_GET['leib']) ){
 	
 	include '../../mysql/config.php'; //引入数据配置文件
 	include '../../mysql/mysql.php';  //引入数据库操作类

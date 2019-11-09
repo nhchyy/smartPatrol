@@ -1,9 +1,9 @@
 <!--pages/loglist/loglist.wxml-->
 <view class="pagetitle">
-  <view class="">维护列表</view>
+  <view class="">维护日志</view>
   <view class="topbuttonview">
-    <button class="topbutton">主页</button>
-    <button class="topbuttonp" bindtap="addlog">新增</button>
+   
+    <view style="color:red;font-size:30rpx;font-weight:bold;" bindtap="addlog">新增》</view> 
   </view>
 </view>
 <view class="showcenter">
@@ -12,8 +12,8 @@
 <view class="backline"></view>
 <view wx:for="{{list}}" wx:key="{{index}}">
   <view class="showlist">
-    {{item.mtime}} {{item.mtype}}
-    <image src="/resources/detail.png" class="image" id="{{item.id}}" bindtap="detail"></image>
+    {{item.mtime}} <view style="text-align:start;color:#003377;">{{item.mtype}}</view>
+    <image src="/resources/btn_xia.png" class="image" id="{{item.id}}" bindtap="detail"></image>
   </view>
   <view class="backline"></view>
   <view hidden="{{item.open ? '' : 'true'}}" class="detail-bg">

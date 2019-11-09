@@ -1,15 +1,14 @@
 <?php
 /** 
+ * 通过设备id查询巡检日志接口
  * @author 作者：杨黎明
- * @param  $_POST['id'] 设备账号，
+ * @param  eqp_id
  * @return JSON
- * @text 通过设备id查询巡检日志接口
  */
 if(isset($_POST['eqp_id'])){
 	
 	include '../../mysql/config.php'; //引入数据配置文件
 	include '../../mysql/mysql.php';  //引入数据库操作类
-	//include '../../ddsdk/dd_token.php'; //引入获取token
 	
 	$mysql = new MMysql($configArr);
 	$sql = "select * from z_mtc where eid='{$_POST['eqp_id']}' order by id desc";

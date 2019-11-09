@@ -1,9 +1,9 @@
 <?php
 /** 
+ * 归还车辆
  * @author 作者：杨黎明
- * @param  car  
- * @return JSON
- * @text 归还车辆
+ * @param 
+ * @return JSON $res
  */
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	

@@ -1,15 +1,14 @@
 <?php
 /** 
+ * 按ID查询设备
  * @author 作者：杨黎明
- * @param  $_POST['id'] 设备账号，
+ * @param  $_POST['id'] 设备id，
  * @return JSON
- * @text 设备查询接口
  */
 if(isset($_POST['id'])){
 	
 	include '../../mysql/config.php'; //引入数据配置文件
 	include '../../mysql/mysql.php';  //引入数据库操作类
-	//include '../../ddsdk/dd_token.php'; //引入获取token
 	
 	$mysql = new MMysql($configArr);
 	$sql = "select * from z_eqp where id='{$_POST['id']}'";
