@@ -1,9 +1,9 @@
 <?php
 /** 
+ * 查询所有设备接口
  * @author 作者：杨黎明
  * @param  
  * @return JSON
- * @text 查询所有设备接口
  */
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	

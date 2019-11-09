@@ -1,10 +1,12 @@
 <?php
 /**
+ * 隐患添加
  * @author 作者：杨黎明
- * @param  
+ * @param  xtype,xwz,xwt,xjd,xwd,xmobile,xname,ximgpath
  * @return JSON
- * @text 添加隐患上报API
+ * @text 
  */
+
 //*****************判断巡检日志信息完整性
 if(!isset($_POST['xtype'])){
 	$res = '{"errcode":"1","errmsg":"请求失败！缺少隐患类型参数"}';

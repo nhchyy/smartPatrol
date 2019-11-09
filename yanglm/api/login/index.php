@@ -1,9 +1,9 @@
 <?php
 /** 
+ * 用户登录认证接口，服务器认证账号密码
  * @author 作者：杨黎明
- * @param  $_POST['mobile']用户账号，$_POST['pwd']用户密码，$_POST['type']登陆入口：1微信小程序、2APP、3钉钉
+ * @param  mobile用户账号，pwd用户密码，type登陆入口：1微信小程序、2APP、3钉钉
  * @return JSON
- * @text 用户登录认证接口，服务器认证账号密码，从钉钉服务器取用户信息
  */
 if((isset($_POST['mobile']))&&(isset($_POST['pwd']))&&(isset($_POST['type']))){
 	

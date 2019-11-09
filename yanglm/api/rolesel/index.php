@@ -1,9 +1,9 @@
 <?php
 /** 
+ * 管理员查询接口
  * @author 作者：杨黎明
- * @param  mobile  认证登录信息
+ * @param  mobile
  * @return JSON
- * @text 管理员查询接口
  */
 if(isset($_POST['mobile'])){
 	
