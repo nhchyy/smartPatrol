@@ -1,0 +1,10 @@
+
+<map id="myMap"
+longitude="{{longitude}}"
+latitude="{{latitude}}"
+markers="{{markers}}"
+scale='9' 
+show-compass
+enable-zoom 
+enable-scroll 
+enable-rotate />

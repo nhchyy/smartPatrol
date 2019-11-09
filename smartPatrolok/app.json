@@ -1,14 +1,16 @@
 {
   "pages": [
-    "pages/login/login",
-    "pages/daka/index",
-    "pages/daka/zuji",
+    "pages/daka/information",
     "pages/index/index",
+    "pages/daka/clock",
+    
+    "pages/daka/record",
+    "pages/daka/footprint",
+    "pages/login/login",
     "pages/register/register",
     "pages/cheliang/index",
     "pages/menhu/apitext",
-    "pages/index/warnCheck",
-    
+    "pages/index/warnCheck", 
     "pages/index/warnDetail",
     "pages/newspaper/index",
     "pages/member/index",
@@ -16,9 +18,7 @@
     "pages/dev/detailinfo",
     "pages/dev/eqpmod",
     "pages/dev/logadd",
-    "pages/dev/loglist",
-    "pages/daka/logs",
-    
+    "pages/dev/loglist", 
     "pages/menhu/dettext",
     "pages/learn/learn",
     "pages/member/fankui",

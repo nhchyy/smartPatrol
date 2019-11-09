@@ -1,27 +1,25 @@
+
 Page({
 
   // 页面的初始数据
   data: {
-    num:'', //打卡次数
-    range:'', //公里数
-    row:'',//天安门广场圈数
-    date:'', //接收上页面的日期
-    month:'', //月度
-    mobile:'', //接收上页面的电话
-    latitude: '', //地图中心点经度
-    longitude: '', //地图中心点纬度
+    num: '',  //打卡次数
+    range: '',  //公里数
+    row: '',  //天安门广场圈数
+    date: '',  //接收上页面的日期
+    month: '',  //月度
+    mobile: '',  //接收上页面的电话
+    latitude: '',  //地图中心点经度
+    longitude: '',  //地图中心点纬度
     markers: '',  //标记点
-    flag:1 //标识
+    flag: 1  //标识
   },
 
-  //生命周期函数--监听页面加载
+  //接收上一个页面的数值
   onLoad: function (option) {
-
-    //接收上一个页面的数值
     this.setData({
-      mobile: option.mobile,
-      date: option.date,
-      month: option.date.substring(0, 7),//截取日期为年月格式，2019-10,
+      mobile: option.mobile,  //手机号码
+      date: option.date,  //日期
     })
 
     //初始化，以所在位置为地图显示的中心点
@@ -36,15 +34,16 @@ Page({
 
         //定位成功后，请求当月打卡数据
         wx.request({
-          url: 'http://112.93.119.181:8090/zhyw/api/dakaseldy/',
+          url: 'http://112.93.119.181:8090/zhyw/api/dakasel/',
           header: {
             "Content-Type": "application/x-www-form-urlencoded"
           },
           data: {
             mobile: this.data.mobile,
-            date: this.data.date.substring(0, 7) //截取日期为年月格式，2019-10,
+            date: this.data.date
           },
           method: 'POST',
+         
           //数据请求成功
           success: res => {
             if (res.data.errcode == 0) {
@@ -57,12 +56,14 @@ Page({
               })
             }else{
               wx.showToast({
-                title: '当月无打卡记录',
+                title: '当日无打卡记录',
                 icon: "loading",
                 duration: 3000
               })
             }
           },
+
+          //数据请求失败
           fail: res => {
             wx.showToast({
               title: '网络或服务故障',
@@ -71,6 +72,7 @@ Page({
           }
         })
       },
+
       //定位服务故障
       fail:res=> {
         wx.showToast({

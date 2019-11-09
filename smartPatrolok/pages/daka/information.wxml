@@ -1,0 +1,15 @@
+
+<view class="top">
+  <image src="img/fdj.png"></image>
+  <input class="input" placeholder="姓名（可输入姓名简写进行查询）"/>
+</view>
+<block wx:for="{{userlist}}" wx:key="index">
+  <view class="item" id="{{item.mobile}}" bindtap="tapitem">
+    <image src="img/ren.png"></image>
+    <view class="text">
+      <view class="t1">姓名：{{item.name}}</view>
+      <view class="t2">部门：{{item.dep}}</view>
+      <view class="t2">电话：{{item.mobile}}</view>
+    </view>
+  </view>
+</block>

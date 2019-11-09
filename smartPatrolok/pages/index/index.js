@@ -159,7 +159,7 @@ Page({
     },
     bindEvent: function () {
         wx.navigateTo({
-            url: '../daka/index'
+            url: '../daka/clock'
         })
     },
     bindUncheck: function (e) {
