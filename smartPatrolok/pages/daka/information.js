@@ -1,11 +1,11 @@
-
 var app = getApp();
 
 Page({
 
   //页面的初始数据
   data:{
-    userlist: ''
+    text: '',  //定义输入框
+    userlist: ''  //定义用户列表
   },
   
   //发送post请求，获取用户列表
@@ -16,7 +16,7 @@ Page({
         "Content-Type": "application/x-www-form-urlencoded"
       },
       data: {
-        mobile: app.globalData.mobile
+        text: this.data.text
       },
       method: 'POST',
       success: res => {
@@ -25,12 +25,6 @@ Page({
         if (res.data.errcode == 0) {
           this.setData({
             userlist: res.data.list
-          })
-        } else {
-          wx.showToast({
-            title: '参数错误，请检查',
-            icon: "none",
-            duration: 2000
           })
         }
       },
@@ -50,6 +44,38 @@ Page({
   tapitem: function (e){
     wx.navigateTo({
       url: 'record?mobile=' + e.currentTarget.id,
+    })
+  },
+
+  //input控件发生变化
+  cg: function(e){
+    //e.detail.value 获取输入框的值
+    wx.request({
+      url: 'http://112.93.119.181:8090/zhyw/api/userselall/',
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      data: {
+        text: e.detail.value
+      },
+      method: 'POST',
+      //请求成功时
+      success: res => {
+        if (res.data.errcode == 0) {
+          this.setData({
+            userlist: res.data.list
+          })
+        }
+      },
+
+      //服务或网络断开
+      fail: res => {
+        wx.showToast({
+          title: '网络断开，请检查',
+          icon: "none",
+          duration: 2000
+        })
+      },
     })
   }
 })

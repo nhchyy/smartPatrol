@@ -1,7 +1,6 @@
-
 <view class="top">
   <image src="img/fdj.png"></image>
-  <input class="input" placeholder="姓名（可输入姓名简写进行查询）"/>
+  <input class="input" placeholder="姓名（可输入姓名简写进行查询）" bindinput="cg" value="{{text}}"/>
 </view>
 <block wx:for="{{userlist}}" wx:key="index">
   <view class="item" id="{{item.mobile}}" bindtap="tapitem">

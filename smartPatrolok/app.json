@@ -1,22 +1,15 @@
 {
   "pages": [
-<<<<<<< HEAD
     "pages/daka/information",
     "pages/index/index",
     "pages/daka/clock",
     
     "pages/daka/record",
     "pages/daka/footprint",
-    "pages/login/login",
     "pages/register/register",
     "pages/cheliang/index",
-=======
     "pages/dev/eqplist",
     "pages/login/login",
-    "pages/daka/index",
-    "pages/daka/zuji",
-    "pages/index/index",
->>>>>>> 7e249fc725a72e7177f1d26d1e6b3f841b4f4524
     "pages/menhu/apitext",
     "pages/index/warnCheck", 
     "pages/index/warnDetail",
