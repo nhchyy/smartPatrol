@@ -28,13 +28,9 @@ Page({
     //获取地址逆向解析地址名称
     amap.getRegeo()
       .then(d => {
-        console.log(d);
         this.setData({
           wz: d[0].desc
         });
-      })
-      .catch(e => {
-        console.log(e);
       })
   },
   

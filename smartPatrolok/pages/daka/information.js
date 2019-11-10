@@ -39,14 +39,6 @@ Page({
       },
     })
   },
-
-  //界面跳转
-  tapitem: function (e){
-    wx.navigateTo({
-      url: 'record?mobile=' + e.currentTarget.id,
-    })
-  },
-
   //input控件发生变化
   cg: function(e){
     //e.detail.value 获取输入框的值
@@ -77,5 +69,11 @@ Page({
         })
       },
     })
-  }
+  },
+  //界面跳转
+  tapitem: function (e) {
+    wx.navigateTo({
+      url: 'record?mobile=' + e.currentTarget.id,
+    })
+  },
 })

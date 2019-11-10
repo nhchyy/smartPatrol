@@ -1,4 +1,3 @@
-
 <map id="myMap"
 longitude="{{longitude}}"
 latitude="{{latitude}}"

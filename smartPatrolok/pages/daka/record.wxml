@@ -1,4 +1,3 @@
-
 <calendar selected="{{selected}}" bindselect="bindselect" bindgetdate="bindgetdate" />
 <view class="zuji" bindtap="tapzj">当日足迹></view>
 <view wx:if="{{tag == 1}}">

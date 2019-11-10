@@ -1,9 +1,9 @@
 {
   "pages": [
-    "pages/daka/information",
+   
     "pages/index/index",
     "pages/daka/clock",
-    
+    "pages/daka/information",
     "pages/daka/record",
     "pages/daka/footprint",
     "pages/register/register",

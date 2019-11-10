@@ -32,7 +32,7 @@ Page({
           longitude: res.longitude
         }),
 
-        //定位成功后，请求当月打卡数据
+        //定位成功后，请求当日打卡数据
         wx.request({
           url: 'http://112.93.119.181:8090/zhyw/api/dakasel/',
           header: {
