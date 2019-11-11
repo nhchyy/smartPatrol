@@ -4,6 +4,10 @@
   <image bindtap="bindQrcode" class="header_add" src="/resources/qrcode2.png"></image>
 </view>
 <view class="menu">
+  <view class="menu_item" bindtap="bindWarnCheck">
+    <image src="/resources/btn_yinhuan.png"></image>
+    <text>{{'隐患处理'}}</text>
+  </view>
   <view class="menu_item" bindtap="bindDev">
     <image src="/resources/btn_shebei.png"></image>
     <text>设备信息</text>
@@ -15,10 +19,6 @@
   <view class="menu_item" bindtap="bindCar">
     <image src="/resources/btn_cheliang.png"></image>
     <text>车辆管理</text>
-  </view>
-  <view class="menu_item" bindtap="bindWarnCheck">
-    <image src="/resources/btn_yinhuan.png"></image>
-    <text>{{'隐患处理'}}</text>
   </view>
   <view class="menu_item" bindtap="bindWarn">
     <image src="/resources/btn_shangbao.png"></image>

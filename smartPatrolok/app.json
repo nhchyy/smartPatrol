@@ -2,6 +2,10 @@
   "pages": [
     "pages/login/login",
     "pages/index/index",
+   
+   
+   
+    
     "pages/index/warnCheck",
     "pages/index/warn",
       
