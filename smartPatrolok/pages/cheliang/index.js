@@ -24,10 +24,6 @@ Page({
   onLoad: function () {
     //接收上一页面跳转过来的mobile和name参数
     this.setData({
-<<<<<<< HEAD
-
-=======
->>>>>>> 05041599e0e08866ace756f54099192724f12d4e
       mobile: '15577554321',
       name: '蔡奕妥',
       mobile: app.globalData.mobile,
