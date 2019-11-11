@@ -1,26 +1,26 @@
 {
   "pages": [
+    
     "pages/login/login",
     "pages/daka/index",
     "pages/daka/zuji",
     "pages/index/index",
     "pages/menhu/apitext",
     "pages/index/warnCheck",
-    "pages/dev/eqplist",
     "pages/index/warnDetail",
     "pages/newspaper/index",
     "pages/member/index",
     "pages/index/warnDepartment",
-    "pages/dev/detailinfo",
     "pages/dev/eqpmod",
     "pages/dev/logadd",
-    "pages/dev/loglist",
+    "pages/dev/eqpinfo",
+    "pages/dev/eqplist",
     "pages/daka/logs",
-    
-    "pages/menhu/dettext",
+    "pages/menhu/dettext",  
     "pages/learn/learn",
     "pages/member/fankui",
     "pages/member/guanyu"
+   
   ],
   "tabBar": {
     "color": "#515151",
