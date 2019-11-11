@@ -1,11 +1,8 @@
 {
   "pages": [
-    
     "pages/index/index",
     "pages/index/warnCheck",
-    
     "pages/index/warn",
-   
     "pages/index/map",
     "pages/test/test2",
     "pages/index/warnDepartment",
@@ -17,20 +14,18 @@
     "pages/index/warnUserList",
     "pages/login/login",
     "pages/register/register",
-    "pages/daka/index",
+    "pages/daka/clock",
+    "pages/daka/information",
+    "pages/daka/footprint",
+    "pages/daka/record",
     "pages/cheliang/index",
-    "pages/login/login",
     "pages/menhu/apitext",
     "pages/index/warnDetail",
     "pages/newspaper/index",
     "pages/member/index",
-    "pages/dev/detailinfo",
     "pages/dev/eqpmod",
     "pages/dev/logadd",
-    "pages/dev/loglist",
-    "pages/daka/logs",
-    "pages/daka/zuji",
-    "pages/menhu/dettext",
+      "pages/menhu/dettext",
     "pages/learn/learn",
     "pages/member/fankui",
     "pages/member/guanyu",

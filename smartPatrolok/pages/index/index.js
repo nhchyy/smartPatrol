@@ -129,7 +129,7 @@ Page({
     },
     bindPatrolList: function () {
         wx.navigateTo({
-          url: '../dev/eqplist'
+            url: '../dev/eqplist'
         })
     },
 
@@ -138,11 +138,11 @@ Page({
             url: '../cheliang/index'
         })
     },
-  bindTest: function () {
-    wx.navigateTo({
-      url: '../test/test'
-    })
-  },
+    bindTest: function () {
+        wx.navigateTo({
+            url: '../daka/information'
+        })
+    },
     bindWarn: function () {
         wx.navigateTo({
             url: '../index/warn'
