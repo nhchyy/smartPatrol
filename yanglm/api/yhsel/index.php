@@ -1,9 +1,9 @@
 <?php
 /**
+ * 取最新的20条隐患上报信息
  * @author 作者：杨黎明
- * @param  
+ * @param  mobile
  * @return JSON
- * @text 取最新的20条隐患上报信息
  */
 //*****************判断参数完整性
 if(!isset($_POST['mobile'])){
@@ -28,9 +28,8 @@ if($res){
 		"yh_log" => $res
 	);
 	$res = json_encode($res, JSON_UNESCAPED_UNICODE); //参数为json中文转义符
-	echo $res;
 }else{
 	$res = '{"errcode":"2","errmsg":"请求失败！你选择的日期没有打卡记录！"}';
-	echo $res;
 }
+echo $res;
 ?>

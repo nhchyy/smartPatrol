@@ -1,7 +1,8 @@
 <?php
 /*
+ * 本地服务器用户明细与本企业钉钉端用户明细比对，更新同步用户，账号默认手机号码，默认密码md5(123456)
  * @author  作者：杨黎明
- * @text 钉钉端更新服务器user表，默认密码md5(123456)
+ * @text 
  */
 header('Content-type:text/html;charset=utf-8');
 include "../../ddsdk/dd_token.php";

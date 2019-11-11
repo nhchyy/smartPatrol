@@ -1,15 +1,14 @@
 <?php
 /** 
+ * 通过巡检日志id查询巡检日志
  * @author 作者：杨黎明
- * @param  $_POST['id'] 设备账号，
+ * @param  log_id
  * @return JSON
- * @text 通过巡检日志id查询巡检日志
  */
 if(isset($_POST['log_id'])){
 	
 	include '../../mysql/config.php'; //引入数据配置文件
 	include '../../mysql/mysql.php';  //引入数据库操作类
-	//include '../../ddsdk/dd_token.php'; //引入获取token
 	
 	$mysql = new MMysql($configArr);
 	$sql = "select * from z_mtc where id='{$_POST['log_id']}'";

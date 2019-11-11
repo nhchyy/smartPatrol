@@ -1,8 +1,9 @@
 <?php
 /**
+ * 添加用户
  * @author 作者：杨黎明
- * @param  
- * @return 添加用户
+ * @param  mobile,pwd,name
+ * @return JSON
  */
 //*****************判断巡检日志信息完整性
 if(!isset($_POST['mobile'])){

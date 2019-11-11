@@ -1,9 +1,9 @@
 <?php
 /**
+ * 隐患照片上传API
  * @author 作者：杨黎明
- * @param  
+ * @param  $_FILES['file']['name']
  * @return JSON
- * @text 上传隐患照片API
  */
 //*****************判断上传图片信息完整性
 if(!isset($_FILES['file']['name'])){
@@ -29,7 +29,6 @@ $file_name = $str.".".$file_type;
 
 /*是否上传成功*/
 if(copy($tmp_file,$savePath.$file_name)){
-	//$res = '{"errcode":"0","errmsg":"请求成功","path":"http://112.93.119.181:8090/zhyw/dimg/'.$file_name.'"}';
 	$res = '{"errcode":"0","errmsg":"请求成功","path":"'.$file_name.'"}';
 	echo $res;
 }else{
