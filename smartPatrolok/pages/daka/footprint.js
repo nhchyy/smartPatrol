@@ -2,16 +2,11 @@ Page({
 
   // 页面的初始数据
   data: {
-    num: '',  //打卡次数
-    range: '',  //公里数
-    row: '',  //天安门广场圈数
     date: '',  //接收上页面的日期
-    month: '',  //月度
     mobile: '',  //接收上页面的电话
     latitude: '',  //地图中心点经度
     longitude: '',  //地图中心点纬度
     markers: '',  //标记点
-    flag: 1  //标识
   },
 
   //接收上一个页面的数值
@@ -47,11 +42,7 @@ Page({
           success: res => {
             if (res.data.errcode == 0) {
               this.setData({
-                num: res.data.num,
-                range: res.data.range,
-                row:res.data.row,
-                markers: res.data.markers,
-                flag: 0
+                markers: res.data.markers
               })
             }else{
               wx.showToast({

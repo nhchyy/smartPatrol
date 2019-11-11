@@ -10,27 +10,27 @@
     <text>扫码</text>
   </view> -->
   <view class="menu_item" bindtap="bindPatrolList">
-    <image src="/resources/btn_second_normal.png"></image>
+    <image src="/resources/btn_shebei.png"></image>
     <text>设备信息</text>
   </view>
   <view class="menu_item" bindtap="bindTest">
-    <image src="/resources/btn_second_normal.png"></image>
-    <text>测试页面</text>
+    <image src="/resources/btn_qiandao.png"></image>
+    <text>签到管理</text>
   </view>
   <view class="menu_item" bindtap="bindCar">
-    <image src="/resources/btn_second_normal.png"></image>
+    <image src="/resources/btn_cheliang.png"></image>
     <text>车辆管理</text>
   </view>
   <view class="menu_item" bindtap="bindWarnCheck">
-    <image src="/resources/btn_third_normal.png"></image>
+    <image src="/resources/btn_yinhuan.png"></image>
     <text>{{'隐患处理'}}</text>
   </view>
   <view class="menu_item" bindtap="bindWarn">
-    <image src="/resources/btn_fourth_normal.png"></image>
+    <image src="/resources/btn_shangbao.png"></image>
     <text>隐患上报</text>
   </view>
   <view class="menu_item" bindtap="bindEvent">
-    <image src="/resources/send_event.png"></image>
+    <image src="/resources/btn_daka.png"></image>
     <text>签到打卡</text>
   </view>
 </view>
