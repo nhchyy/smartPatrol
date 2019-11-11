@@ -1,4 +1,3 @@
-
 let amap = require("../../utils/amap");
 var app = getApp();
 
