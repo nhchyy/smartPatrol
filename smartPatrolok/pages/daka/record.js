@@ -1,10 +1,18 @@
+var app = getApp();
 Page({
   
   //页面的初始数据
   data: {
-    date: '',  //日期传递到下个界面
+    mobile: "", //接收手机号码
+    date: "",  //日期传递到下个界面
     tag: "",  //标记数字，控制前台显示
     log: ""  //打卡日志数组
+  },
+
+  onLoad: function(option){
+    this.setData({
+      mobile: option.mobile
+    })
   },
 
   //点选日期方法，页面进入时直接跳转至当前日期，同时被调用一次
@@ -19,7 +27,7 @@ Page({
         "Content-Type": "application/x-www-form-urlencoded" 
       }, 
       data: { 
-        mobile: app.globalData.mobile,
+        mobile: this.data.mobile,
         date: this.data.date
       }, 
       method: 'POST', 
