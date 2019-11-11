@@ -1,0 +1,13 @@
+<calendar selected="{{selected}}" bindselect="bindselect" bindgetdate="bindgetdate" />
+<view class="zuji" bindtap="tapzj">当日足迹></view>
+<view wx:if="{{tag == 1}}">
+  <view class="log" wx:for="{{log}}" wx:key="{{index}}">
+    {{item.title}}
+  </view>
+</view>
+<view wx:elif="{{tag == 2}}" class="log">
+  今天没有打卡记录
+</view>
+<view wx:else class="log">
+  网络断开，请检查！
+</view>

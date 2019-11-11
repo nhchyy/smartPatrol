@@ -93,6 +93,7 @@ Page({
   styleChange: function(e) {
     this.setData({
       sindex: e.detail.value
+
     })
   },
 

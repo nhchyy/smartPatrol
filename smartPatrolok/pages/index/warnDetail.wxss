@@ -1,3 +1,10 @@
+@import '../../style/weui.wxss';
+
+page {
+  width: 100%;
+  overflow-x: hidden;
+}
+
 .warner {
 
 }
@@ -78,14 +85,14 @@
 }
 
 .check_user {
-  margin-top: 50rpx;
+  margin-top: 20rpx;
 }
 .user_item {
   display: flex;
   align-items:center;
   justify-content:space-between;
   padding: 0 20rpx;
-  margin-bottom: 42rpx;
+  margin-bottom: 10rpx;
 }
 
 
@@ -146,14 +153,12 @@
 
 .active {
   display: flex;
-  position: fixed;
-  bottom:0;
   width: 100%;
   background-color: #ffffff;
 }
 
 .active view{
-  width: 50%;
+  width: 100%;
   text-align: center;
   color:#ff5255;
   height: 100rpx;

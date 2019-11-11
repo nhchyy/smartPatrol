@@ -1,6 +1,9 @@
+@import '../../style/weui.wxss';
+/* @import "../../assembly/weui-cell.wxss"; */
 .tag {
   display: flex;
   background-color: #FFFFFF;
+  align-items:center;
 }
 
 .tag_item {
@@ -17,6 +20,8 @@
   font-size: 32rpx;
   color:#b3b3b3;
 }
+
+
 
 .tag_item .tag_item_current {
   border-bottom: 6rpx solid #ff5255;

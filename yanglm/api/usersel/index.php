@@ -1,9 +1,9 @@
 <?php
 /**
+ * 按手机号码查询用户是否存在
  * @author 作者：杨黎明
- * @param  
+ * @param  mobile
  * @return JSON
- * @text 查询用户是否存在
  */
 //*****************判断参数完整性
 if(!isset($_POST['mobile'])){

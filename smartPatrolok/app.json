@@ -2,33 +2,36 @@
   "pages": [
     "pages/login/login",
     "pages/register/register",
-    "pages/daka/index",
+    
+    
     "pages/index/index",
-    
-    
-    "pages/cheliang/index",
-    "pages/menhu/apitext",
     "pages/index/warnCheck",
     "pages/index/warn",
+    "pages/index/map",
+    "pages/test/test2",
+    "pages/index/warnDepartment",
+    "pages/index/patrol",
+    "pages/index/patrolList",
+    "pages/index/patrolDetailContentList",
+    "pages/index/patrolDetailList",
+    "pages/index/warnMyList",
+    "pages/index/warnUserList",
+    "pages/daka/clock",
+    "pages/daka/information",
+    "pages/daka/footprint",
+    "pages/daka/record",
+    "pages/cheliang/index",
+    "pages/menhu/apitext",
     "pages/index/warnDetail",
     "pages/newspaper/index",
     "pages/member/index",
-    "pages/index/warnDepartment",
-    "pages/dev/detailinfo",
     "pages/dev/eqpmod",
     "pages/dev/logadd",
-    "pages/dev/loglist",
-    
-    "pages/daka/logs",
-    "pages/daka/zuji",
-
-    
-    "pages/menhu/dettext",
-
+      "pages/menhu/dettext",
     "pages/learn/learn",
     "pages/member/fankui",
-    "pages/member/guanyu"
-
+    "pages/member/guanyu",
+    "pages/test/test"
   ],
   "tabBar": {
     "color": "#515151",

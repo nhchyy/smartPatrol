@@ -1,0 +1,141 @@
+<!--pages/dev/eqpinfo.wxml-->
+<view class="navbar">
+  <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>
+</view>
+
+<!--设备信息-->
+<view hidden="{{currentTab!==0}}" bindtouchstart="touchstart" bindtouchmove="touchmove" bindtouchend="touchend">
+  <view class="show_message">
+    <view style="width:100%;">
+      <view class="hori">
+        <view style="color:#AA0000; "> {{list.eqp_name}}</view>
+        <image style="width:50rpx;height:50rpx;" src="/resources/btn_kaoshi.png" bindtap="dataMod"></image>
+      </view>
+      <view class="back_line"></view>
+    </view>
+
+    <view style="width:100%;">
+      <view class="hori">
+        <view>
+          <label style="color:#AA0000; ">设备类型：</label>{{list.eqp_type}}</view>
+      </view>
+      <view class="back_line"></view>
+    </view>
+
+    <view style="width:100%;">
+      <view class="hori">
+        <view>
+          <label style="color:#AA0000; ">生产厂家：</label>
+          {{list.mfr_name}}</view>
+      </view>
+      <view class="back_line"></view>
+    </view>
+
+    <view style="width:100%;">
+      <view class="hori">
+        <view>
+          <label style="color:#AA0000; ">责任人员：</label>
+          {{list.principal_name}}</view>
+      </view>
+      <view class="back_line"></view>
+    </view>
+
+
+    <view style="width:100%;">
+      <view class="hori">
+        <view>
+          <label style="color:#AA0000; ">责任电话：</label>
+          {{list.principal_tel}}</view>
+      </view>
+      <view class="back_line"></view>
+    </view>
+
+    <view style="width:100%;">
+      <!--hidden="{{open ? '' : 'true'}}"> -->
+      <view class="hori">
+        <view>
+          <label style="color:#AA0000; ">机房地址：</label>
+          {{list.address}}</view>
+      </view>
+      <view class="back_line"></view>
+    </view>
+
+    <view style="width:100%;">
+      <!--hidden="{{open ? '' : 'true'}}"> -->
+      <view class="hori">
+        <view>
+          <label style="color:#AA0000; ">机房经度：</label>
+          {{list.longtitude}}</view>
+      </view>
+      <view class="back_line"></view>
+    </view>
+
+    <view style="width:100%;">
+      <!-- hidden="{{open ? '' : 'true'}}"> -->
+      <view class="hori">
+        <view>
+          <label style="color:#AA0000; ">机房纬度：</label>
+          {{list.latitude}}</view>
+      </view>
+      <view class="back_line"></view>
+    </view>
+
+    <view style="width:100%;">
+      <!--  hidden="{{open ? '' : 'true'}}"> -->
+      <view class="hori">
+        <view>
+          <label style="color:#AA0000; ">厂家电话：</label>
+          {{list.mfr_tel}}</view>
+      </view>
+      <view class="back_line"></view>
+    </view>
+  </view>
+
+  <!-- <view style="width:100%;" class="hori hd">
+  <view class=" {{open ? 'hd_show' : ''}}" bindtap="kindToggle">
+    <image class="img" src="/resources/icon_nav_nav.png"></image>
+  </view>
+</view> -->
+
+</view>
+
+<!--维护日志-->
+<view hidden="{{currentTab!==1}}" bindtouchstart="touchstart" bindtouchmove="touchmove" bindtouchend="touchend">
+  <view class="show_message">
+    <view class="hori">
+      <view style="color:#AA0000; "> {{list.eqp_name}}</view>
+      <view class="top_button_view">
+        <view class="top_plus" bindtap="addLog">新增》</view>
+      </view>
+    </view>
+    <view class="back_line"></view>
+    <view wx:for="{{listlog}}" wx:key="{{index}}">
+      <view class="show_list_log">
+        <view class="show_list_row">
+          <view class="list_item_name"> {{item.mtime}} -</view>{{item.mtype}}</view>
+        <image src="/resources/btn_xia.png" class="image" id="{{item.id}}" bindtap="clickOpen"></image>
+      </view>
+      <view hidden="{{item.open ? '' : 'true'}}" class="detail_bg">
+        <view>操作人：{{item.mname}}</view>
+        <view>电话：{{item.mtel}}</view>
+        <view style="width:100%;">描述：{{item.mdes}}</view>
+      </view>
+      <view class="back_line"></view>
+    </view>
+  </view>
+</view>
+
+<!--备注信息-->
+<view hidden="{{currentTab!==2}}" bindtouchstart="touchstart" bindtouchmove="touchmove" bindtouchend="touchend">
+  <view class="show_message">
+    <view class="hori">
+      <view style="color:#AA0000; "> {{list.eqp_name}}</view>
+    </view>
+    <view class="back_line"></view>
+  </view>
+  <view style="width:100%;">
+    <view class="comment">{{list.comment}} </view>
+    <view class=""></view>
+  </view>
+
+</view>

@@ -1,4 +1,5 @@
 /**app.wxss**/
+
 page {
   background-color: #f2f2f2;
 }
@@ -79,7 +80,7 @@ page {
   -webkit-transform:scaleY(0.5);
   transform:scaleY(0.5);
 }
-
+/* 
 .weui-cell_select .weui-cell__bd:after {
   content: " ";
   display: inline-block;
@@ -96,7 +97,7 @@ page {
   top: 50%;
   right: 30rpx;
   margin-top: -8rpx;
-}
+} */
 
 
 .weui-cell_access .weui-cell__ft:after {

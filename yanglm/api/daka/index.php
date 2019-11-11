@@ -1,10 +1,11 @@
 <?php
 /**
+ * 添加打卡日志信息，10分钟内不允许重复打卡
  * @author 作者：杨黎明
- * @param  
+ * @param  wjd,wwd,mobile,name,wz
  * @return JSON
- * @text 添加打卡日志信息，10分钟内不允许重复打卡
  */
+
 //*****************判断添加打卡日志信息完整性
 if(!isset($_POST['wjd'])){
 	$res = '{"errcode":"1","errmsg":"请求失败！缺少打卡经度参数"}';
@@ -26,12 +27,19 @@ if(!isset($_POST['name'])){
 	echo $res;
 	exit;
 }
+if(!isset($_POST['wz'])){
+	$res = '{"errcode":"5","errmsg":"请求失败！缺少位置参数"}';
+	echo $res;
+	exit;
+}
 
 //信息验证完成，开始插入巡检日志
 include '../../mysql/config.php'; //引入数据配置文件
 include '../../mysql/mysql.php';  //引入数据库操作类
+
 date_default_timezone_set('prc'); //设置时区与time配合使用为中国时区
 $time = date('Y-m-d H:i:s',time()); //获取当前时间
+
 $mysql = new MMysql($configArr);
 
 //获取最后一条打卡日志
@@ -51,27 +59,22 @@ if(($time1 - $time2)/60 > 10) {
 		"wwd" => $_POST['wwd'],
 		"wtime" => $time,
 		"mobile" => $_POST['mobile'],
-		"name" => $_POST['name']
+		"name" => $_POST['name'],
+		"wz" => $_POST['wz']
 		);
 	$row = $mysql->insert('z_dak',$data);
-	if($row){
-		$res = array(
-			"errcode" => "0",
-			"errmsg" => "请求成功，已生成最新打卡记录"
-		);
-	}else{
-		$res = array(
-			"errcode" => "5",
-			"errmsg" => "生成最新打卡记录失败，请重试打卡"
-		);
-	}
+	$res = array(
+		"errcode" => "0",
+		"errmsg" => "请求成功，已生成最新打卡记录"
+	);
 }else{
 	$res = array(
 		"errcode" => "6",
-		"errmsg" => "打卡失败，您的打卡频率过高，请在最新打卡记录10分钟后再打卡"
+		"errmsg" => "请求失败，频率过高，10分钟后再试"
 	);
 }
 
+//输出
 $res = json_encode($res, JSON_UNESCAPED_UNICODE); //参数为json中文转义符
 echo $res;
 ?>

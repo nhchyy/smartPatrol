@@ -1,15 +1,18 @@
 .main{
-  padding: 20rpx 0;
-  border-bottom: 1rpx solid rgba(70, 67, 67, 0.712);
-}
-.top{
+  height: 300rpx;
   display: flex;
-  padding: 20rpx 15rpx;
+  border-bottom: 1rpx solid rgb(85, 85, 85);
+  align-items: center;
 }
-.fl{
-  width: 345rpx;
-  text-align: left;
+.main image{
+  height: 220rpx;
+  width: 260rpx;
+  padding: 0 50rpx;
 }
-.a:hover{
-  font-weight: bold;
+.text{
+  letter-spacing: 1rpx;
+  padding-bottom: 10rpx;
+}
+.t2{
+  color: rgb(141, 140, 140);
 }

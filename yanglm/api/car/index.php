@@ -1,9 +1,9 @@
 <?php
-/** 
+/**
+ * 查询自己借用的车辆信息和现在还可以借用的车辆
  * @author 作者：杨黎明
- * @param  car  
- * @return JSON
- * @text 查询车辆信息
+ * @param 
+ * @return JSON  $res  $mycar 自己借用的， $car还可以借用的
  */
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	
@@ -13,11 +13,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$mysql = new MMysql($configArr);
 	
 	//先查询自己是否有借出未还的车
-	$sql = "select id,cname,ctype,cno,cgzrq,cstate,clc from z_car where mobile = '{$_POST['mobile']}'";
+	$sql = "select id,cname,cno,cgzrq,cstate,clc,cpath from z_car where mobile = '{$_POST['mobile']}' order by cstate desc";
 	$res1 = $mysql->doSql($sql);
 
 	//查询可以借用的车
-	$sql = "select id,cname,ctype,cno,cgzrq,clc from z_car where cstate = 0";
+	$sql = "select id,cname,cno,cgzrq,cstate,clc,cpath from z_car where cstate = 0";
 	$res2 = $mysql->doSql($sql);
 
 	//打包结果集

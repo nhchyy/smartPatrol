@@ -1,0 +1,12 @@
+  <view class="top">
+    <button class="daka" bindtap="tapdaka">点击打卡</button>
+  </view>
+  <map id="myMap"
+  longitude="{{longitude}}" 
+  latitude="{{latitude}}" 
+  markers="{{markers}}"
+  scale='14' 
+  show-compass
+  enable-zoom 
+  enable-scroll 
+  enable-rotate />

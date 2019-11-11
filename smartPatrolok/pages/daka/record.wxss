@@ -1,0 +1,21 @@
+.zuji{
+  text-align: right;
+  font-size: 32rpx;
+  color: rgb(134, 134, 134);
+  font-weight: bold;
+  letter-spacing: 2rpx;
+  padding: 15rpx;
+  border-bottom: 2rpx rgb(65, 64, 64) solid;
+}
+
+.zuji:hover{
+  color: black;
+}
+
+.log{
+  text-align: center;
+  padding-top: 30rpx;
+  font-size: 30rpx;
+  color: rgb(126, 125, 125);
+  letter-spacing: 3rpx;
+}
