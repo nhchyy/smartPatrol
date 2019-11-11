@@ -6,15 +6,11 @@ Page({
   data: {
     id:'',
     clc:'',
-    mobile:'',
-    name:'',
     date:'2019-10-01'
   },
   onLoad: function (option) {
     this.setData({
-      id: option.id,
-      mobile: app.globalData.mobile,
-      name: app.globalData.name
+      id: option.id
     })
   },
   //确认归还
@@ -23,8 +19,7 @@ Page({
     if(e.detail.value.clc == ''){
       wx.showToast({
         title: '您还没填里程数',
-        icon: "none",
-        duration: 2000
+        icon: "none"
       })
       return false;
     }
@@ -42,21 +37,11 @@ Page({
       success: res => {
         if (res.data.errcode == 0) {
           wx.showToast({
-            title: '完成，行驶' + res.data.clc + 'KM',
-            duration: 4000
+            title: '归还成功',
           })
-          wx.navigateTo({
-            url: 'index',
-          })({
-            delta: 1 // 返回上一页
+          wx.navigateBack({
+            delta: 1     // 1返回上一个界面，2返回上上个页面
           });
-        } else {
-          //参数错误
-          wx.showToast({
-            title: '参数错误',
-            icon: "none",
-            duration: 2000
-          })
         }
       },
       //网络或服务器异常
@@ -64,7 +49,6 @@ Page({
         wx.showToast({
           title: '网络异常，请重试',
           icon: "none",
-          duration: 2000
         })
       },
     })

@@ -4,38 +4,29 @@ const app = getApp()
 
 Page({
   data: {
-    mobile:'',
-    name:'',
     mycar:'',
     car:''
   },
   //借用车辆
   jy:function(e){
     wx.navigateTo({
-      url: '../jie/index?id=' + e.currentTarget.id
+      url: 'jie?id=' + e.currentTarget.id
     })
   },
   //归还车辆
   gh: function (e) {
     wx.navigateTo({
-      url: '../gh/indexgh?id=' + e.currentTarget.id
+      url: 'gh?id=' + e.currentTarget.id
     })
   },
-  onLoad: function () {
-    //接收上一页面跳转过来的mobile和name参数
-    this.setData({
-      mobile: '15577554321',
-      name: '蔡奕妥',
-      mobile: app.globalData.mobile,
-      name: app.globalData.name
-    })
+  onShow: function () {
     wx.request({
       url: 'http://112.93.119.181:8090/zhyw/api/car/',
       header: {
         "Content-Type": "application/x-www-form-urlencoded"
       },
       data: {
-        mobile: this.data.mobile,
+        mobile: app.globalData.mobile,
       },
       method: 'POST',
       //服务器打卡数据成功保存
@@ -44,13 +35,6 @@ Page({
           this.setData({
             mycar : res.data.mycar,
             car : res.data.car
-          })
-        } else {
-          //参数错误
-          wx.showToast({
-            title: '参数错误',
-            icon: "none",
-            duration: 2000
           })
         }
       },
