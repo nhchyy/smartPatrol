@@ -5,39 +5,39 @@ Page({
 
 
     // 3:需在data中声明一个接收数据的变量。
-    list1:[],
-    list2:[],
-    list3:[],
+    list1: [],
+    list2: [],
+    list3: [],
 
     // 轮播图数据
     background: ['demo-text-1', 'demo-text-2', 'demo-text-3'],
     imgurl: [{
-      url: '/images/1.png'
+      url: '/images/1.jpg'
     }, {
       url: '/images/2.jpg'
     }, {
       url: '/images/3.jpg'
     }],
-    currentTab:0,
-    
+    currentTab: 0,
+
   },
 
   /**
    * 新闻点击操作
    */
-  navNews: function(event) {
-    console.log("按钮："+event.currentTarget.dataset.navindex)
+  navNews: function (event) {
+    console.log("按钮：" + event.currentTarget.dataset.navindex)
     var navindex = event.currentTarget.dataset.navindex
     //需要修改currentTab变量
     this.setData({
-      currentTab:navindex
-     
+      currentTab: navindex
+
       // currentTab:navindex
     })
     console.log("当前navindex" + navindex)
   },
 
-  swiperView: function(event) {
+  swiperView: function (event) {
     //console.log(event)
     var current = event.detail.current
     this.setData({
@@ -58,7 +58,7 @@ Page({
   },
 
 
-  onLoad: function(options) {
+  onLoad: function (options) {
     var that = this
     wx.request({
       url: 'http://112.93.119.181:8090/zhyw/api/art/',
@@ -67,8 +67,8 @@ Page({
       },
       method: "get",
       data: {
-        leib:1,
-       
+        leib: 1,
+
       },
       success: res => {
         //1:在控制台打印一下返回的res.data数据
@@ -88,7 +88,7 @@ Page({
       },
       method: "get",
       data: {
-        leib:3,
+        leib: 3,
 
       },
       success: res => {
@@ -110,7 +110,7 @@ Page({
       },
       method: "get",
       data: {
-        leib:2,
+        leib: 2,
 
       },
       success: res => {
