@@ -1,43 +1,19 @@
-// http://112.93.119.181:8090/zhyw/dimg/20191105142959694.png
-// http://112.93.119.181:8090/zhyw/dimg/20191105142959586.png
-// http://112.93.119.181:8090/zhyw/dimg/20191105142959695.png
-// http://112.93.119.181:8090/zhyw/dimg/20191105155129837.png
-
-
-
-
 var app = getApp()
 Page({
   data: {
-    warnID: 0,
-    warnDetail: {
-      title: '线路隐患',
-      placeName: '忻州xxx',
-      contentName: '',
-      textDescription: '啊是多久啊饭卡阿斯弗啊师傅哈桑\nasfsasasdfaskfasfja',
-      voiceDescription: '',
-      photo: '',
-      thumbs: ["http://112.93.119.181:8090/zhyw/dimg/20191105220824214.png",
-        "http://112.93.119.181:8090/zhyw/dimg/20191105220824457.png",
-        "http://112.93.119.181:8090/zhyw/dimg/20191105220824457.png",
-        "http://112.93.119.181:8090/zhyw/dimg/20191105220824457.png",
-        "http://112.93.119.181:8090/zhyw/dimg/20191105220824324.png"],
-      name: '陈源一',
-      updateTime: 0,
-      cheskMsg: ["aaa"],
-      checkUserMsg: {
-        roleID: 0,
-        userID: 0,
-        checkName: '',
-        status: 0,
-        statusText: '',
-        checkUpdateTime: ''
-      },
-      copyUserMsg: {
-        copyName: ''
+    departmentList: [
+      {
+        departmentID: 1,
+        departmentName: "运维部"
+
       }
-    },
-    roleID: 0,
+
+    ],
+    name: "",
+    mobile: "",
+    warnID: 0,
+    warnDetail: {},
+    roleID: 1,
     note: ''
   },
   //事件处理函数
@@ -145,7 +121,10 @@ Page({
   onLoad: function (option) {
     this.setData({
       warnID: option.id,
-      roleID: 1
+      roleID: 1,
+      name: app.globalData.name,
+      mobile: app.globalData.mobile
+
       // roleID:app.globalData.userInfo.roleID
     })
 
@@ -159,6 +138,47 @@ Page({
       current: current, // 当前显示图片的http链接
       urls: this.data.warnDetail.thumbs // 需要预览的图片http链接列表
     })
+  },
+
+  bindInput: function (e) {
+    let warnDetail = this.data.warnDetail;
+    warnDetail.ctext = e.detail.value;
+    this.setData({
+      warnDetail: warnDetail
+    })
+  },
+  submitHandle: function () {
+
+
+
+
+    let that = this;
+    var warnForm = {}
+    warnForm.yhid = this.data.warnDetail.id
+    warnForm.mobile = this.data.warnDetail.cmobile
+    warnForm.name = this.data.warnDetail.cname
+    warnForm.clyj = this.data.warnDetail.ctext
+    
+
+
+    wx.request({
+      url: app.globalData.serverUrl + '/zhyw/api/yhedit/',
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded"
+        // 'Content-Type': 'application/json'
+      },
+      data: warnForm,
+      method: 'POST',
+      success: function (res) {
+        console.log(res);
+        wx.navigateBack({
+          delta: 1
+        })
+
+
+      }
+    })
   }
 
-})
+
+  })

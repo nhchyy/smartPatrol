@@ -6,7 +6,7 @@ Page({
         warnList: [],
         type: 1,
         roleID: 1,
-        nolistMessage: '加载中...'
+        nolistMessage: '没有工单'
     },
 
     /** 巡检人 **/
@@ -105,9 +105,43 @@ Page({
                 }
 
 
+
+
+                var warnList = []
+
+                if (action == 'getHadSubmitWarnList') { warnList = result.data.yh_log }
+
+                if (action == 'getUnDealWarnList') {
+                    warnList = result.data.yh_log.filter(function (o) {
+                        return (o.xstate == 0) && (o.cmobile == app.globalData.mobile);
+                    })
+
+                }
+                if (action == 'getHadDealWarnList') {
+
+                    warnList = result.data.yh_log.filter(function (o) {
+                        return o.xstate == 1;
+
+                    })
+                }
+
+
+
+
+
+
+
+
+
+
+                 
+
+
+
                 that.setData({
-                    warnList: result.data.yh_log
+                    warnList: warnList
                 });
+                wx.setStorageSync("warnList", warnList);
             }
 
 
@@ -170,23 +204,32 @@ Page({
             }
         });
     },*/
+    bindGoMap: function (e) {
+        wx.navigateTo({
+            url: '../index/map'
+        })
+    },
     bindGoWarnDetail: function (e) {
         wx.navigateTo({
             url: '../index/warnDetail?id=' + e.currentTarget.dataset.id
         })
     },
+    onShow: function () {
+
+        
+        
+
+        if (this.data.type == 1) { this.getWarnList('getHadSubmitWarnList')}
+        if (this.data.type == 2) { this.getWarnList('getUnDealWarnList')}
+        if (this.data.type == 3) { this.getWarnList('getHadDealWarnList')}
+        
+
+
+    }
+    ,
     onLoad: function () {
         this.setData({
             roleID: app.globalData.roleID
         });
-        if (this.data.roleID == 1) {
-            this.bindGetHadSubmitWarnList();
-        }
-        else if (this.data.roleID == 2) {
-            this.bindGetUnOfferWarnList();
-        }
-        else if (this.data.roleID == 3) {
-            this.bindGetUnOfferWarnList3();
-        }
     }
 })

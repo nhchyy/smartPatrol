@@ -138,6 +138,11 @@ Page({
             url: '../cheliang/index'
         })
     },
+  bindTest: function () {
+    wx.navigateTo({
+      url: '../test/test'
+    })
+  },
     bindWarn: function () {
         wx.navigateTo({
             url: '../index/warn'

@@ -13,6 +13,10 @@
     <image src="/resources/btn_second_normal.png"></image>
     <text>设备信息</text>
   </view>
+  <view class="menu_item" bindtap="bindTest">
+    <image src="/resources/btn_second_normal.png"></image>
+    <text>测试页面</text>
+  </view>
   <view class="menu_item" bindtap="bindCar">
     <image src="/resources/btn_second_normal.png"></image>
     <text>车辆管理</text>
