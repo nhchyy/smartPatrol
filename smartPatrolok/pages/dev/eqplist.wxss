@@ -1,6 +1,6 @@
 /* pages/dev/eqplist.wxss */
 page {
-background-color: white;
+  background-color: white;
 }
 
 .image {
