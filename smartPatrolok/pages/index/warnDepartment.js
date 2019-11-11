@@ -1,5 +1,7 @@
 
-
+function unique(arr) {
+    return Array.from(new Set(arr))
+}
 
 var app = getApp()
 
@@ -9,90 +11,54 @@ Page({
         contentIndex: 0,
         thumbs: [],
         thumbsForDatabase: [],
-        departmentList: [],
-        userList: [],
+        departmentList: [
+            {
+                departmentID: 1,
+                departmentName: "运维部"
+
+            },
+            {
+                departmentID: 2,
+                departmentName: "财务部"
+
+            }
+
+        ],
+        userList: [
+            {
+                userID: 1,
+                userName: "陈源一",
+                selected: true
+
+            },
+            {
+                userID: 2,
+                userName: "赵峰",
+                selected: false
+
+            }
+        ],
         option: {
             from: 0
         },
         selectUserStorageName: ''
     },
     bindGoWarnUserList: function (e) {
+        console.log(e.currentTarget.dataset)
+
         wx.navigateTo({
-            url: '../index/warnUserList' + '?' + 'id=' + e.currentTarget.dataset.id + '&from=' + this.data.option.from
+            
+            url: '../index/warnUserList' + '?' + 'dep=' + e.currentTarget.dataset.dep + '&from=' + this.data.option.from
         })
     },
-    bindUploadFile: function () {
-        let that = this;
-        wx.chooseImage({
-            count: 3, // 默认9
-            sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
-            sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
-            success: function (res) {
-                // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
-                that.setData({
-                    thumbs: res.tempFilePaths
-                });
-
-
-                let thumbsForDatabase = [];
-                res.tempFilePaths.forEach(function (item, index) {
-                    wx.uploadFile({
-                        url: app.globalData.serverUrl + '/upload/upload', //仅为示例，非真实的接口地址
-                        filePath: item,
-                        name: 'file',
-                        formData: {},
-                        success: function (_res) {
-                            let data = JSON.parse(_res.data);
-                            thumbsForDatabase.push(data.content.imgUrl);
-                            console.log(index);
-                            if (index == res.tempFilePaths.length - 1) {
-                                that.setData({
-                                    thumbsForDatabase: thumbsForDatabase
-                                });
-                            }
-                        }
-                    })
-                });
-            }
-        })
-    },
+    
     bindOk: function (e) {
         var delta = e.target.dataset.delta;
         wx.navigateTo({
             url: '../index/msg' + '?' + 'delta=' + delta,
         })
     },
-    bindAudio: function () {
-        let that = this;
-        let warnForm = this.data.warnForm;
-        wx.startRecord({
-            success: function (res) {
-                warnForm.voiceDescription = res.tempFilePath;
-                that.setData({
-                    warnForm: warnForm
-                })
-
-
-                //上传服务器
-                wx.uploadFile({
-                    url: app.globalData.serverUrl + '/upload/upload', //仅为示例，非真实的接口地址
-                    filePath: res.tempFilePath,
-                    name: 'file',
-                    formData: {},
-                    success: function (res) {
-                        /*let data = JSON.parse(res.data);
-                         thumbs.push(data.content.imgUrl);*/
-                    }
-                })
-
-
-            },
-            fail: function (res) {
-                //录音失败
-                console.log(res);
-            }
-        })
-    },
+   
     bindPlayAudio: function () {
         let that = this;
         wx.playVoice({
@@ -101,9 +67,6 @@ Page({
 
             }
         })
-    },
-    bindEndAudio: function () {
-        wx.stopRecord();
     },
     bindRangeChange: function (e) {
         this.setData({
@@ -144,53 +107,37 @@ Page({
         //     }
         // });
     },
-    getDepartmentList: function () {
-        let that = this;
-        // app.request({
-        //     url: app.globalData.serverUrl + '/department/getDepartmentList',
-        //     data: {},
-        //     method: 'POST',
-        //     login: true,
-        //     success(result) {
-        //         if (result.data.code != 1) {
-        //             return;
-        //         }
-        //         that.setData({
-        //             departmentList: result.data.content.departmentList
-        //         });
-        //     }
-        // });
-    },
+    
     getUsualUserList: function () {
         let that = this;
-        // app.request({
-        //     url: app.globalData.serverUrl + '/department/getUsualUserList',
-        //     data: {},
-        //     method: 'POST',
-        //     login: true,
-        //     success(result) {
-        //         if (result.data.code != 1) {
-        //             return;
-        //         }
+        wx.request({
+            url: app.globalData.serverUrl + '/zhyw/api/userselall/',
+            header: {
+                "Content-Type": "application/x-www-form-urlencoded"
+                // 'Content-Type': 'application/json'
+            },
+            data: {text: ""},
+            method: 'POST',
+            success: function (res) {
+                console.log(res.data.list);
+                console.log(Array.from(new Set(res.data.list.map(a => a.dep))));
+                that.setData({
+                    departmentList: Array.from(new Set(res.data.list.map(a => a.dep)))
+                })
 
-        //         let userList = wx.getStorageSync(that.data.selectUserStorageName);
-        //         if(!userList) {
-        //             userList = [];
-        //         }
+                var aaa=res.data.list.filter(function (x) {
+                    return x.dep == "数据专业";
+                    
+                }).map(a=>a.name)
 
-        //         result.data.content.userList.forEach(function (item) {
-        //             item.selected = false;
-        //             userList.forEach(function (_item) {
-        //                 if(_item.userID == item.userID) {
-        //                     item.selected = true;
-        //                 }
-        //             })
-        //         });
-        //         that.setData({
-        //             userList:result.data.content.userList
-        //         });
-        //     }
-        // });
+                console.log(aaa)
+                 
+
+
+
+            }
+        })
+
     },
     bindSelectUser: function (e) {
         let userList = this.data.userList;
@@ -234,8 +181,6 @@ Page({
             });
         }
 
-        //调用应用实例的方法获取全局数据
-        this.getDepartmentList();
         this.getUsualUserList();
     }
 })

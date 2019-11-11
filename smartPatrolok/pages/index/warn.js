@@ -1,9 +1,13 @@
-
-let amap = require("../../utils/amap");
+let QQMapWX = require('../../utils/qqmap-wx-jssdk.js');
+let qqmapsdk;
+// let amap = require("../../utils/amap");
 var app = getApp()
 Page({
     data: {
-        xwz:"",
+        types: ["光缆线路", "光交箱", "分线盒", "动力设备", "传输设备", "数据设备"],
+        typesIndex: 0,
+        xwz: "",
+        loaction: {},
         userInfo: {},
         mapCtx: {},
         placeContentList: [],
@@ -12,18 +16,12 @@ Page({
         thumbItemUrl: '',
         thumbs: [],
         thumbsForDatabase: [],
-        warnForm: {
-            contentID: 0,
-            textDescription: '',
-            voiceDescription: '',
-            photoList: [],
-            checkUser: [],
-            copyUser: []
-        },
+        warnForm: {},
         voice: '',
-        checkUser: [],
+        checkUser: [
+        ],
         copyUser: [],
-        loaction: {}
+
     },
     bindUploadFile: function () {
         let that = this;
@@ -91,11 +89,13 @@ Page({
     },
 
 
+   
+
 
 
     bindInput: function (e) {
         let warnForm = this.data.warnForm;
-        warnForm.textDescription = e.detail.value;
+        warnForm.xwt = e.detail.value;input
         this.setData({
             warnForm: warnForm
         })
@@ -144,16 +144,7 @@ Page({
             });
         });
 
-        let warnForm = {
-            xtype: '线路',
-            xwz: that.data.xwz,
-            xwt: that.data.warnForm.textDescription,
-            ximgpath: photoList,
-            xmobile: app.globalData.mobile,
-            xname: app.globalData.name,
-            xjd: this.data.loaction.longitude,
-            xwd: this.data.loaction.latitude
-        };
+        this.data.warnForm.ximgpath = photoList
 
         wx.request({
             url: app.globalData.serverUrl + '/zhyw/api/yhadd/',
@@ -161,32 +152,18 @@ Page({
                 "Content-Type": "application/x-www-form-urlencoded"
                 // 'Content-Type': 'application/json'
             },
-            data: warnForm,
+            data: this.data.warnForm,
             method: 'POST',
             success: function (res) {
                 console.log(res);
                 wx.navigateBack({
                     delta: 1
                 })
-            
+
 
             }
         })
 
-        // app.request({
-        //     url: app.globalData.serverUrl + '/patrol/submitPatrol',
-        //     data:warnForm,
-        //     method: 'POST',
-        //     login: true,
-        //     success(result) {
-        //         if(result.data.code != 1) {
-        //             return;
-        //         }
-        //         that.setData({
-        //             placeContentList:result.data.content.placeContentList
-        //         });
-        //     }
-        // });
     },
     pushThumbForDatabase: function (item, index) {
         let thumbsForDatabase = this.data.thumbsForDatabase;
@@ -198,71 +175,107 @@ Page({
             thumbsForDatabase: thumbsForDatabase
         });
     },
-    getPlaceContentList: function () {
-        let that = this;
-        // app.request({
-        //     url: app.globalData.serverUrl + '/place/getPlaceContentList',
-        //     data:{},
-        //     method: 'POST',
-        //     login: true,
-        //     success(result) {
-        //         if(result.data.code != 1) {
-        //             return;
-        //         }
-        //         that.setData({
-        //             placeContentList:result.data.content.placeContentList
-        //         });
-        //     }
-        // });
-    },
-    onShow: function () {
-        let that = this;
+    
+    onLoad: function (e) {
+        let warnForm = this.data.warnForm;
+        warnForm.xmobile = app.globalData.mobile
+        warnForm.xname = app.globalData.name
+        warnForm.xtype = this.data.types[this.data.typesIndex];
+        this.setData({
+            warnForm: warnForm
+        })
+
+        var that = this;
         wx.getLocation({
             type: 'gcj02',
             success: function (loaction) {
+                let warnForm = that.data.warnForm;
+                warnForm.xjd = loaction.longitude;
+                warnForm.xwd = loaction.latitude;
                 that.setData({
-                    loaction: loaction
-                });
+                    warnForm: warnForm
+                })
+
             }
         });
-
-
-        //copyUser
-        try {
-            let copyUser = wx.getStorageSync('copyUser');
-            if (copyUser) {
-                this.setData({
-                    copyUser: copyUser
+        qqmapsdk = new QQMapWX({ key: 'XYNBZ-ZC2LK-SIGJY-ACCBQ-ISWY6-MMBFN' });
+        qqmapsdk.reverseGeocoder({
+            success: function (addressRes) {
+                console.log(addressRes);
+                let warnForm = that.data.warnForm;
+                warnForm.xwz = addressRes.result.formatted_addresses.recommend;
+                that.setData({
+                    warnForm: warnForm
                 })
             }
-        } catch (e) { }
+        });
+        wx.setStorageSync("checkUser", []);
+        // amap.getRegeo()
+        //     .then(d => {
+        //         console.log(d);
+        //         this.setData({
+        //             xwz: d[0].desc
+        //         });
+
+
+        //     })
+        //     .catch(e => {
+        //         console.log(e);
+        //     })
+
+
+    },
+
+    bindChangeLocation: function () {
+        var that = this
+        wx.chooseLocation({
+            success: function (res) {
+                let warnForm = that.data.warnForm;
+                warnForm.xjd = res.longitude;
+                warnForm.xwd = res.latitude;
+                warnForm.xwz = res.address;
+                that.setData({
+                    warnForm: warnForm
+                })
+            },
+            fail: function (err) {
+                console.log(err)
+            }
+        });
+    },
+
+    bindTypeChange: function (e) {
+        console.log('picker country 发生选择改变，携带值为', e.detail.value);
+
+        this.setData({
+            typesIndex: e.detail.value
+        })
+
+        let warnForm = this.data.warnForm;
+        warnForm.xtype = this.data.types[e.detail.value];
+        this.setData({
+            warnForm: warnForm
+        })
+    },
+    onShow: function () {
+        let that = this;
 
         //checkUser
         try {
             let checkUser = wx.getStorageSync('checkUser');
             if (checkUser) {
                 this.setData({
-                    checkUser: checkUser
+                    checkUser:checkUser
+                })
+
+                let warnForm = that.data.warnForm;
+                warnForm.cname = checkUser[0].name;
+                warnForm.cmobile = checkUser[0].mobile;
+                that.setData({
+                    warnForm: warnForm
                 })
             }
-        } catch (e) { }
+        } catch (e) {}
 
-        //调用应用实例的方法获取全局数据
-        this.getPlaceContentList();
-
-    },
-    onLoad(e) {
-        amap.getRegeo()
-            .then(d => {
-                console.log(d);
-                this.setData({
-                    xwz: d[0].desc
-                });
-
-                
-            })
-            .catch(e => {
-                console.log(e);
-            })
     }
 })

@@ -1,63 +1,80 @@
-
-
-
-<view class="warner">
-  <view class="warner_item">
-    <image src="/resources/icon_yinhuan.png"></image>
-    <view class="warner_desc">
-      <view class="warner_title">{{warnDetail.xname}}发起的{{warnDetail.xtype}}</view>
-    </view>
-    <view class="warner_date">{{warnDetail.xtime}}</view>
-  </view>
-</view>
-
-
-
-<view class="form mt20">
-  <view class="form_item">
-    <view class="form_label">类型</view>
-    <view class="form_value">{{warnDetail.xtype}}</view>
-  </view>
-  <view class="form_item">
-    <view class="form_label">描述</view>
-    <view class="form_value">{{warnDetail.xwt}}</view>
-  </view>
-  <view class="form_item">
-    <view class="form_label">语音</view>
-    <view class="form_value">
-      <!-- {{warnDetail.voiceDescription}} -->
+<view style="overflow:hidden">
+  <view class="warner">
+    <view class="warner_item">
+      <image src="/resources/icon_yinhuan.png"></image>
+      <view class="warner_desc">
+        <view class="warner_title">{{warnDetail.xname}}发起的{{warnDetail.xtype}}</view>
+      </view>
+      <view class="warner_date">{{warnDetail.xtime}}</view>
     </view>
   </view>
-
-
-  <view class="form_item_thumb">
-    <view class="thumb_item" wx:for="{{warnDetail.thumbs}}" data-url="{{item}}" >
-      <image src="{{item}}"  data-src="{{item}}"  bindtap="previewImage" style="width: 154rpx; height: 154rpx;"></image>
+  <view class="form mt20">
+    <view class="form_item">
+      <view class="form_label">类型</view>
+      <view class="form_value">{{warnDetail.xtype}}</view>
+    </view>
+    <view class="form_item">
+      <view class="form_label">地址</view>
+      <view class="form_value">{{warnDetail.xwz}}</view>
+    </view>
+    <view class="form_item">
+      <view class="form_label">经度</view>
+      <view class="form_value">{{warnDetail.xjd}}</view>
+    </view>
+    <view class="form_item">
+      <view class="form_label">纬度</view>
+      <view class="form_value">{{warnDetail.xwd}}</view>
+    </view>
+    <view style="height:auto ;" class="form_item">
+      <view class="form_label">描述</view>
+      <view class="form_value  weui-cell__bd">{{warnDetail.xwt}}</view>
+    </view>
+    <view  wx:if="{{warnDetail.cname!==name}}" style="height:auto ;" class="form_item">
+      <view class="form_label">处理意见</view>
+      <view class="form_value  weui-cell__bd">{{warnDetail.ctext}}</view>
+    </view>
+    <view class="form_item_thumb">
+      <view class="thumb_item" wx:for="{{warnDetail.thumbs}}" data-url="{{item}}">
+        <image src="{{item}}" data-src="{{item}}" bindtap="previewImage" style="width: 154rpx; height: 154rpx;"></image>
+      </view>
     </view>
   </view>
-</view>
-
-
-
-
-<view class="check_user">
-  <view  class="user_item">
-    <image class="user_thumb" src="/resources/icon_yinhuan.png"></image>
-    <view class="user_desc">
-      <image class="user_icon" src="/resources/icon_zhanghao.48.png"></image>
-      <view class="user_title">{{warnDetail.xname}}</view>
-      <view class="user_status">发起申请</view>
-      <view class="user_arrow"></view>
+  <view class="check_user">
+    <view class="user_item">
+      <image class="user_thumb" src="/resources/icon_yinhuan.png"></image>
+      <view class="user_desc">
+        <image class="user_icon" src="/resources/icon_zhanghao.48.png"></image>
+        <view class="user_title">{{warnDetail.xname}}</view>
+        <view class="user_status">发起申请</view>
+        <view class="user_arrow"></view>
+      </view>
+      <view class="user_date">{{warnDetail.xtime}}</view>
     </view>
-    <view class="user_date">{{warnDetail.xtime}}</view>
+    <view   wx:if="{{warnDetail.xstate==1}}" class="user_item">
+      <image class="user_thumb" src="/resources/icon_yinhuan.png"></image>
+      <view class="user_desc">
+        <image class="user_icon" src="/resources/icon_zhanghao.48.png"></image>
+        <view class="user_title">{{warnDetail.cname}}</view>
+        <view class="user_status">提交处理</view>
+        <view class="user_arrow"></view>
+      </view>
+      <view class="user_date">{{warnDetail.ctime}}</view>
+    </view>
   </view>
-</view>
-
-
-
-<view class="active">
-  <view class="active_item_current">不同意</view>
-  <view>同意</view>
+  <view  wx:if="{{warnDetail.cname==name}}" class="form mt20">
+    <view class="weui-cell ">
+      <view class="weui-cell__hd">
+        <view class="weui-label">处理意见</view>
+      </view>
+      <view class="weui-cell__bd">
+        <textarea class="weui-textarea" bindinput="bindInput" placeholder="请输入文本" style="height: 4.3em" />
+      </view>
+    </view>
+  </view>
+  <view class="form mt20"></view>
+  <view wx:if="{{warnDetail.cname==name}}" bindtap="submitHandle" class="active">
+    <view class="active_item_current">提交处理意见</view>
+  </view>
 </view>
 <!-- <view class="weui-form-preview mt20">
   <view class="weui-form-preview__bd">

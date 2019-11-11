@@ -1,5 +1,4 @@
-@import '../../style/weui.wxss';
-/* @import "../../assembly/weui-cell.wxss"; */
+@import "../../assembly/weui-cell.wxss";
 .tag {
   display: flex;
   background-color: #FFFFFF;
