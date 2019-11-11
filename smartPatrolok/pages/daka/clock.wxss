@@ -29,5 +29,5 @@ page{
 map{
   width: 710rpx;
   padding: 0 20rpx;
-  height: 860rpx;
+  height: 1200rpx;
 }

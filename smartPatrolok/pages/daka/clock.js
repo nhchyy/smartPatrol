@@ -5,9 +5,9 @@ Page({
  
   //页面的初始数据
   data: {
-    latitude: 39.9096045,  //纬度
-    longitude: 116.397228,  //经度
-    wz: "",  //详细地址
+    latitude: 39.9096045,  
+    longitude: 116.397228,  
+    wz: "",  
     markers:[{
       id: 1, 
       latitude: 39.90890, 
@@ -16,9 +16,8 @@ Page({
     }]
   },
 
-  //接收上一页面跳转过来的mobile和name参数
+  //获取地址逆向解析地址名称
   onLoad: function (option){
-    //获取地址逆向解析地址名称
     amap.getRegeo()
       .then(d => {
         this.setData({

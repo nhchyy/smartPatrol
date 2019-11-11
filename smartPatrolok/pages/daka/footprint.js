@@ -12,8 +12,8 @@ Page({
   //接收上一个页面的数值
   onLoad: function (option) {
     this.setData({
-      mobile: option.mobile,  //手机号码
-      date: option.date,  //日期
+      mobile: option.mobile,  
+      date: option.date, 
     })
 
     //初始化，以所在位置为地图显示的中心点

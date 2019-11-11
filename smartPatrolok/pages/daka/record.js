@@ -1,15 +1,15 @@
+var app = getApp();
 Page({
   
   //页面的初始数据
   data: {
-    mobile: '',  //接收跳转过来的
-    date: '',  //日期传递到下个界面
+    mobile: "", //接收手机号码
+    date: "",  //日期传递到下个界面
     tag: "",  //标记数字，控制前台显示
     log: ""  //打卡日志数组
   },
 
-  //接收上一页面跳转过来的mobile参数
-  onLoad: function (option) {
+  onLoad: function(option){
     this.setData({
       mobile: option.mobile
     })
@@ -27,7 +27,7 @@ Page({
         "Content-Type": "application/x-www-form-urlencoded" 
       }, 
       data: { 
-        mobile: this.data.mobile, 
+        mobile: this.data.mobile,
         date: this.data.date
       }, 
       method: 'POST', 
