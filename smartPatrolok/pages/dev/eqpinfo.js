@@ -10,6 +10,7 @@ Page({
      listlog：维护日志信息数组
      touchS:滑动事件开始坐标
      touchE:滑动事件终止坐标
+     angle: 滑动角度
    */
   data: {
     id: "",
@@ -18,7 +19,8 @@ Page({
     currentTab: 0,
     listlog: [],
     touchS: [0, 0],
-    touchE: [0, 0]
+    touchE: [0, 0],
+    angle: ""
   },
 
   //页面加载时获取前页传来的设备编号
@@ -111,7 +113,6 @@ Page({
   //选项卡点击事件。
   navbarTap: function(e) {
     var that = this
-
     that.setData({
       currentTab: e.currentTarget.dataset.idx
     })
@@ -173,64 +174,63 @@ Page({
 
   // 监听手指滑动事件获取坐标
   touchmove: function(e) {
-    let sx = e.touches[0].pageX;
-    let sy = e.touches[0].pageY;
-    this.data.touchE = [sx, sy]
-    // console.log(e.currentTarget.data)
-    // let idx = this.data.currentTab;
-    // console.log(idx);
-    // let startX = this.data.startX,//开始X坐标
-    //   startY = this.data.startY,//开始Y坐标
-    //   touchMoveX = e.changedTouches[0].clientX,//滑动变化坐标
-    //   touchMoveY = e.changedTouches[0].clientY,//滑动变化坐标
-    //   //获取滑动角度
-    //   angle = this.angle({ X: startX, Y: startY }, { X: touchMoveX, Y: touchMoveY });
+    // let ex = e.touches[0].pageX;
+    // let ey = e.touches[0].pageY;
+    let startX = this.data.touchS[0], //开始X坐标
+      startY = this.data.touchS[0], //开始Y坐标
+      touchMoveX = e.changedTouches[0].clientX, //滑动变化坐标
+      touchMoveY = e.changedTouches[0].clientY; //滑动变化坐标
 
-    // //滑动超过45度角 return
-    // if (Math.abs(angle) > 45) return;
-
-    // if (touchMoveX > startX) { //右滑
-    //   this.setData({
-    //     currentTab: idx == 3 - 1 ? idx : idx + 1,
-    //   })
-    // } else {
-    //   this.setData({
-
-    //     currentTab: idx == 0 ? 0 : idx - 1,
-    //   })
-    // }
-
+    //获取滑动角度
+    this.data.angle = this.angle({
+      X: startX,
+      Y: startY
+    }, {
+      X: touchMoveX,
+      Y: touchMoveY
+    });
+    this.data.touchE = [touchMoveX, touchMoveY]
   },
-
 
   // 监听手指滑动事件结束，判断滑动防线改变当前tap
   touchend: function() {
     let idx = this.data.currentTab;
     let start = this.data.touchS
     let end = this.data.touchE
-    console.log(start)
-    console.log(end)
-    if (start[0] < end[0] - 70) {
+    //滑动超过45度角 return
+    if (Math.abs(this.data.angle) > 45) return;
+
+    if (start[0] < end[0] - 50) { //右滑
       this.setData({
         currentTab: idx == 3 - 1 ? idx : idx + 1,
       })
-      // console.log('右滑')
-    } else if (start[0] > end[0] + 70) {
+    } else if (start[0] > end[0] + 50) {
       this.setData({
 
         currentTab: idx == 0 ? 0 : idx - 1,
       })
       // console.log('左滑')
-    } else {
-      // console.log('静止')
     }
+    // if (start[0] < end[0] - 70) {
+    //   this.setData({
+    //     currentTab: idx == 3 - 1 ? idx : idx + 1,
+    //   })
+    //   // console.log('右滑')
+    // } else if (start[0] > end[0] + 70) {
+    //   this.setData({
 
+    //     currentTab: idx == 0 ? 0 : idx - 1,
+    //   })
+    //   // console.log('左滑')
+    // } else {
+    //   // console.log('静止')
+    // }
+  },
+  angle: function(start, end) {
+    var _X = end.X - start.X,
+      _Y = end.Y - start.Y
+    //返回角度 /Math.atan()返回数字的反正切值
+    return 360 * Math.atan(_Y / _X) / (2 * Math.PI)
   }
-  // angle: function(start, end) {
-  //   var _X = end.X - start.X,
-  //     _Y = end.Y - start.Y
-  //   //返回角度 /Math.atan()返回数字的反正切值
-  //   return 360 * Math.atan(_Y / _X) / (2 * Math.PI)
-  // }
 
 })
