@@ -1,7 +1,6 @@
   <view class="top">
-    <button class="btn" bindtap="daka">点击打卡</button>
+    <button class="daka" bindtap="tapdaka">点击打卡</button>
   </view>
-  <view class="log" bindtap="jilu">打卡记录></view>
   <map id="myMap"
   longitude="{{longitude}}" 
   latitude="{{latitude}}" 

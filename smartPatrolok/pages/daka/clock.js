@@ -1,32 +1,40 @@
+let amap = require("../../utils/amap");
 var app = getApp();
+
 Page({
+ 
+  //页面的初始数据
   data: {
-    latitude: 39.9096045,
-    longitude: 116.397228,
-    mobile:'',
-    name:'',
-    markers: [{
+    latitude: 39.9096045,  //纬度
+    longitude: 116.397228,  //经度
+    mobile: '',  //手机号码
+    name: '',  //姓名
+    wz: "",  //详细地址
+    markers:[{
       id: 1, 
       latitude: 39.90890, 
       longitude: 116.39750, 
       title: '天安门'
     }]
   },
+
   //接收上一页面跳转过来的mobile和name参数
-  onLoad: function (option) {
+  onLoad: function (option){
     this.setData({
-      mobile: app.globalData.mobile ,
-      name: app.globalData.name  
+      mobile: app.globalData.mobile,
+      name: app.globalData.name
     })
+    //获取地址逆向解析地址名称
+    amap.getRegeo()
+      .then(d => {
+        this.setData({
+          wz: d[0].desc
+        });
+      })
   },
-  //页面跳转
-  jilu:function(){
-    wx.navigateTo({
-      url: '../daka/logs?mobile=' + this.data.mobile,
-    })
-  },
+  
   //点击打卡
-  daka:function() {
+  tapdaka:function() {
     //启动定位服务
     wx.getLocation({
       //定位成功
@@ -35,7 +43,7 @@ Page({
         this.setData({
           latitude:res.latitude,
           longitude:res.longitude,
-          markers: [{
+          markers:[{
             id: 1,
             latitude: res.latitude,
             longitude: res.longitude,
@@ -51,8 +59,9 @@ Page({
           data: {
             mobile: this.data.mobile,
             name: this.data.name,
+            wz: this.data.wz,
             wjd: res.longitude,
-            wwd: res.latitude
+            wwd: res.latitude            
           },
           method: 'POST',
           //服务器打卡数据成功保存

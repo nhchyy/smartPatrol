@@ -1,10 +1,12 @@
 <?php
+
 /** 
+ * 按ID文章查询接口
  * @author 作者：杨黎明
  * @param  artid  文章id
- * @return JSON
- * @text 按ID文章查询接口
+ * @return JSON $res
  */
+
 if(isset($_GET['artid'])){
 	
 	include '../../mysql/config.php'; //引入数据配置文件

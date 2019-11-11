@@ -1,10 +1,12 @@
 <?php
 /**
+ * 停用
+ * 按月查打卡记录，返回月打卡日志，行驶里程，天安门周长倍数
  * @author 作者：杨黎明
- * @param  
+ * @param  mobile是11位手机号码   date是日期参数，日期格式为  2019-01-01
  * @return JSON
- * @text 按时间查询当月的打卡日志，通过mobile
  */
+
 //*****************判断添加打卡日志信息完整性
 if(!isset($_POST['mobile'])){
 	$res = '{"errcode":"1","errmsg":"请求失败！缺少打卡人手机号码参数"}';
@@ -16,6 +18,9 @@ if(!isset($_POST['date'])){
 	echo $res;
 	exit;
 }
+exit;
+//接口停用
+
 
 //信息验证完成，开始插入巡检日志
 include '../../mysql/config.php'; //引入数据配置文件

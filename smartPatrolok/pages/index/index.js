@@ -50,8 +50,8 @@ Page({
         var id = "";
         wx.scanCode({
             success: (res) => {
-                this.show = "结果:" + res.result + "二维码类型:" + res.scanType + "字符集:" + res.charSet + "路径:" + res.path;
-                console.log(this.show);
+                // this.show = "结果:" + res.result + "二维码类型:" + res.scanType + "字符集:" + res.charSet + "路径:" + res.path;
+                // console.log(this.show);
                 id = res.result;
                 // that.setData({
                 //   id: res.result
@@ -62,17 +62,8 @@ Page({
                     duration: 2000
                 })
                 wx.navigateTo({
-                    url: '../dev/detailinfo?id=' + id,
+                    url: '../dev/eqpinfo?id=' + id,
 
-                    success: function () {
-                        console.log('接口调用成功')
-                    },
-                    fail: function () {
-                        console.log('接口调用成功')
-                    },
-                    complete: function () {
-                        console.log('调用结束，调用成功失败都会执行')
-                    }
                 })
             },
             fail: (res) => {
@@ -138,7 +129,7 @@ Page({
     },
     bindPatrolList: function () {
         wx.navigateTo({
-            url: '../cheliang/index'
+          url: '../dev/eqplist'
         })
     },
 
@@ -164,7 +155,7 @@ Page({
     },
     bindEvent: function () {
         wx.navigateTo({
-            url: '../daka/index'
+            url: '../daka/clock'
         })
     },
     bindUncheck: function (e) {

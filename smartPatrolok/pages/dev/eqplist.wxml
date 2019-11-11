@@ -1,0 +1,69 @@
+<!--pages/dev/eqplist.wxml-->
+<view class="page_title">查询设备台账</view>
+<view class="show_border">
+  <form bindsubmit="searchSubmit">
+    <view class='page_row_start'>
+      <view class="row_title">设备类型：</view>
+      <view class="search">
+        <view class="df search_arr">
+          <picker bindchange="styleChange" placeholder="请选择" class="input1" name="type" range="{{styles}}">
+            <view>{{styles[sindex]}}</view>
+          </picker>
+        </view>
+      </view>
+    </view>
+    <view class='page_row'>
+      <view class="row_title">
+        设备名称：
+      </view>
+      <view class="search">
+        <view class="df search_arr">
+          <input name="ename" placeholder="请输入关键字" />
+        </view>
+      </view>
+    </view>
+    <view class='page_row'>
+      <view class="row_title">生产厂家：</view>
+      <view class="search">
+        <view class="df search_arr">
+          <input name="mname" placeholder="请输入关键字" />
+        </view>
+      </view>
+    </view>
+    <view class='page_row'>
+      <view class="row_title">机房地址：</view>
+      <view class="search">
+        <view class="df search_arr">
+          <input name="wz" placeholder="请输入关键字" />
+        </view>
+      </view>
+    </view>
+    <view class='page_row_end'>
+      <view class="row_title">责任人员： </view>
+      <view class="search">
+        <view class="df search_arr">
+          <input name="pname" placeholder="请输入关键字" />
+        </view>
+      </view>
+    </view>
+    <view class='page_row_end'>
+      <button form-type="submit" class="bottom_button">
+        <icon class="search_icon" size='20' type='search'></icon>搜索</button>
+      <button form-type="reset" bindtap="resetSindex" class="bottom_button">
+        <icon type="clear" size="19" color="#aaa" class="search_icon"></icon>重置 </button>
+    </view>
+  </form>
+</view>
+<view class="show_border">
+  <view wx:for="{{list}}" wx:key="{{index}}">
+    <view style="color:#003377" class="show_list">
+      {{item.etype}}
+      <view style="color:#d0d0d0;">|
+      </view> {{item.mname}}
+      <view style="color:#d0d0d0;">|
+      </view>{{item.ename}}
+      <image src="/resources/detail.png" class="image" id="{{item.id}}" bindtap="detail"></image>
+    </view>
+    <view class="back_line"></view>
+  </view>
+</view>

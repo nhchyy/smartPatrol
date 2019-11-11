@@ -1,33 +1,24 @@
 Page({
-  /**
-   * 页面的初始数据
-   */
+  
+  //页面的初始数据
   data: {
-    mobile:'',  //接收跳转过来的
+    mobile: '',  //接收跳转过来的
     date: '',  //日期传递到下个界面
-    tag:"",  //标记数字，控制前台显示
-    log:""  //打卡日志数组
+    tag: "",  //标记数字，控制前台显示
+    log: ""  //打卡日志数组
   },
-  /**
-   * 生命周期函数--监听页面加载
-   * 接收参数
-   */
+
+  //接收上一页面跳转过来的mobile参数
   onLoad: function (option) {
     this.setData({
       mobile: option.mobile
     })
   },
+
   //点选日期方法，页面进入时直接跳转至当前日期，同时被调用一次
   bindgetdate(e){
-    //点选的日期e为对象格式，year,month,date，此处转化为数组
-    let arr = [];
-    for (let i in e.detail) {
-      arr.push(e.detail[i]);
-    }
-    //将转化好的数组转化为日期格式的字符串，即 2019-11-02，用于POST传参，
-    let time = arr.join("-");
     this.setData({
-      date: time
+      date: e.detail.year.toString() + e.detail.month.toString() + e.detail.date.toString()
     })
     //发送POST请求，获取当天的打卡记录
     wx.request({
@@ -37,7 +28,7 @@ Page({
       }, 
       data: { 
         mobile: this.data.mobile, 
-        date: time
+        date: this.data.date
       }, 
       method: 'POST', 
       success: res => {
@@ -45,7 +36,7 @@ Page({
         if(res.data.errcode == 0){
           this.setData({
             tag:1,
-            log: res.data.dak_log
+            log: res.data.markers
           })
         }else{
           //没有打卡记录
@@ -62,10 +53,11 @@ Page({
       },
     })
   },
+  
   //界面跳转
-  zj:function(){
+  tapzj:function(){
     wx.navigateTo({
-      url: '../daka/zuji?mobile=' + this.data.mobile + "&date=" + this.data.date,
+      url: 'footprint?mobile=' + this.data.mobile + "&date=" + this.data.date,
     })
   }
 })

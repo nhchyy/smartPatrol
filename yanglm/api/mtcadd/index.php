@@ -1,9 +1,9 @@
 <?php
 /**
+ * 添加巡检日志API
  * @author 作者：杨黎明
- * @param  
+ * @param  eqp_id,mtc_type,maintainer_name,maintainer_tel,description
  * @return JSON
- * @text 单独添加巡检日志API
  */
 //*****************判断巡检日志信息完整性
 if(!isset($_POST['eqp_id'])){
@@ -35,6 +35,7 @@ if(!isset($_POST['description'])){
 //信息验证完成，开始插入巡检日志
 include '../../mysql/config.php'; //引入数据配置文件
 include '../../mysql/mysql.php';  //引入数据库操作类
+
 date_default_timezone_set('prc'); //设置时区与time配合使用为中国时区
 $time = date('Y-m-d H:i:s',time()); //获取当前时间
 

@@ -1,5 +1,6 @@
 {
   "pages": [
+    
     "pages/index/index",
     "pages/index/warnCheck",
     
@@ -18,6 +19,7 @@
     "pages/register/register",
     "pages/daka/index",
     "pages/cheliang/index",
+    "pages/login/login",
     "pages/menhu/apitext",
     "pages/index/warnDetail",
     "pages/newspaper/index",

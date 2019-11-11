@@ -12,18 +12,20 @@ Page({
   //借用车辆
   jy:function(e){
     wx.navigateTo({
-      url: 'jie?id=' + e.currentTarget.id
+      url: '../jie/index?id=' + e.currentTarget.id
     })
   },
   //归还车辆
   gh: function (e) {
     wx.navigateTo({
-      url: 'gh?id=' + e.currentTarget.id
+      url: '../gh/indexgh?id=' + e.currentTarget.id
     })
   },
   onLoad: function () {
     //接收上一页面跳转过来的mobile和name参数
     this.setData({
+      mobile: '15577554321',
+      name: '蔡奕妥',
       mobile: app.globalData.mobile,
       name: app.globalData.name
     })

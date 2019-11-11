@@ -1,16 +1,16 @@
 page{
-  width: 100%;
-  height: 100%;
   background: #EEEEEE;
 }
+
 .top{
-  padding-top: 7%;
+  padding: 60rpx 0%;
 }
-.btn{
+
+.daka{
   height: 250rpx;
   width: 250rpx;
   border-radius: 150rpx;
-  border: 2rpx solid rgb(60, 189, 173);
+  border: 2rpx solid rgb(49, 238, 222);
   padding: 0;
   color: white;
   font-size: 45rpx;
@@ -21,22 +21,13 @@ page{
   vertical-align: middle; 
   box-shadow: 5px 10px 15px 2px rgba(37, 148, 27, 0.1);
 }
+
 .button-hover{
   background: linear-gradient(to bottom right, rgb(175, 241, 219), rgb(196, 224, 216)) !important;
 }
-.log{
-  text-align: right;
-  font-size: 32rpx;
-  color: rgb(134, 134, 134);
-  font-weight: bold;
-  letter-spacing: 2rpx;
-  padding: 3% 20rpx 2% 20rpx;
-}
-.log:hover{
-  color: black;
-}
+
 map{
-  width: 96%;
-  padding: 0 2%;
-  height: 70vh;
+  width: 710rpx;
+  padding: 0 20rpx;
+  height: 860rpx;
 }
