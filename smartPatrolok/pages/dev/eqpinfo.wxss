@@ -1,4 +1,7 @@
 /* pages/dev/eqpinfo.wxss */
+page {
+  background-color: white;
+}
 
 .navbar{
   flex: none;

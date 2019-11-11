@@ -138,7 +138,10 @@ Page({
       }
     }
     this.setData({
-      listlog: listlog
+      listlog: listlog,
+      touchS: [0, 0],
+      touchE: [0, 0],
+      currentTab: 1
     });
   },
 
@@ -198,18 +201,27 @@ Page({
     let start = this.data.touchS
     let end = this.data.touchE
     //滑动超过45度角 return
-    if (Math.abs(this.data.angle) > 45) return;
-
-    if (start[0] < end[0] - 50) { //右滑
+    if (Math.abs(this.data.angle) > 45) {
+      this.setData({
+        touchS: [0, 0],
+        touchE: [0, 0]
+      })
+      return
+    }else{
+    if (start[0] < end[0]) { //右滑
       this.setData({
         currentTab: idx == 3 - 1 ? idx : idx + 1,
+        touchS: [0, 0],
+        touchE: [0, 0]
       })
-    } else if (start[0] > end[0] + 50) {
+    } else if (start[0] > end[0]) {
       this.setData({
-
         currentTab: idx == 0 ? 0 : idx - 1,
+        touchS: [0, 0],
+        touchE: [0, 0]
       })
       // console.log('左滑')
+    }
     }
     // if (start[0] < end[0] - 70) {
     //   this.setData({
@@ -231,6 +243,7 @@ Page({
       _Y = end.Y - start.Y
     //返回角度 /Math.atan()返回数字的反正切值
     return 360 * Math.atan(_Y / _X) / (2 * Math.PI)
+    set
   }
 
 })

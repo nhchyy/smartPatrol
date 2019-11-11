@@ -1,4 +1,7 @@
 /* pages/dev/eqplist.wxss */
+page {
+  background-color: white;
+}
 
 .image {
   width: 70rpx;
