@@ -2,17 +2,9 @@ Page({
   
   //页面的初始数据
   data: {
-    mobile: '',  //接收跳转过来的
     date: '',  //日期传递到下个界面
     tag: "",  //标记数字，控制前台显示
     log: ""  //打卡日志数组
-  },
-
-  //接收上一页面跳转过来的mobile参数
-  onLoad: function (option) {
-    this.setData({
-      mobile: option.mobile
-    })
   },
 
   //点选日期方法，页面进入时直接跳转至当前日期，同时被调用一次
@@ -27,7 +19,7 @@ Page({
         "Content-Type": "application/x-www-form-urlencoded" 
       }, 
       data: { 
-        mobile: this.data.mobile, 
+        mobile: app.globalData.mobile,
         date: this.data.date
       }, 
       method: 'POST', 
