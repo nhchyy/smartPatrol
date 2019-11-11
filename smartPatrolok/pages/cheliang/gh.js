@@ -47,8 +47,6 @@ Page({
           })
           wx.navigateTo({
             url: 'index',
-          })({
-            delta: 1 // 返回上一页
           });
         } else {
           //参数错误

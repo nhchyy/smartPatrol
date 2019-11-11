@@ -1,6 +1,7 @@
 //app.js
 App({
   
+  
   globalData: {
     serverUrl: "http://112.93.119.181:8090",
     roleID:1,

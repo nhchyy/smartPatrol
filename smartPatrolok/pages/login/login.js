@@ -41,8 +41,16 @@ Page({
 
     let mobiles = this.data.mobile;
     let pwds = this.data.pwd;
-    var imgCodeS = this.data.imgCode;
-    var cod = this.data.code
+
+    var imgCod = this.data.imgCode;
+    var imgCodes = imgCod.toLowerCase();
+
+
+    var cods = this.data.code
+    var cod = cods.toLowerCase();
+
+
+
     //检验非空
     if (mobiles.length == 0) {
       wx.showModal({
@@ -111,8 +119,8 @@ Page({
 
     }
 
-    // if (cod != imgCodeS) {
-    if (cod == imgCodeS) {
+    if (cod != imgCodes) {
+      // if (cod == imgCodeS) {
       wx.showModal({
         title: '提示',
         content: '图形码错误！',
@@ -248,7 +256,7 @@ Page({
   },
 
   //跳转注册页面
-  goRegister:function(){
+  goRegister: function () {
     wx.reLaunch({
       url: '../register/register'
     })
