@@ -44,7 +44,7 @@
 </view>
 
 <view class="warner3">
-  <view class="warner3_thumb_list" wx:for="{{thumbs}}" data-url="{{item}}" bindtap="bindShowThumb">
+  <view class="warner3_thumb_list" wx:for="{{thumbs}}" data-url="{{item}}" >
     <image src="{{item}}" style="width: 230rpx; height: 230rpx;"></image>
   </view>
   <view class="warner3_thumb_add" bindtap="bindUploadFile">
@@ -69,6 +69,6 @@
     </view>
   </view>
 </view>
-<view bindtap="submitPatrol" class="active">
+<view bindtap="submitWarn" class="active">
   <view class="active_item_current">上报</view>
 </view>

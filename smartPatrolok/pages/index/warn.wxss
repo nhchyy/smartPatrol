@@ -1,5 +1,4 @@
 @import '../../style/weui.wxss';
-/* @import "../../assembly/weui-cell.wxss"; */
 
 .part1 {
   background-color: #ffffff;

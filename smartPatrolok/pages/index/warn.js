@@ -1,26 +1,14 @@
 let QQMapWX = require('../../utils/qqmap-wx-jssdk.js');
 let qqmapsdk;
-// let amap = require("../../utils/amap");
 var app = getApp()
 Page({
     data: {
         types: ["光缆线路", "光交箱", "分线盒", "动力设备", "传输设备", "数据设备"],
         typesIndex: 0,
-        xwz: "",
-        loaction: {},
-        userInfo: {},
-        mapCtx: {},
-        placeContentList: [],
-        contentIndex: 0,
-        thumbShow: false,
-        thumbItemUrl: '',
         thumbs: [],
         thumbsForDatabase: [],
         warnForm: {},
-        voice: '',
-        checkUser: [
-        ],
-        copyUser: [],
+        checkUser: []
 
     },
     bindUploadFile: function () {
@@ -52,7 +40,7 @@ Page({
                     //更新数据库
 
                     wx.uploadFile({
-                        url: app.globalData.serverUrl + '/zhyw/api/yhload/', //仅为示例，非真实的接口地址
+                        url: app.globalData.serverUrl + '/zhyw/api/yhload/',
                         filePath: item,
                         name: 'file',
                         formData: {},
@@ -60,13 +48,6 @@ Page({
                             console.log(_res);
                             let data = JSON.parse(_res.data);
                             that.pushThumbForDatabase(data.path, item);
-                            /*                            thumbsForDatabase.push(data.content.imgUrl);
-                                                        console.log(index);
-                                                        if(index == res.tempFilePaths.length - 1) {
-                                                            that.setData({
-                                                                thumbsForDatabase:thumbsForDatabase
-                                                            });
-                                                        }*/
                         },
                         fail: function (_res) {
                             console.log(_res);
@@ -81,59 +62,17 @@ Page({
             url: '../index/warnDepartment' + '?' + 'from=' + 1,
         })
     },
-    bindOk: function (e) {
-        var delta = e.target.dataset.delta;
-        wx.navigateTo({
-            url: '../index/msg' + '?' + 'delta=' + delta,
-        })
-    },
-
-
-   
-
-
 
     bindInput: function (e) {
         let warnForm = this.data.warnForm;
-        warnForm.xwt = e.detail.value;input
+        warnForm.xwt = e.detail.value;
         this.setData({
             warnForm: warnForm
         })
     },
-    bindShowThumb: function (e) {
-        let that = this;
-        let thumbItemUrl = '';
-        this.data.thumbs.forEach(function (item) {
-            if (item == e.currentTarget.dataset.url) {
-                that.data.thumbsForDatabase.forEach(function (_item) {
-                    if (item == _item.local) {
-                        thumbItemUrl = _item.url;
-                    }
-                });
-            }
-        });
-
-        this.setData({
-            thumbItemUrl: thumbItemUrl,
-            thumbShow: true
-        });
-    },
-    submitPatrol: function () {
-
-
-
+    submitWarn: function () {
 
         let that = this;
-        let contentID = this.data.placeContentList.length ? this.data.placeContentList[this.data.contentIndex].contentID : 0;
-        let checkUserID = [];
-        let copyUserID = [];
-        this.data.checkUser.forEach(function (item) {
-            checkUserID.push(item.userID);
-        });
-        this.data.copyUser.forEach(function (item) {
-            copyUserID.push(item.userID);
-        });
-
         let photoList = [];
 
         this.data.thumbs.forEach(function (item) {
@@ -150,7 +89,6 @@ Page({
             url: app.globalData.serverUrl + '/zhyw/api/yhadd/',
             header: {
                 "Content-Type": "application/x-www-form-urlencoded"
-                // 'Content-Type': 'application/json'
             },
             data: this.data.warnForm,
             method: 'POST',
@@ -175,7 +113,7 @@ Page({
             thumbsForDatabase: thumbsForDatabase
         });
     },
-    
+
     onLoad: function (e) {
         let warnForm = this.data.warnForm;
         warnForm.xmobile = app.globalData.mobile
@@ -210,18 +148,6 @@ Page({
             }
         });
         wx.setStorageSync("checkUser", []);
-        // amap.getRegeo()
-        //     .then(d => {
-        //         console.log(d);
-        //         this.setData({
-        //             xwz: d[0].desc
-        //         });
-
-
-        //     })
-        //     .catch(e => {
-        //         console.log(e);
-        //     })
 
 
     },
@@ -265,7 +191,7 @@ Page({
             let checkUser = wx.getStorageSync('checkUser');
             if (checkUser) {
                 this.setData({
-                    checkUser:checkUser
+                    checkUser: checkUser
                 })
 
                 let warnForm = that.data.warnForm;
@@ -275,7 +201,7 @@ Page({
                     warnForm: warnForm
                 })
             }
-        } catch (e) {}
+        } catch (e) { }
 
     }
 })

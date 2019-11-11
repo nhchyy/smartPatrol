@@ -1,24 +1,12 @@
 <wxs module="util">
-    var cutdate = function(val) {
-      var str=val.toString();
-      var reg = getRegExp("\d{4}-", "g");
-      str=str.replace(reg,"");
-      var reg = getRegExp(":\d{2}$", "g");
-      str=str.replace(reg,"");
-      return str;
-    }
     var sub = function(val,start,end) {  
       var tail=""
       if(val.length>end){tail="..."}
-
       return val.substring(start,end) +tail ;
     }
-
-    module.exports.cutdate =  cutdate;
-    module.exports.sub = sub;
-    
-
+    module.exports.sub = sub;    
 </wxs>
+
 <view class="tag">
   <view class="tag_item" bindtap="bindGetHadSubmitWarnList">
     <view class="{{type == 1? 'tag_item_current' : ''}}">已上报</view>
@@ -34,7 +22,6 @@
   </view>
 </view>
 
-
 <view class="list mt20">
   <view class="list_item" wx:for="{{warnList}}" data-id="{{item.id}}" bindtap="bindGoWarnDetail">
     <view class="item_thumb">
@@ -44,11 +31,9 @@
       <view class="item_title">隐患类型:{{item.xtype}}</view>
       <view class="item_status">地点:{{item.xwz == "undefined"?"":util.sub(item.xwz,0,15)}}</view>
       <view class="item_status">日期:{{item.xtime}}</view>
-      <!-- <view class="item_status">隐患描述:{{util.sub(item.xwt,0,15)}}...</view> -->
     </view>
-    <!-- <view class="item_xdes">{{item.xw}}</view> -->
-    <!-- <view class="item_date">{{item.xwt}}</view> -->
   </view>
+  
   <view class="list_item" wx:if="{{warnList.length == 0}}">
     <view class="item_desc">
       <view class="item_title" style="text-align: center">{{nolistMessage}}</view>

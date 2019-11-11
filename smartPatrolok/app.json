@@ -1,19 +1,13 @@
 {
   "pages": [
-    "pages/index/index",
-    
     "pages/login/login",
-      
+    "pages/index/index",
     "pages/index/warnCheck",
     "pages/index/warn",
+      
     "pages/index/map",
-    "pages/test/test2",
     "pages/index/warnDepartment",
-    "pages/index/patrol",
-    "pages/index/patrolList",
-    "pages/index/patrolDetailContentList",
-    "pages/index/patrolDetailList",
-    "pages/index/warnMyList",
+    
     "pages/index/warnUserList",
     "pages/daka/clock",
     "pages/daka/information",
@@ -22,15 +16,14 @@
     "pages/cheliang/index",
     "pages/menhu/apitext",
     "pages/index/warnDetail",
-    "pages/newspaper/index",
+   
     "pages/member/index",
     "pages/dev/eqpmod",
     "pages/dev/logadd",
     "pages/menhu/dettext",
     "pages/learn/learn",
     "pages/member/fankui",
-    "pages/member/guanyu",
-    "pages/test/test"
+    "pages/member/guanyu"
   ],
   "tabBar": {
     "color": "#515151",
