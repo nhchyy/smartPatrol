@@ -141,7 +141,7 @@ Page({
           //定义传到后台的数据
           data: {
             //data中获取数据
-            mobile: this.data.inputMobile,
+            mobile: e.detail.value.mobileName, 
           },
           method: 'POST',
           success: function (res) {

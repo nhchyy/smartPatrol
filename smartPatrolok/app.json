@@ -1,8 +1,9 @@
 {
   "pages": [
     "pages/index/index",
+    
     "pages/login/login",
-   
+      
     "pages/index/warnCheck",
     "pages/index/warn",
     "pages/index/map",
@@ -70,6 +71,11 @@
   },
   "usingComponents": {
     "calendar": "/components/calendar/calendar"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "您的位置信息将用于小程序位置的展示"
+    }
   },
   "sitemapLocation": "sitemap.json"
 }

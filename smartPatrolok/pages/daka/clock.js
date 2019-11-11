@@ -7,8 +7,6 @@ Page({
   data: {
     latitude: 39.9096045,  //纬度
     longitude: 116.397228,  //经度
-    mobile: '',  //手机号码
-    name: '',  //姓名
     wz: "",  //详细地址
     markers:[{
       id: 1, 
@@ -20,10 +18,6 @@ Page({
 
   //接收上一页面跳转过来的mobile和name参数
   onLoad: function (option){
-    this.setData({
-      mobile: app.globalData.mobile,
-      name: app.globalData.name
-    })
     //获取地址逆向解析地址名称
     amap.getRegeo()
       .then(d => {
@@ -57,8 +51,8 @@ Page({
             "Content-Type": "application/x-www-form-urlencoded"
           },
           data: {
-            mobile: this.data.mobile,
-            name: this.data.name,
+            mobile: app.globalData.mobile,
+            name: app.globalData.name,
             wz: this.data.wz,
             wjd: res.longitude,
             wwd: res.latitude            
