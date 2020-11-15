@@ -46,6 +46,7 @@ Page({
   },
 
   previewImage: function (e) {
+    // debugger;
     var current = e.target.dataset.src;
     wx.previewImage({
       current: current, // 当前显示图片的http链接

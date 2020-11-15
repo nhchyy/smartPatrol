@@ -1,17 +1,12 @@
 {
   "pages": [
-    "pages/login/login",
     "pages/index/index",
-   
-   
-   
-    
+
+    "pages/login/login",
     "pages/index/warnCheck",
     "pages/index/warn",
-      
     "pages/index/map",
     "pages/index/warnDepartment",
-    
     "pages/index/warnUserList",
     "pages/daka/clock",
     "pages/daka/information",
@@ -20,7 +15,6 @@
     "pages/cheliang/index",
     "pages/menhu/apitext",
     "pages/index/warnDetail",
-   
     "pages/member/index",
     "pages/dev/eqpmod",
     "pages/dev/logadd",
