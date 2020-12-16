@@ -8,18 +8,25 @@
     "pages/index/map",
     "pages/index/warnDepartment",
     "pages/index/warnUserList",
+    "pages/index/warnDetail",
+
+    "pages/dev/eqplist",
+    "pages/dev/eqpinfo",
+    "pages/dev/eqpmod",
+    "pages/dev/logadd",
+
     "pages/daka/clock",
     "pages/daka/information",
     "pages/daka/footprint",
     "pages/daka/record",
     "pages/cheliang/index",
+
     "pages/menhu/apitext",
-    "pages/index/warnDetail",
-    "pages/member/index",
-    "pages/dev/eqpmod",
-    "pages/dev/logadd",
     "pages/menhu/dettext",
+
     "pages/learn/learn",
+
+    "pages/member/index",
     "pages/member/fankui",
     "pages/member/guanyu"
   ],

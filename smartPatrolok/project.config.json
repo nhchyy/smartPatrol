@@ -30,7 +30,7 @@
     "minifyWXSS": true
   },
   "compileType": "miniprogram",
-  "libVersion": "2.9.2",
+  "libVersion": "2.7.3",
   "appid": "wxa6f8c607ee5df677",
   "projectname": "smartPatrolok",
   "debugOptions": {

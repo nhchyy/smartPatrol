@@ -19,7 +19,7 @@
   </view>
   <view class="weui-cell ">
     <view class="weui-cell__hd">
-      <view class="weui-label">经度</view>
+      <view class="weui-label">经度</view>  
     </view>
     <view class="weui-cell__bd">
       <input value="{{warnForm.xjd}}" disabled="true" class="weui-input" placeholder="请输入经度" />

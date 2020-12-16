@@ -55,7 +55,7 @@
   </form>
 </view>
 <view class="show_border">
-  <view wx:for="{{list}}" wx:key="{{index}}">
+  <view wx:for="{{list}}">
     <view style="color:#003377" class="show_list">
       {{item.etype}}
       <view style="color:#d0d0d0;">|

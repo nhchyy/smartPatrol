@@ -35,8 +35,8 @@ Page({
             data: { text: "" },
             method: 'POST',
             success: function (res) {
-                var userList = res.data.list.filter(x => x.dep == dep).map(a => {
-                    a.selected = false
+                var userList = res.data.list.filter(x => x.dep == dep).map((a , idx)=> {
+                    idx==0 ? a.selected = true:a.selected = false
                     return a
                 })
                 that.setData({

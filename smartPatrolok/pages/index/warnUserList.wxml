@@ -7,7 +7,7 @@
         <radio-group bindchange="radioChange">
           <label class="weui-cell weui-check__label" wx:for="{{userList}}" wx:key="{{item.mobile}}">
             <view class="weui-cell__hd">
-              <radio value="{{item.mobile}}" checked="false" />
+              <radio value="{{item.mobile}}" checked="{{item.selected}}" />
             </view>
             <view class="weui-cell__bd">{{item.name}}</view>
           </label>

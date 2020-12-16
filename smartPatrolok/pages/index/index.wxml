@@ -6,7 +6,7 @@
 <view class="menu">
   <view class="menu_item" bindtap="bindWarnCheck">
     <image src="/resources/btn_yinhuan.png"></image>
-    <text>{{'隐患处理'}}</text>
+    <text>隐患处理</text>
   </view>
   <view class="menu_item" bindtap="bindDev">
     <image src="/resources/btn_shebei.png"></image>

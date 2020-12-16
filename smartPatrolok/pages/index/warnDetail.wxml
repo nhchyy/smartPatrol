@@ -25,13 +25,13 @@
       <view class="form_label">纬度</view>
       <view class="form_value">{{warnDetail.xwd}}</view>
     </view>
-    <view style="height:auto ;" class="form_item">
+    <view  class="form_item">
       <view class="form_label">描述</view>
       <view class="form_value  weui-cell__bd">{{warnDetail.xwt}}</view>
     </view>
-    <view  wx:if="{{warnDetail.cname!==name}}" style="height:auto ;" class="form_item">
+    <view  class="form_item">
       <view class="form_label">处理意见</view>
-      <view class="form_value  weui-cell__bd">{{warnDetail.ctext}}</view>
+      <view class="form_value">{{warnDetail.ctext}}</view>
     </view>
     <view class="form_item_thumb">
       <view class="thumb_item" wx:for="{{warnDetail.thumbs}}" data-url="{{item}}">
@@ -61,7 +61,7 @@
       <view class="user_date">{{warnDetail.ctime}}</view>
     </view>
   </view>
-  <view  wx:if="{{warnDetail.cname==name}}" class="form mt20">
+  <view  wx:if="{{warnDetail.cname==name&&warnDetail.xstate==0}}" class="form mt20">
     <view class="weui-cell ">
       <view class="weui-cell__hd">
         <view class="weui-label">处理意见</view>
@@ -72,7 +72,7 @@
     </view>
   </view>
   <view class="form mt20"></view>
-  <view wx:if="{{warnDetail.cname==name}}" bindtap="submitHandle" class="active">
+  <view wx:if="{{warnDetail.cname==name&&warnDetail.xstate==0}}" bindtap="submitHandle" class="active">
     <view class="active_item_current">提交处理意见</view>
   </view>
 </view>
